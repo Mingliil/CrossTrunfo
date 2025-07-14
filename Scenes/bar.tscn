@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bau56h1jhefs"]
+
+[ext_resource type="PackedScene" uid="uid://dq8wofdwrjevk" path="res://Scenes/player.tscn" id="1_vwav4"]
+[ext_resource type="PackedScene" uid="uid://d28xcfqkmuj5w" path="res://Npcs/Bar/Gambler/Gambler.tscn" id="2_w5oem"]
+
+[node name="Bar" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_vwav4")]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-192, -125, -158, -180, 152, -182, 195, -130, 427, -125, 573, 2, 577, -299, -583, -307, -586, -13, -415, -130)
+
+[node name="Node2D" parent="." instance=ExtResource("2_w5oem")]
+position = Vector2(10, -131)

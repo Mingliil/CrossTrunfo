@@ -1,0 +1,6 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c6ysrqpjwwm0x"]
+
+[ext_resource type="FontFile" uid="uid://qnufvnbhnnrr" path="res://Fonts/MxPlus_ToshibaSat_9x8.ttf" id="1_cox4j"]
+
+[resource]
+font = ExtResource("1_cox4j")

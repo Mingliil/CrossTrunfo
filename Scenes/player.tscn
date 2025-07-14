@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq8wofdwrjevk"]
+
+[ext_resource type="Script" uid="uid://qpjci7ktfds0" path="res://Player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dnbabx4c7ufiy" path="res://Sprites/lendario.tres" id="2_6t5aa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
+size = Vector2(58, 79)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6t5aa")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_vgqql")
