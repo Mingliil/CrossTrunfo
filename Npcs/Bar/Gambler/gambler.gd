@@ -12,5 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_interagivel(acao_player: bool) -> void:
-	Interact_manager._appears("")
+	Interact_manager._appears("s")
 	pass # Replace with function body.

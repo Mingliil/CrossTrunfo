@@ -19,5 +19,6 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _process(delta: float) -> void:
 	if acao == true:
+		Interact_manager._appears("para Interagir")
 		if Input.is_action_just_pressed("Interagir"):
 			print(player.position)

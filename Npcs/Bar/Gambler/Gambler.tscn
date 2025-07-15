@@ -21,5 +21,3 @@ position = Vector2(-2, -1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractAction"]
 position = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_acf2i")
-
-[connection signal="interagivel" from="InteractAction" to="." method="_on_interagivel"]
