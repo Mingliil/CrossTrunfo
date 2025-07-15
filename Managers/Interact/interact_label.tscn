@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bg3vxcop3mf23" path="res://Managers/Interact/InteractManager.gd" id="1_dh7gn"]
 [ext_resource type="LabelSettings" uid="uid://c6ysrqpjwwm0x" path="res://Fonts/label_settings.tres" id="1_ubpmd"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Interact" type="Node2D" groups=["interact"]]
 script = ExtResource("1_dh7gn")
 
 [node name="Label" type="Label" parent="."]
