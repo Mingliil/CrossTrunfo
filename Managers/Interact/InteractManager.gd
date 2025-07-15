@@ -2,11 +2,11 @@ extends Node2D
 class_name InteractManager
 
 @onready var label = $Label
-
-func _ready() -> void:
-	pass
-func _show_interact_label():
+@export var texto_base:String = "[E] "
+func _process(delta: float) -> void:
 	
 	pass
-func _process(delta: float) -> void:
+
+func _appears(interagir_desc: String):
+	label.text = texto_base
 	pass

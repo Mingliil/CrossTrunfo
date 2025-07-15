@@ -6,7 +6,7 @@
 [node name="Interact" type="Node2D" groups=["interact"]]
 script = ExtResource("1_dh7gn")
 
-[node name="Label" type="Label" parent="."]
+[node name="desc" type="Label" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
