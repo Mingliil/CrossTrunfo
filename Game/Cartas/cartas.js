@@ -13,3 +13,6 @@ function randomizeDeck(){
     }
     document.getElementById("Teste").innerHTML("salve");
 }
+function test(){
+    
+}
