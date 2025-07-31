@@ -4,3 +4,7 @@ var CardCord={
     w : 95,
     h : 71,
 }
+
+function Card{
+    
+}
