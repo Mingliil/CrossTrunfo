@@ -4,14 +4,13 @@ var cartaTeste = {
     x:1,
 }
 var PlayerDeck = {
-    cards:0,
+    cards:10,
     order:[],
 }
-
-}
 function randomizeDeck(){
-    for (let i = 0; i <= PlayerDeck.cards; i++) {
+    /*for (let i = 0; i <= PlayerDeck.cards; i++) {
     order[i] = i;
-    }
-    document.getElementById(teste).innerText(order)
+    }*/
+    A = document.getElementById(teste);
+    a.innerHTML("salve");
 }
