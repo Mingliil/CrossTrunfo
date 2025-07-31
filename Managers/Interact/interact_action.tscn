@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dl5oxoo6ti1gh"]
-
-[ext_resource type="Script" uid="uid://c55yp0713ji65" path="res://Managers/Interact/interact_action.gd" id="1_xedy7"]
-
-[node name="InteractAction" type="Area2D"]
-script = ExtResource("1_xedy7")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
