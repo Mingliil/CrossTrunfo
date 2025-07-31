@@ -8,9 +8,8 @@ var PlayerDeck = {
     order:[],
 }
 function randomizeDeck(){
-    /*for (let i = 0; i <= PlayerDeck.cards; i++) {
+    for (let i = 0; i <= PlayerDeck.cards; i++) {
     order[i] = i;
-    }*/
-    A = document.getElementById(teste);
-    a.innerHTML("salve");
+    }
+    document.getElementById("teste").innerHTML("salve");
 }
