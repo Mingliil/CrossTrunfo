@@ -10,4 +10,5 @@ var PlayerDeck = {
 for (let i = 0; i <= cards; i++) {
     order[i] = i;
 }
-print(PlayerDeck.order)
+function teste(){
+print(PlayerDeck.order)}
