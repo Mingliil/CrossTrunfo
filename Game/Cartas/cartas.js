@@ -8,5 +8,5 @@ var PlayerDeck = {
     order:[],
 }
 for (let i = -1; i < cards; i++) {
-       
+    order[i] = i;
 }
