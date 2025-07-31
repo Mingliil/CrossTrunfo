@@ -5,6 +5,6 @@ var CardCord={
     h : 71,
 }
 
-function Card{
+function randomDeck(cards, order){
     
 }
