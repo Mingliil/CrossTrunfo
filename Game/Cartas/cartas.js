@@ -11,4 +11,7 @@ for (let i = 0; i <= cards; i++) {
     order[i] = i;
 }
 function teste(){
-print(PlayerDeck.order)}
+print(PlayerDeck.order)
+textoteste = document.getElementById("teste");
+textoteste.text
+}
