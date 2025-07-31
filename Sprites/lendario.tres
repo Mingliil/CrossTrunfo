@@ -1,8 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dnbabx4c7ufiy"]
-
-[ext_resource type="Texture2D" uid="uid://ckmo31vagcu6f" path="res://Sprites/Afonso_Lendario.png" id="1_b3mje"]
-
-[resource]
-atlas = ExtResource("1_b3mje")
-region = Rect2(71, 0, 71, 95)
-margin = Rect2(0, 0, -7.26, 0)
