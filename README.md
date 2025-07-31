@@ -1,1 +1,1 @@
-O maior e mais insano jogo de Trunfo
+# O maior e mais insano jogo de Trunfo
