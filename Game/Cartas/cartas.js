@@ -7,6 +7,6 @@ var PlayerDeck = {
     cards:0,
     order:[],
 }
-for (let i = -1; i < cards; i++) {
+for (let i = 0; i <= cards; i++) {
     order[i] = i;
 }
