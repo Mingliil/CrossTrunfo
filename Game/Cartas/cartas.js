@@ -5,5 +5,8 @@ var cartaTeste = {
 }
 var PlayerDeck = {
     cards:0,
-    order:[]
+    order:[],
+}
+for (let i = -1; i < cards; i++) {
+       
 }
