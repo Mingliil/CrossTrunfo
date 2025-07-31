@@ -11,5 +11,5 @@ function randomizeDeck(){
     for (let i = 0; i <= PlayerDeck.cards; i++) {
     order[i] = i;
     }
-    document.getElementById("teste").innerHTML("salve");
+    document.getElementById("Teste").innerHTML("salve");
 }
