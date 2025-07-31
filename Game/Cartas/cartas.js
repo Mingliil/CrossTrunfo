@@ -7,11 +7,11 @@ var PlayerDeck = {
     cards:0,
     order:[],
 }
-for (let i = 0; i <= cards; i++) {
-    order[i] = i;
+
 }
-function teste(){
-print(PlayerDeck.order)
-textoteste = document.getElementById("teste");
-textoteste.text
+function randomizeDeck(){
+    for (let i = 0; i <= PlayerDeck.cards; i++) {
+    order[i] = i;
+    }
+    document.getElementById(teste).innerText(order)
 }
