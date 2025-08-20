@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8" />
     <title>MainMenu</title>
-    <link href="MainMenu.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>  
-        <div style="background-color: aliceblue; color:black; margin-left: 10%; margin-right: 10%;">
-        teste<br>
-        teste
-        </div>
-    <img src="Assets/cards.png" style="width: 50%;">
+    <div class="container ">
+        <h2 class="text-center">Rodada</h2>
+        <h3 id="rodada" class="text-center"></h3>
+            <div class="row">
+                <div class="col">
+                    <h3>Aura</h3>
+                    <p id="VidaP1">100</p>
+                    <button onclick="ataqueP1()">Ataque</button>
+                </div>
+                <div class="col text-right">
+                    <h3>Aura</h3>
+                    <p id="VidaP2">100</p>
+                    <div id="cardP2">
+                        <img src="Assets/Afonso_Lendario.png" style="position: absolute; clip: rect();">
+                    </div>
+                    <button onclick="ataqueP2()">Ataque</button>
+                </div>
+            </div>
+    </div>
+    <script src="playeratack.js"></script>
+    <script src="Assets/atlas.js"></script>
 </body>
 </html>
