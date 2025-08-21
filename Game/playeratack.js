@@ -25,5 +25,24 @@ function ataqueP2(){
 }
 
 function criaCarta(){
-document.createElement("div class=primary");
+let cartafront = document.createElement('div');
+let cartamid = document.createElement('div');
+let cartatexture = document.createElement('img');
+cartamid.classList.add('text-bg-primary');
+cartafront.classList.add('container');
+cartafront.classList.add('container');
+cartatexture.src = "Assets/cards.png";
+let text = document.createTextNode('carta');
+cartamid.appendChild(text);
+cartamid.appendChild(cartatexture);
+cartafront.appendChild(cartamid);
+document.body.appendChild(cartafront);
 }
+/*function criaCarta(){
+let div = document.createElement('div');
+div.classList.add('text-bg-primary');
+let text = document.createTextNode('Test');
+div.appendChild(text);
+document.body.appendChild(div)
+}*/
+window.onload = criaCarta;
