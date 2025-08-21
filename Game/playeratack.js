@@ -33,7 +33,7 @@ function ataqueP2(){
     rodada++;
     document.getElementById("rodada").innerHTML = rodada;
 }
-function criaCarta(cartaExemplo){
+function criaCarta(){
 
     const canvas = document.getElementById('myCanvas');
     const ctx = canvas.getContext('2d');
@@ -84,6 +84,7 @@ cartamid.appendChild(cartatexture);
 cartafront.appendChild(cartamid);
 document.body.appendChild(cartafront);
 }*/
+
 
 function debug(){
     document.getElementById('debug').innerHTML = cartaExemplo.Atlas;
