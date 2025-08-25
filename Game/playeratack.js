@@ -6,7 +6,9 @@ Player2Stats = {
 }
 rodada = 0;
 
-let cartaExemplo = {
+Deck = [];
+
+Deck.cartaExemplo = {
     code:0,
     nome:"teste",
     Atlas:'Assets/cards.png',
@@ -74,10 +76,12 @@ function CartaP1(carta){
 }
 
 function Deckdraw(){
-
+ 
 };
 
 function debug(){
-    document.getElementById('debug').innerHTML = cartaExemplo.Atlas;
+    document.getElementById('debug').innerHTML = Deck;
 }
+window.onload = Deckdraw;
+window.onload = CartaP1(Deck.cartaExemplo);
 window.onload = debug;
