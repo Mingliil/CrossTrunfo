@@ -7,16 +7,18 @@ Player2Stats = {
 rodada = 0;
 
 let cartaExemplo = {
+    code:0,
     nome:"teste",
     Atlas:'Assets/cards.png',
-    AlturaX:0,
-    AlturaY:0,
+    AlturaX:373,
+    AlturaY:519,
     CoordsX:0,
     CoordsY:0,
     Status : {
         poder: 20
     }
 }
+
 var suits = ["spades", "diamonds", "clubs", "hearts"];
 var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
@@ -33,19 +35,19 @@ function ataqueP2(){
     rodada++;
     document.getElementById("rodada").innerHTML = rodada;
 }
-function criaCarta(cartaExemplo){
+function CartaP1(carta){
 
-    const canvas = document.getElementById('myCanvas');
+    const canvas = document.getElementById('CartaP1');
     const ctx = canvas.getContext('2d');
     const img = new Image();
-    img.src = "cards.png";
+    img.src = carta.Atlas;
 
     img.onload = () => {
         // Define the source rectangle (x, y, width, height) from the original image
-        const sourceX = 0; // X-coordinate of the top-left corner of the desired part
-        const sourceY = 0; // Y-coordinate of the top-left corner of the desired part
-        const sourceWidth = 373; // Width of the desired part
-        const sourceHeight = 519; // Height of the desired part
+        const sourceX = carta.CoordsX; // X-coordinate of the top-left corner of the desired part
+        const sourceY = carta.CoordsY; // Y-coordinate of the top-left corner of the desired part
+        const sourceWidth = carta.AlturaX; // Width of the desired part
+        const sourceHeight = carta.AlturaY; // Height of the desired part
 
         // Define the destination rectangle (x, y, width, height) on the canvas
         const destX = 0; // X-coordinate on the canvas to draw the part
@@ -56,7 +58,6 @@ function criaCarta(cartaExemplo){
         // Set canvas dimensions if needed
         canvas.width = destWidth;
         canvas.height = destHeight;
-
         ctx.drawImage(
             img,
             sourceX,
@@ -69,24 +70,14 @@ function criaCarta(cartaExemplo){
             destHeight
         );
     };
+
 }
-/*function criaCarta(){
-let cartafront = document.createElement('div');
-let cartamid = document.createElement('div');
-let cartatexture = document.createElement('img');
-cartamid.classList.add('text-bg-primary');
-cartafront.classList.add('container');
-cartafront.classList.add('container');
-cartatexture.src = "Assets/cards.png";
-let text = document.createTextNode('carta');
-cartamid.appendChild(text);
-cartamid.appendChild(cartatexture);
-cartafront.appendChild(cartamid);
-document.body.appendChild(cartafront);
-}*/
+
+function Deckdraw(){
+
+};
 
 function debug(){
     document.getElementById('debug').innerHTML = cartaExemplo.Atlas;
 }
-window.onload = criaCarta;
 window.onload = debug;
