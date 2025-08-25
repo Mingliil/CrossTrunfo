@@ -7,7 +7,7 @@ Player2Stats = {
 rodada = 0;
 
 Deck = [];
-
+DeckPlayer1 = [];
 Deck.cartaExemplo = {
     code:0,
     nome:"teste",
@@ -16,10 +16,14 @@ Deck.cartaExemplo = {
     AlturaY:519,
     CoordsX:0,
     CoordsY:0,
+    DescX: 1,
+    DescY: 0,
     Status : {
         poder: 20
     }
 }
+
+
 
 var suits = ["spades", "diamonds", "clubs", "hearts"];
 var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
@@ -38,6 +42,11 @@ function ataqueP2(){
     document.getElementById("rodada").innerHTML = rodada;
 }
 function CartaP1(carta){
+
+   /* const cardDesc = document.getElementById('CartaP1Desc');
+    const contextoDesc = canvas.getContext('2d');
+    const imgDesc = new Image();
+    imgDesc.src = carta.Atlas;*/
 
     const canvas = document.getElementById('CartaP1');
     const ctx = canvas.getContext('2d');
@@ -71,17 +80,13 @@ function CartaP1(carta){
             destWidth,
             destHeight
         );
+
     };
 
 }
 
-function Deckdraw(){
- 
-};
-
 function debug(){
-    document.getElementById('debug').innerHTML = Deck;
+    document.getElementById('debug').innerHTML = DeckPlayer1[0];
 }
-window.onload = Deckdraw;
 window.onload = CartaP1(Deck.cartaExemplo);
 window.onload = debug;
