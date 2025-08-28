@@ -19,7 +19,9 @@ Deck.cartaExemplo = {
     DescX: 1,
     DescY: 0,
     Status : {
-        poder: 20
+        poder: 20,
+        defesa: 20,
+        magia: 20
     }
 }
 
@@ -85,7 +87,9 @@ function CartaP1(carta){
 
 }
 
-
+function criarDeck(){
+    
+}
 function debug(){
     document.getElementById('debug').innerHTML = DeckPlayer1[0];
 }
