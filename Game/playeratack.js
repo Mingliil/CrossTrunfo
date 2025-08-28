@@ -1,17 +1,17 @@
 Player1Stats = {
     Aura : 100,
-    card: null
+    card: 0
 }
 Player2Stats = {
     Aura : 100,
-    card: null
+    card: 0
 }
 rodada = 0;
 
 Deck = [];
 Deck.Morshu = {
     code:0,
-    nome:"teste",
+    nome:"Morshu",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
@@ -77,6 +77,7 @@ Deck.GlassAnimals = {
 const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
 function ataque(P){
     if (P == "P1"){
+        ;
         Player2Stats.Aura -= 20;
         document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
     }
