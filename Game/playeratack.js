@@ -39,33 +39,66 @@ Deck.Superman = {
         magia: 50
     }
 }
-
+Deck.SOAD = {
+    code:2,
+    nome:"SOAD",
+    Atlas:'Assets/cards.png',
+    AlturaX:442,
+    AlturaY:549,
+    CoordsX:380,
+    CoordsY:1080,
+    DescX: 1,
+    DescY: 0,
+    Status : {
+        poder: 40,
+        defesa: 10,
+        magia: 50
+    }
+}
+Deck.GlassAnimals = {
+    code:2,
+    nome:"SOAD",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:519,
+    CoordsX:380,
+    CoordsY:1680,
+    DescX: 1,
+    DescY: 0,
+    Status : {
+        poder: 40,
+        defesa: 10,
+        magia: 50
+    }
+}
 
 
 var suits = ["spades", "diamonds", "clubs", "hearts"];
 var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
-function ataqueP1(){
+function ataque(P){
+
     Player2Stats.Aura = Player2Stats.Aura - 20;
     document.getElementById("VidaP2").innerHTML = Player2Stats.Aura;
     rodada++;
     document.getElementById("rodada").innerHTML = rodada;
 }
 
-function ataqueP2(){
-    Player1Stats.Aura = Player1Stats.Aura - 20;
-    document.getElementById("VidaP1").innerHTML = Player1Stats.Aura;
-    rodada++;
-    document.getElementById("rodada").innerHTML = rodada;
-}
-function CartaP1(carta){
+function Carta(carta, P){
 
    /* const cardDesc = document.getElementById('CartaP1Desc');
     const contextoDesc = canvas.getContext('2d');
     const imgDesc = new Image();
     imgDesc.src = carta.Atlas;*/
+    let canvas;
 
-    const canvas = document.getElementById('CartaP1');
+    if (P == "P1"){
+    canvas = document.getElementById('CartaP1');
+    }
+    if (P == "P2"){
+    canvas = document.getElementById('CartaP2');
+    }
+
     const ctx = canvas.getContext('2d');
     const img = new Image();
     img.src = carta.Atlas;
@@ -106,13 +139,18 @@ function criarDeck(){
 
 }
 function puxaCarta(P){
-    const canvas = document.getElementById('CartaP1');
-    DeckPlayer = []
-    onload = CartaP1();
+    const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
+    if (P == "player1"){
+        Carta(DeckPlayer[3], "P1");
+    }
+    if (P == "player2"){
+        Carta(DeckPlayer[0], "P2");
+    }
 }
 function debug(){
     document.getElementById('debug').innerHTML = DeckPlayer1[0];
 }
-window.onload = CartaP1(Deck.Superman);
 window.onload = criarDeck();
+window.onload = puxaCarta("player2");
+window.onload = puxaCarta("player1");
 window.onload = debug;

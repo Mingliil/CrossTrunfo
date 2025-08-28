@@ -26,19 +26,24 @@
         </div><BR>
         <div class="row">
             <div class="col">
-                CARTA<br>
-                <canvas id="CartaP1" style="width: 50%;">
-
-                </canvas>
+                <h6>aura</h6>
+                <p id="auraP1">100</p>
+                <canvas id="CartaP1" style="width: 50%;"></canvas>
+                <canvas id="CartaP1Desc" style="width: 50%;"></canvas>
             </div>
             <div class="col">
-                RODADA<BR>
-                <p id="rodada">1</p><br>
-                status da carta:
-
+                <h5 class="fs-6">RODADA</h5>
+                <p id="rodada" class="fs-6">1</p>
+                <p>status da carta:<br>
+                
+                </p>
+                <button onclick="ataque('P1')" >ATAQUE</button>
             </div>
             <div class="col">
-                CARTA
+                <h6>aura</h6>
+                <p id="auraP2">100</p>
+                <canvas id="CartaP2" style="width: 50%;"></canvas>
+                <canvas id="CartaP1Desc" style="width: 50%;"></canvas>
             </div>
         </div><br>
         
@@ -53,28 +58,7 @@
                 
             </div>
         </div>
-    </div> 
-    <!-- <div class="container text-center">
-        <h2 class="text-center">Rodada</h2>
-        <h3 id="rodada" class="text-center"></h3>
-            <div class="row">
-                <div class="col">
-                    <h3>Aura</h3>
-                    <p id="VidaP1">100</p>
-                    <canvas id="CartaP1" onclick="ataqueP1()" onmouseenter="CartaP1Desc(Deck.cartaExemplo)" onmouseleave=""></canvas><br>
-                    <canvas id="CartaP1Desc"></canvas><br>
-                </div>
-                <div class="col text-right">
-                    <h3>Aura</h3>
-                    <p id="VidaP2">100</p>
-                    <canvas id="CartaP2"></canvas><br>
-                    <button onclick="ataqueP2()">Ataque</button>
-                </div>
-            </div>
-        <p id="debug" ondragenter="criaCarta()">2323</p> 
-        <button id="puxar carta" onclick="Deck()">Puxar carta</button>
-    </div> -->
-
+    </div>
     <script src="playeratack.js"></script>
     <script src="Assets/atlas.js"></script>
 </body>
