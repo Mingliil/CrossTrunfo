@@ -72,10 +72,6 @@ Deck.GlassAnimals = {
     }
 }
 
-
-var suits = ["spades", "diamonds", "clubs", "hearts"];
-var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-
 function ataque(P){
 
     Player2Stats.Aura = Player2Stats.Aura - 20;
