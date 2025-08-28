@@ -7,8 +7,7 @@ Player2Stats = {
 rodada = 0;
 
 Deck = [];
-DeckPlayer1 = [];
-Deck.cartaExemplo = {
+Deck.Morshu = {
     code:0,
     nome:"teste",
     Atlas:'Assets/cards.png',
@@ -22,6 +21,22 @@ Deck.cartaExemplo = {
         poder: 20,
         defesa: 20,
         magia: 20
+    }
+}
+Deck.Superman = {
+    code:1,
+    nome:"super",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:519,
+    CoordsX:385,
+    CoordsY:538,
+    DescX: 1,
+    DescY: 0,
+    Status : {
+        poder: 40,
+        defesa: 10,
+        magia: 50
     }
 }
 
@@ -88,10 +103,16 @@ function CartaP1(carta){
 }
 
 function criarDeck(){
-    
+
+}
+function puxaCarta(P){
+    const canvas = document.getElementById('CartaP1');
+    DeckPlayer = []
+    onload = CartaP1();
 }
 function debug(){
     document.getElementById('debug').innerHTML = DeckPlayer1[0];
 }
-window.onload = CartaP1(Deck.cartaExemplo);
+window.onload = CartaP1(Deck.Superman);
+window.onload = criarDeck();
 window.onload = debug;
