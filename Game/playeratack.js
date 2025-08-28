@@ -34,9 +34,9 @@ Deck.Superman = {
     DescX: 1,
     DescY: 0,
     Status : {
-        poder: 40,
-        defesa: 10,
-        magia: 50
+        poder: 100,
+        defesa: 0,
+        magia: 0
     }
 }
 Deck.SOAD = {
@@ -140,7 +140,11 @@ function criarDeck(){
 function puxaCarta(P){
     const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
     if (P == "player1"){
-        Carta(DeckPlayer[3], "P1");
+        let c = 1
+        Carta(DeckPlayer[c], "P1");
+        document.getElementById("cartaPoder").innerHTML = "Poder: " +DeckPlayer[c].Status.poder + "<br>";
+        document.getElementById("cartaDefesa").innerHTML = "Defesa: " +DeckPlayer[c].Status.defesa + "<br>";
+        document.getElementById("cartaMagia").innerHTML = "Magia: " +DeckPlayer[c].Status.magia + "<br>";
     }
     if (P == "player2"){
         Carta(DeckPlayer[0], "P2");
