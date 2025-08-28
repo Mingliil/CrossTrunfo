@@ -73,7 +73,11 @@ Deck.GlassAnimals = {
 }
 
 function ataque(P){
-    
+    if (P == "P1"){
+        let diff;
+        Player2Stats.Aura -= 20;
+        document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
+    }
     document.getElementById("VidaP2").innerHTML = Player2Stats.Aura;
     rodada++;
     document.getElementById("rodada").innerHTML = rodada;
