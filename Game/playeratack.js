@@ -1,8 +1,10 @@
 Player1Stats = {
-    Aura : 100 
+    Aura : 100,
+    card: null
 }
 Player2Stats = {
-    Aura : 100 
+    Aura : 100,
+    card: null
 }
 rodada = 0;
 
@@ -23,6 +25,7 @@ Deck.Morshu = {
         magia: 20
     }
 }
+
 Deck.Superman = {
     code:1,
     nome:"super",
@@ -72,7 +75,6 @@ Deck.GlassAnimals = {
     }
 }
 const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
-
 function ataque(P){
     if (P == "P1"){
         Player2Stats.Aura -= 20;
@@ -139,22 +141,27 @@ function Carta(carta, P){
 }
 
 function criarDeck(){
+    const DeckArea = document.getElementById("DeckYou");
+    const Carta = [];
 
 }
 function puxaCarta(P){
     if (P == "player1"){
-        let c = 1
+        let c = 1;
         Carta(DeckPlayer[c], "P1");
+        Player1Stats.carta = DeckPlayer[c];
         document.getElementById("cartaPoder").innerHTML = "Poder: " +DeckPlayer[c].Status.poder + "<br>";
         document.getElementById("cartaDefesa").innerHTML = "Defesa: " +DeckPlayer[c].Status.defesa + "<br>";
         document.getElementById("cartaMagia").innerHTML = "Magia: " +DeckPlayer[c].Status.magia + "<br>";
     }
     if (P == "player2"){
-        Carta(DeckPlayer[0], "P2");
+        let c2 = 0;
+        Player1Stats.carta = DeckPlayer[c2];
+        Carta(DeckPlayer[c2], "P2");
     }
 }
 function debug(){
-    document.getElementById('debug').innerHTML = DeckPlayer1[0];
+    document.getElementById('debug').innerHTML = Player1Stats.card;
 }
 window.onload = criarDeck();
 window.onload = puxaCarta("player2");
