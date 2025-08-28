@@ -14,19 +14,18 @@
                 <div class="col">
                     <h3>Aura</h3>
                     <p id="VidaP1">100</p>
-                    <button onclick="ataqueP1()">Ataque</button>
+                    <canvas id="CartaP1" onclick="ataqueP1()" onmouseenter="CartaP1Desc(Deck.cartaExemplo)" onmouseleave=""></canvas><br>
+                    <canvas id="CartaP1Desc"></canvas><br>
                 </div>
                 <div class="col text-right">
                     <h3>Aura</h3>
                     <p id="VidaP2">100</p>
-                    <div id="cardP2">
-                        <img src="Assets/Afonso_Lendario.png" style="position: absolute; clip: rect();">
-                    </div>
+                    <canvas id="CartaP2"></canvas><br>
                     <button onclick="ataqueP2()">Ataque</button>
                 </div>
             </div>
         <p id="debug" ondragenter="criaCarta()">2323</p> 
-        <canvas id="myCanvas"></canvas>
+        <button id="puxar carta" onclick="Deck()">Puxar carta</button>
     </div>
     <script src="playeratack.js"></script>
     <script src="Assets/atlas.js"></script>
