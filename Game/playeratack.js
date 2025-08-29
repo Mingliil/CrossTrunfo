@@ -78,7 +78,8 @@ const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
 function ataque(P){
     const P1card = Player1Stats.card.Status;
     const P2card = Player2Stats.card.Status;
-    let escolha = "";
+    let escolha = 0;
+    let result = 0;
     if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
         if(document.getElementById("status1").checked){
             escolha = P1card.poder;
@@ -92,13 +93,14 @@ function ataque(P){
             escolha = P1card.magia;
             P2card = P1card.magia;
         }
-
+            document.getElementById('debug').innerHTML = "test";
+        result = escolha - P2card; 
     }
     else{
         alert("escolha 1 opção");
     }
     if (P == "P1"){
-        Player2Stats.Aura -= escolha;
+        Player2Stats.Aura -= result;
         document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
     }
     if (P == "P2"){
