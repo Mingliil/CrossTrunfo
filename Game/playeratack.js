@@ -79,37 +79,50 @@ function ataque(P){
     const P1card = Player1Stats.card.Status;
     const P2card = Player2Stats.card.Status;
     let escolha = 0;
+    let ataqueP2 = 0;
     let result = 0;
     if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
         if(document.getElementById("status1").checked){
             escolha = P1card.poder;
-            P2card = P1card.poder;
+            ataqueP2 = P2card.poder;
         }
         if(document.getElementById("status2").checked){
             escolha = P1card.defesa;
-            P2card = P1card.defesa;
+            ataqueP2 = P2card.defesa;
         }
         if(document.getElementById("status3").checked){
             escolha = P1card.magia;
-            P2card = P1card.magia;
+            ataqueP2 = P2card.magia;
         }
             document.getElementById('debug').innerHTML = "test";
-        result = escolha - P2card; 
+        result = escolha - ataqueP2; 
     }
     else{
         alert("escolha 1 opção");
     }
     if (P == "P1"){
-        Player2Stats.Aura -= result;
-        document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
+        document.getElementById('debug').innerHTML = "vai ataque";
+        if (result == 0){
+            alert("EMPATE!!");
+        }
+        else if (result>0){
+            Player2Stats.Aura -= result;
+            document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
+            if (Player2Stats.Aura <=0){
+                document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
+            }
+            else{
+                rodada++;
+                document.getElementById("rodada").innerHTML = rodada;
+            }
+        }
+        else if (result<0){
+            Player1Stats.Aura -= -result;
+            document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
+            rodada++;
+            document.getElementById("rodada").innerHTML = rodada;
+        }
     }
-    if (P == "P2"){
-        Player1Stats.Aura -= 20;
-        document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
-    }
-    document.getElementById("VidaP2").innerHTML = Player2Stats.Aura;
-    rodada++;
-    document.getElementById("rodada").innerHTML = rodada;
 }
 
 function Carta(carta, P){
