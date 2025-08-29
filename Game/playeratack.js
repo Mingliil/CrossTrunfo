@@ -118,12 +118,14 @@ function ataque(P){
         }
         else if (result<0){
             Player1Stats.Aura -= -result;
-            if(){
-                document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
-            }
             document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
+            if(Player1Stats.Aura <=0){
+                document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
+            }
+            else{
             rodada++;
             document.getElementById("rodada").innerHTML = rodada;
+            }
         }
     }
 }
@@ -186,7 +188,7 @@ function criarDeck(){
 }
 function puxaCarta(P){
     if (P == "player1"){
-        let c = 2;
+        let c = 1;
         Carta(DeckPlayer[c], "P1");
         Player1Stats.card = DeckPlayer[c];
         document.getElementById("cartaPoder").innerHTML = "Poder: " +DeckPlayer[c].Status.poder + "<br>";
