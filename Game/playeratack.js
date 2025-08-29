@@ -77,7 +77,8 @@ Deck.GlassAnimals = {
 const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
 function ataque(P){
     if (P == "P1"){
-        ;
+        const cartaP1 = Player1Stats.card;
+        document.getElementById('debug').innerHTML = cartaP1;
         Player2Stats.Aura -= 20;
         document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
     }
@@ -148,7 +149,7 @@ function criarDeck(){
 }
 function puxaCarta(P){
     if (P == "player1"){
-        let c = 1;
+        let c = 2;
         Carta(DeckPlayer[c], "P1");
         Player1Stats.carta = DeckPlayer[c];
         document.getElementById("cartaPoder").innerHTML = "Poder: " +DeckPlayer[c].Status.poder + "<br>";
@@ -157,7 +158,7 @@ function puxaCarta(P){
     }
     if (P == "player2"){
         let c2 = 0;
-        Player1Stats.carta = DeckPlayer[c2];
+        Player1Stats.card = DeckPlayer[c2];
         Carta(DeckPlayer[c2], "P2");
     }
 }
