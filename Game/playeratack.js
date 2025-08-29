@@ -118,6 +118,9 @@ function ataque(P){
         }
         else if (result<0){
             Player1Stats.Aura -= -result;
+            if(){
+                document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
+            }
             document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
             rodada++;
             document.getElementById("rodada").innerHTML = rodada;
