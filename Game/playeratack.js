@@ -74,6 +74,7 @@ Deck.GlassAnimals = {
         magia: 50
     }
 }
+let estadoRodada = 0;
 const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
 function ataque(P){
     const P1card = Player1Stats.card.Status;
@@ -94,14 +95,12 @@ function ataque(P){
             escolha = P1card.magia;
             ataqueP2 = P2card.magia;
         }
-            document.getElementById('debug').innerHTML = "test";
         result = escolha - ataqueP2; 
     }
     else{
         alert("escolha 1 opção");
     }
     if (P == "P1"){
-        document.getElementById('debug').innerHTML = "vai ataque";
         if (result == 0){
             alert("EMPATE!!");
         }
@@ -112,8 +111,8 @@ function ataque(P){
                 document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
             }
             else{
-                rodada++;
-                document.getElementById("rodada").innerHTML = rodada;
+                estadoRodada++;
+                EstadoRodada();
             }
         }
         else if (result<0){
@@ -123,13 +122,29 @@ function ataque(P){
                 document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
             }
             else{
-            rodada++;
-            document.getElementById("rodada").innerHTML = rodada;
+                estadoRodada++;
+                EstadoRodada();
             }
         }
     }
 }
+function EstadoRodada(){
+    if (estadoRodada == 1){
+    const P2card = Player2Stats.card;
+    const canvas = document.getElementById('CartaP2');
+    const ctx = canvas.getContext('2d');
+    const cartaTm =P2card.AlturaX;
+    for(let i = P2card.AlturaX; i <= 0; i --){
+        document.getElementById("debug").innerHTML = "rses";
+        P2card.card.AlturaX = i;
+        Carta(P2card.card, "P2");
+    }
+    rodada++;
+    estadoRodada-=2;
+    document.getElementById("rodada").innerHTML = rodada;
+}
 
+}
 function Carta(carta, P){
 
    /* const cardDesc = document.getElementById('CartaP1Desc');
@@ -145,7 +160,10 @@ function Carta(carta, P){
     }
     if (P == "P2"){
     canvas = document.getElementById('CartaP2');
-    img.src = 'Assets\ExemploCartaFundo.png';
+    img.src = 'Assets/ExemploCartaFundo.png';
+    if (carta.AlturaX <= 0){
+        img.src = carta.Atlas;
+    }
     } 
     const ctx = canvas.getContext('2d');
     
