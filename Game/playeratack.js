@@ -137,18 +137,18 @@ function Carta(carta, P){
     const imgDesc = new Image();
     imgDesc.src = carta.Atlas;*/
     let canvas;
-
+    let img = new Image();
+    
     if (P == "P1"){
     canvas = document.getElementById('CartaP1');
+    img.src = carta.Atlas;
     }
     if (P == "P2"){
     canvas = document.getElementById('CartaP2');
-    }
-
+    img.src = 'Assets\ExemploCartaFundo.png';
+    } 
     const ctx = canvas.getContext('2d');
-    const img = new Image();
-    img.src = carta.Atlas;
-
+    
     img.onload = () => {
         // Define the source rectangle (x, y, width, height) from the original image
         const sourceX = carta.CoordsX; // X-coordinate of the top-left corner of the desired part
