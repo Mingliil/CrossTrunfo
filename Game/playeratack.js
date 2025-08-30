@@ -1,16 +1,17 @@
 Player1Stats = {
-    Aura : 100 
+    Aura : 100,
+    card: 0
 }
 Player2Stats = {
-    Aura : 100 
+    Aura : 100,
+    card: 0
 }
 rodada = 0;
 
 Deck = [];
-DeckPlayer1 = [];
-Deck.cartaExemplo = {
+Deck.Morshu = {
     code:0,
-    nome:"teste",
+    nome:"Morshu",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
@@ -19,36 +20,131 @@ Deck.cartaExemplo = {
     DescX: 1,
     DescY: 0,
     Status : {
-        poder: 20
+        poder: 20,
+        defesa: 20,
+        magia: 20
     }
 }
 
-
-
-var suits = ["spades", "diamonds", "clubs", "hearts"];
-var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-
-function ataqueP1(){
-    Player2Stats.Aura = Player2Stats.Aura - 20;
-    document.getElementById("VidaP2").innerHTML = Player2Stats.Aura;
-    rodada++;
-    document.getElementById("rodada").innerHTML = rodada;
+Deck.Superman = {
+    code:1,
+    nome:"super",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:519,
+    CoordsX:385,
+    CoordsY:538,
+    DescX: 1,
+    DescY: 0,
+    Status : {
+        poder: 100,
+        defesa: 0,
+        magia: 0
+    }
+}
+Deck.SOAD = {
+    code:2,
+    nome:"SOAD",
+    Atlas:'Assets/cards.png',
+    AlturaX:442,
+    AlturaY:549,
+    CoordsX:380,
+    CoordsY:1080,
+    DescX: 1,
+    DescY: 0,
+    Status : {
+        poder: 40,
+        defesa: 10,
+        magia: 50
+    }
+}
+Deck.GlassAnimals = {
+    code:2,
+    nome:"SOAD",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:519,
+    CoordsX:380,
+    CoordsY:1680,
+    DescX: 1,
+    DescY: 0,
+    Status : {
+        poder: 40,
+        defesa: 10,
+        magia: 50
+    }
+}
+const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
+function ataque(P){
+    const P1card = Player1Stats.card.Status;
+    const P2card = Player2Stats.card.Status;
+    let escolha = 0;
+    let ataqueP2 = 0;
+    let result = 0;
+    if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
+        if(document.getElementById("status1").checked){
+            escolha = P1card.poder;
+            ataqueP2 = P2card.poder;
+        }
+        if(document.getElementById("status2").checked){
+            escolha = P1card.defesa;
+            ataqueP2 = P2card.defesa;
+        }
+        if(document.getElementById("status3").checked){
+            escolha = P1card.magia;
+            ataqueP2 = P2card.magia;
+        }
+            document.getElementById('debug').innerHTML = "test";
+        result = escolha - ataqueP2; 
+    }
+    else{
+        alert("escolha 1 opção");
+    }
+    if (P == "P1"){
+        document.getElementById('debug').innerHTML = "vai ataque";
+        if (result == 0){
+            alert("EMPATE!!");
+        }
+        else if (result>0){
+            Player2Stats.Aura -= result;
+            document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
+            if (Player2Stats.Aura <=0){
+                document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
+            }
+            else{
+                rodada++;
+                document.getElementById("rodada").innerHTML = rodada;
+            }
+        }
+        else if (result<0){
+            Player1Stats.Aura -= -result;
+            document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
+            if(Player1Stats.Aura <=0){
+                document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
+            }
+            else{
+            rodada++;
+            document.getElementById("rodada").innerHTML = rodada;
+            }
+        }
+    }
 }
 
-function ataqueP2(){
-    Player1Stats.Aura = Player1Stats.Aura - 20;
-    document.getElementById("VidaP1").innerHTML = Player1Stats.Aura;
-    rodada++;
-    document.getElementById("rodada").innerHTML = rodada;
-}
-function CartaP1(carta){
+function Carta(carta, P){
 
    /* const cardDesc = document.getElementById('CartaP1Desc');
     const contextoDesc = canvas.getContext('2d');
     const imgDesc = new Image();
     imgDesc.src = carta.Atlas;*/
+    let canvas;
 
-    const canvas = document.getElementById('CartaP1');
+    if (P == "P1"){
+    canvas = document.getElementById('CartaP1');
+    }
+    if (P == "P2"){
+    canvas = document.getElementById('CartaP2');
+    }
+
     const ctx = canvas.getContext('2d');
     const img = new Image();
     img.src = carta.Atlas;
@@ -85,8 +181,30 @@ function CartaP1(carta){
 
 }
 
-function debug(){
-    document.getElementById('debug').innerHTML = DeckPlayer1[0];
+function criarDeck(){
+    const DeckArea = document.getElementById("DeckYou");
+    const Carta = [];
+
 }
-window.onload = CartaP1(Deck.cartaExemplo);
+function puxaCarta(P){
+    if (P == "player1"){
+        let c = 1;
+        Carta(DeckPlayer[c], "P1");
+        Player1Stats.card = DeckPlayer[c];
+        document.getElementById("cartaPoder").innerHTML = "Poder: " +DeckPlayer[c].Status.poder + "<br>";
+        document.getElementById("cartaDefesa").innerHTML = "Defesa: " +DeckPlayer[c].Status.defesa + "<br>";
+        document.getElementById("cartaMagia").innerHTML = "Magia: " +DeckPlayer[c].Status.magia + "<br>";
+    }
+    if (P == "player2"){
+        let c2 = 0;
+        Player2Stats.card = DeckPlayer[c2];
+        Carta(DeckPlayer[c2], "P2");
+    }
+}
+function debug(){
+    document.getElementById('debug').innerHTML = Player1Stats.card;
+}
+window.onload = criarDeck();
+window.onload = puxaCarta("player2");
+window.onload = puxaCarta("player1");
 window.onload = debug;

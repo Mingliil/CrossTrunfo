@@ -6,26 +6,55 @@
     <link href="MainMenu.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>  
-    <div class="container text-center">
-        <h2 class="text-center">Rodada</h2>
-        <h3 id="rodada" class="text-center"></h3>
-            <div class="row">
-                <div class="col">
-                    <h3>Aura</h3>
-                    <p id="VidaP1">100</p>
-                    <canvas id="CartaP1" onclick="ataqueP1()" onmouseenter="CartaP1Desc(Deck.cartaExemplo)" onmouseleave=""></canvas><br>
-                    <canvas id="CartaP1Desc"></canvas><br>
-                </div>
-                <div class="col text-right">
-                    <h3>Aura</h3>
-                    <p id="VidaP2">100</p>
-                    <canvas id="CartaP2"></canvas><br>
-                    <button onclick="ataqueP2()">Ataque</button>
-                </div>
+<body> 
+    <div class="container text-center" style="background-color: black; color:aliceblue">
+        <div class="row">
+            <div class="col">
+
             </div>
-        <p id="debug" ondragenter="criaCarta()">2323</p> 
-        <button id="puxar carta" onclick="Deck()">Puxar carta</button>
+        </div>
+        <div class="row">
+            <div class="col">
+                PLAYER 1
+            </div>
+            <div class="col">
+                DECK INIMIGO
+            </div>
+            <div class="col">
+                PLAYER 2
+            </div>
+        </div><BR>
+        <div class="row">
+            <div class="col">
+                <h6>aura</h6>
+                <p id="auraP1">100</p>
+                <canvas id="CartaP1" style="width: 50%;"></canvas>
+                <canvas id="CartaP1Desc" style="width: 50%;"></canvas>
+            </div>
+            <div class="col">
+                <h5 class="fs-6">RODADA</h5>
+                <p id="rodada" class="fs-6">1</p>
+                <p>status da carta:<br>
+                <input class="form-check-input" type="radio" name="statuscard" id="status1"><label class="form-check-label" id="cartaPoder" for="status1"></label><br>
+                <input class="form-check-input" type="radio" name="statuscard" id="status2"><label class="form-check-label" id="cartaDefesa" for="status2"></label><br>
+                <input class="form-check-input" type="radio" name="statuscard" id="status3"><label class="form-check-label" id="cartaMagia" for="status3"></label>
+                </p>
+                <button onclick="ataque('P1')" >ATAQUE</button>
+            </div>
+            <div class="col">
+                <h6>aura</h6>
+                <p id="auraP2">100</p>
+                <canvas id="CartaP2" style="width: 50%;"></canvas>
+                <canvas id="CartaP1Desc" style="width: 50%;"></canvas>
+            </div>
+        </div><br>
+        
+        <div class="row">
+            <div class="col" id="DeckYou">
+                DECK
+            </div>
+        </div>
+        <p id="debug">among</p>
     </div>
     <script src="playeratack.js"></script>
     <script src="Assets/atlas.js"></script>
