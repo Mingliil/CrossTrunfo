@@ -135,6 +135,7 @@ function EstadoRodada(){
     const ctx = canvas.getContext('2d');
     const cartaTm =P2card.AlturaX;
     for(let i = P2card.AlturaX; i <= 0; i --){
+        alert(test);
         document.getElementById("debug").innerHTML = "rses";
         P2card.card.AlturaX = i;
         Carta(P2card.card, "P2");
