@@ -74,15 +74,17 @@ Deck.GlassAnimals = {
         magia: 50
     }
 }
-let estadoRodada = 0;
+let estadoRodada = 1;
 const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
 function ataque(P){
     const P1card = Player1Stats.card.Status;
     const P2card = Player2Stats.card.Status;
     let escolha = 0;
+    let atacando = 0;
     let ataqueP2 = 0;
     let result = 0;
     if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
+        atacando++;
         if(document.getElementById("status1").checked){
             escolha = P1card.poder;
             ataqueP2 = P2card.poder;
@@ -100,7 +102,7 @@ function ataque(P){
     else{
         alert("escolha 1 opção");
     }
-    if (P == "P1"){
+    if (P == "P1" && atacando==1){
         if (result == 0){
             alert("EMPATE!!");
         }
@@ -129,22 +131,12 @@ function ataque(P){
     }
 }
 function EstadoRodada(){
-    if (estadoRodada == 1){
-    const P2card = Player2Stats.card;
-    const canvas = document.getElementById('CartaP2');
-    const ctx = canvas.getContext('2d');
-    const cartaTm =P2card.AlturaX;
-    for(let i = P2card.AlturaX; i <= 0; i --){
-        alert(test);
-        document.getElementById("debug").innerHTML = "rses";
-        P2card.card.AlturaX = i;
-        Carta(P2card.card, "P2");
+    if (estadoRodada == 1) {
+        estadoRodada--;
+        rodada++;
+        document.getElementById("rodada").innerHTML = rodada;
+        
     }
-    rodada++;
-    estadoRodada-=2;
-    document.getElementById("rodada").innerHTML = rodada;
-}
-
 }
 function Carta(carta, P){
 
