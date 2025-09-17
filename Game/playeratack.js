@@ -102,6 +102,7 @@ function ataque(P){
     else{
         alert("escolha 1 opção");
     }
+    if (estadoRodada == 1){
     if (P == "P1" && atacando==1){
         if (result == 0){
             alert("EMPATE!!");
@@ -113,7 +114,7 @@ function ataque(P){
                 document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
             }
             else{
-                estadoRodada++;
+                estadoRodada--;
                 EstadoRodada();
             }
         }
@@ -124,18 +125,24 @@ function ataque(P){
                 document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
             }
             else{
-                estadoRodada++;
+                estadoRodada == 1;
                 EstadoRodada();
             }
         }
     }
+    else{
+        estadoRodada == 1;
+        document.getElementById("botao").innerHTML = "Ataque";
+    }
+    }
 }
 function EstadoRodada(){
     if (estadoRodada == 1) {
-        estadoRodada--;
+        estadoRodada = 0;
+        document.getElementById("botao").innerHTML = "proxima Rodada";
+
         rodada++;
         document.getElementById("rodada").innerHTML = rodada;
-        
     }
 }
 function Carta(carta, P){
