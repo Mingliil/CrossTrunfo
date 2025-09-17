@@ -59,7 +59,7 @@ Deck.SOAD = {
     }
 }
 Deck.GlassAnimals = {
-    code:2,
+    code:3,
     nome:"SOAD",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -75,7 +75,9 @@ Deck.GlassAnimals = {
     }
 }
 let estadoRodada = 1;
+
 const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
+
 function ataque(P){
     const P1card = Player1Stats.card.Status;
     const P2card = Player2Stats.card.Status;
@@ -83,7 +85,9 @@ function ataque(P){
     let atacando = 0;
     let ataqueP2 = 0;
     let result = 0;
-    if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
+    if(estadoRodada == 1){
+        estadoRodada = 0;
+        if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
         atacando++;
         if(document.getElementById("status1").checked){
             escolha = P1card.poder;
@@ -98,55 +102,56 @@ function ataque(P){
             ataqueP2 = P2card.magia;
         }
         result = escolha - ataqueP2; 
-    }
-    else{
-        alert("escolha 1 opção");
-    }
-    if (estadoRodada == 1){
-    if (P == "P1" && atacando==1){
-        if (result == 0){
-            alert("EMPATE!!");
         }
-        else if (result>0){
-            Player2Stats.Aura -= result;
-            document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
-            if (Player2Stats.Aura <=0){
-                document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
-            }
-            else{
-                estadoRodada--;
-                EstadoRodada();
-            }
+        else{
+            alert("escolha 1 opção");
         }
-        else if (result<0){
-            Player1Stats.Aura -= -result;
-            document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
-            if(Player1Stats.Aura <=0){
-                document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
-            }
-            else{
-                estadoRodada == 1;
-                EstadoRodada();
+            if (P == "P1" && atacando==1){
+                if (result == 0){
+                    alert("EMPATE!!");
+                }
+                else if (result>0){
+                    Player2Stats.Aura -= result;
+                    document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
+                    if (Player2Stats.Aura <=0){
+                        document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
+                    }
+                    else{
+                        EstadoRodada(0);
+                    }
+                }
+                else if (result<0){
+                    Player1Stats.Aura -= -result;
+                    document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
+                    if(Player1Stats.Aura <=0){
+                        document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
+                    }
+                    else{
+                        EstadoRodada(0);
+                }
             }
         }
     }
     else{
-        estadoRodada == 1;
-        document.getElementById("botao").innerHTML = "Ataque";
-    }
+        EstadoRodada(1);
     }
 }
-function EstadoRodada(){
-    if (estadoRodada == 1) {
-        estadoRodada = 0;
-        document.getElementById("botao").innerHTML = "proxima Rodada";
-
-        rodada++;
+function EstadoRodada(x){
+    if (x == 1){
+        Player2Stats.card.Atlas = 'Assets/ExemploCartaFundo.png';
+        puxaCarta("player1");
+        puxaCarta("player2");
         document.getElementById("rodada").innerHTML = rodada;
+        estadoRodada = 1;
+        document.getElementById("botao").innerHTML = "ataque";
+    }
+    else{
+        Player2Stats.card.Atlas = 'Assets/cards.png';
+        document.getElementById("botao").innerHTML = "proxima rodada";
     }
 }
+let comecou = 1
 function Carta(carta, P){
-
    /* const cardDesc = document.getElementById('CartaP1Desc');
     const contextoDesc = canvas.getContext('2d');
     const imgDesc = new Image();
@@ -160,7 +165,13 @@ function Carta(carta, P){
     }
     if (P == "P2"){
     canvas = document.getElementById('CartaP2');
+    if (comecou == 1){
     img.src = 'Assets/ExemploCartaFundo.png';
+    comecou = 0;
+    }
+    else{
+    img.src = Player2Stats.card.Atlas;
+    }
     if (carta.AlturaX <= 0){
         img.src = carta.Atlas;
     }
@@ -205,8 +216,9 @@ function criarDeck(){
 
 }
 function puxaCarta(P){
+    let random = Math.floor(Math.random() * 4);
     if (P == "player1"){
-        let c = 1;
+        let c = random;
         Carta(DeckPlayer[c], "P1");
         Player1Stats.card = DeckPlayer[c];
         document.getElementById("cartaPoder").innerHTML = "Poder: " +DeckPlayer[c].Status.poder + "<br>";
@@ -214,7 +226,7 @@ function puxaCarta(P){
         document.getElementById("cartaMagia").innerHTML = "Magia: " +DeckPlayer[c].Status.magia + "<br>";
     }
     if (P == "player2"){
-        let c2 = 0;
+        let c2 = random;
         Player2Stats.card = DeckPlayer[c2];
         Carta(DeckPlayer[c2], "P2");
     }
