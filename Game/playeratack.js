@@ -137,10 +137,12 @@ function ataque(P){
     }
 }
 function EstadoRodada(x){
+
     if (x == 1){
         Player2Stats.card.Atlas = 'Assets/ExemploCartaFundo.png';
         puxaCarta("player1");
         puxaCarta("player2");
+        rodada++;
         document.getElementById("rodada").innerHTML = rodada;
         estadoRodada = 1;
         document.getElementById("botao").innerHTML = "ataque";
@@ -165,17 +167,17 @@ function Carta(carta, P){
     }
     if (P == "P2"){
     canvas = document.getElementById('CartaP2');
-    if (comecou == 1){
-    img.src = 'Assets/ExemploCartaFundo.png';
-    comecou = 0;
-    }
-    else{
-    img.src = Player2Stats.card.Atlas;
-    }
-    if (carta.AlturaX <= 0){
-        img.src = carta.Atlas;
-    }
+        if (comecou == 1){
+        img.src = 'Assets/ExemploCartaFundo.png';
+        comecou = 0;
+
+        }
+        else{
+        img.src = Player2Stats.card.Atlas;
+
+        }
     } 
+    debug();
     const ctx = canvas.getContext('2d');
     
     img.onload = () => {
@@ -216,7 +218,7 @@ function criarDeck(){
 
 }
 function puxaCarta(P){
-    let random = Math.floor(Math.random() * 4);
+    let random = Math.floor(Math.random() * 3);
     if (P == "player1"){
         let c = random;
         Carta(DeckPlayer[c], "P1");
@@ -232,7 +234,7 @@ function puxaCarta(P){
     }
 }
 function debug(){
-    document.getElementById('debug').innerHTML = Player1Stats.card;
+    document.getElementById('debug').innerHTML = Player1Stats.card.nome;
 }
 window.onload = criarDeck();
 window.onload = puxaCarta("player2");
