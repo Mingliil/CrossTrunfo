@@ -1,39 +1,35 @@
-# O maior e mais insano jogo de Trunfo
+# O maior e mais insano jogo de Trunfo!
 **Ou ao menos algo do tipo**
 
-driadores:
+Criadores: Afonso Cesar, Caio Lopes, Felipe Goes, João Vitor, Julia Oliveira, Matheus Cardoso, Matheus Gomes, Miguel Fernandes, Miguel Lima
 
-ideias
+Personagens até o momento:
+Caine (TADC),
+Ubirajara (Ubirajara),
+YAAI Noli (Forsaken),
+Morshu (Zelda),
+System of a Down,
+Glass Animals,
+Gaster (Undertale),
+Superman (DC),
+Sysiphus Prime (Ultrakill),
 
-Brincadeiras gostosas:
-
-(Cartas especiais: Afonso, Migue Fernandes, Miguel Lima Santos, Goes, Gomes, Indiano, Fanboy do Sonic, Tailândia/ 8 cartas 
-
-Personagem de Jogo: Cris - Deltarune, Maculado - Elden Ring, Knight - Hollow Knight. Adicionar se possível CJ - GTA
-
-Personagem de Serie: N - Muder drones, Walter White - Breaking Bad, Gihun - Squid Game.
-
-Personagem de Quadrinhos: Superman - Dc, Neymar - Turma da Mônica, Thanos - Marvel.
-
-Personagem de Anime: Goku - Dragon Ball, Gabimaru - Hell´s Paradise, Obito - Naruto.
-
-Personagem de desenho: Gumball - Incrivel Mundo de Gumball, Rigby - Apenas Um Show,
-Personagem de Filme: Batman - Dc, Adam Sandler - Humano, Don Corleone - Poderoso Chefão.) Pode ser usado no futuro.
-
-
-Brincadeiras Sérias:
-
-Cartas:
-Kris (Deltarune) (50-40-10)
-Knight (Hollow Knight) (60-0-40)
-CJ (GTA) (80-10-10)
-N (Murder Drones) ( 
+Personagens com cartas prontas, mas ainda não estão no jogo:
+2011X (SONIC 2011),
+Lord X (Sonic PC Port),
+Kris (Deltarune),
+Susie (Deltarune),
+Frisk (Undertale),
+Chara (Undertale),
+Batman (DC),
+Escrava Isaura,
+Luffy (One Piece),
+CJ (GTA),
+Goku (Dragon Ball),
+Knight (Hollow Knight),
+Shadow the Hedgehog
 
 
-Quantidade de cartas: 10 min, 30 max de cartas, se der certo adicionar mais
 
 Atributos: 
-Distribuição por 100 pontos.
-Força - Moggada
-Defesa - Hype
-Magia - Aura
+Distribuição por 100 pontos, entre Poder, Defesa e Magia.
