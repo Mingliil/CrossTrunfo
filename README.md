@@ -16,6 +16,7 @@ Sysiphus Prime (Ultrakill),
 
 Personagens com cartas prontas, mas ainda não estão no jogo:
 2011X (SONIC 2011),
+Lord X (Sonic PC Port),
 Kris (Deltarune),
 Susie (Deltarune),
 Frisk (Undertale),
@@ -23,7 +24,11 @@ Chara (Undertale),
 Batman (DC),
 Escrava Isaura,
 Luffy (One Piece),
-CJ (GTA)
+CJ (GTA),
+Goku (Dragon Ball),
+Knight (Hollow Knight),
+Shadow the Hedgehog
+
 
 
 Atributos: 
