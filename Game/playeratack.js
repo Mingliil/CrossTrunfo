@@ -265,7 +265,9 @@ function EstadoRodada(x){
         document.getElementById("botao").innerHTML = "main menu";
     }
 }
-let comecou = 1
+
+let comecou = 1;
+
 function Carta(carta, P){
    /* const cardDesc = document.getElementById('CartaP1Desc');
     const contextoDesc = canvas.getContext('2d');
