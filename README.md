@@ -19,9 +19,11 @@ Personagens com cartas prontas, mas ainda não estão no jogo:
 Kris (Deltarune),
 Susie (Deltarune),
 Frisk (Undertale),
+Chara (Undertale),
 Batman (DC),
 Escrava Isaura,
-Luffy (One Piece)
+Luffy (One Piece),
+CJ (GTA)
 
 
 Atributos: 
