@@ -27,7 +27,13 @@ Luffy (One Piece),
 CJ (GTA),
 Goku (Dragon Ball),
 Knight (Hollow Knight),
-Shadow the Hedgehog
+Shadow the Hedgehog,
+Obito (Naruto Shippuden),
+Valkyrie (Beyblade Burst),
+Kerbeus (Beyblade Burst),
+Ragnaruk (Beyblade Burst),
+Spriggan (Beyblade Burst)
+
 
 
 
