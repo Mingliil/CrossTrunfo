@@ -75,7 +75,7 @@ Deck.GlassAnimals = {
 }
 
 let estadoRodada = 0;
-let CartaRel=0; //0 = escondido - 1 =revelado
+let CartaRel=1; //0 = escondido - 1 =revelado
 const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
 
 function ataque(P){
@@ -142,7 +142,7 @@ function ataque(P){
 
 function EstadoRodada(x){
     if (x == 1){
-        CartaRel++;
+        CartaRel--;
         puxaCarta("player1");
         rodada++;
         document.getElementById("rodada").innerHTML = rodada;
@@ -151,7 +151,8 @@ function EstadoRodada(x){
         puxaCarta("player2");
     }
     else{
-        CartaRel = 0;
+        CartaRel++;
+        Carta(Player2Stats.card, "P2");
         document.getElementById("botao").innerHTML = "proxima rodada";
     }
 }
@@ -182,10 +183,30 @@ function Carta(carta, P){
     const ctx = canvas.getContext('2d');
     
     img.onload = () => {
-        const sourceX = carta.CoordsX;
-        const sourceY = carta.CoordsY; 
-        const sourceWidth = carta.AlturaX;
-        const sourceHeight = carta.AlturaY;
+        let sourceX = carta.CoordsX;
+        let sourceY = carta.CoordsY; 
+        let sourceWidth = carta.AlturaX;
+        let sourceHeight = carta.AlturaY;
+        if (P == "P1"){
+            sourceX = carta.CoordsX;
+            sourceY = carta.CoordsY; 
+            sourceWidth = carta.AlturaX;
+            sourceHeight = carta.AlturaY;
+        }
+        if (P == "P2"){
+            if (CartaRel == 0){
+                sourceX = 0;
+                sourceY = 0; 
+                sourceWidth = 373;
+                sourceHeight =519; 
+            }
+            else{
+                sourceX = carta.CoordsX;
+                sourceY = carta.CoordsY; 
+                sourceWidth = carta.AlturaX;
+                sourceHeight = carta.AlturaY;
+            }
+        }
         // Define the destination rectangle (x, y, width, height) on the canvas
         const destX = 0; // X-coordinate on the canvas to draw the part
         const destY = 0; // Y-coordinate on the canvas to draw the part
@@ -224,7 +245,7 @@ function puxaCarta(P){
     if (P == "player2"){
         let c2 = random;
         Player2Stats.card = DeckPlayer[c2];
-        Carta(DeckPlayer[c2], "P2");
+        Carta(Player2Stats.card, "P2");
     }
 }
 function debug(){
