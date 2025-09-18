@@ -275,11 +275,12 @@ function SuperTrunfo(carta){
     const audio = document.getElementById("audio");
     const AudioScr = document.getElementById("audioScr");
     AudioScr.type = carta.AudioType;
-    AudioScr.src = 'Assets/audios/Prison.mp3';//carta.Audiofont;
+    AudioScr.src = Player1Stats.card.Audiofont;
     //audio.onload = () =>{  
         audio.load();
         audio.play();
     //}
+    //window.onload = audio.play();
 }
 
 function Carta(carta, P){
@@ -361,11 +362,9 @@ function Carta(carta, P){
 
 function puxaCarta(P){
     const random = Math.floor(Math.random() * 7);
-    let lenda = Math.floor(Math.random() * 99);
-    
+    let lenda = Math.floor(Math.random() * 4);
     if (P == "player1"){
         let c = 0;
-        lenda = 0;
         if (lenda == 0){
             c = 0;
             Player1Stats.card = DeckLenda[c];
