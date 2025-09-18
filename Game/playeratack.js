@@ -25,7 +25,6 @@ Deck.Morshu = {
         magia: 20
     }
 }
-
 Deck.Superman = {
     code:1,
     nome:"super",
@@ -60,12 +59,12 @@ Deck.SOAD = {
 }
 Deck.GlassAnimals = {
     code:3,
-    nome:"SOAD",
+    nome:"TOSoTP",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
     CoordsX:380,
-    CoordsY:1680,
+    CoordsY:1635,
     DescX: 1,
     DescY: 0,
     Status : {
@@ -109,6 +108,7 @@ function ataque(P){
             if (P == "P1" && atacando==1){
                 if (result == 0){
                     alert("EMPATE!!");
+                    EstadoRodada(0);
                 }
                 else if (result>0){
                     Player2Stats.Aura -= result;
@@ -139,16 +139,14 @@ function ataque(P){
 function EstadoRodada(x){
 
     if (x == 1){
-        Player2Stats.card.Atlas = 'Assets/ExemploCartaFundo.png';
         puxaCarta("player1");
-        puxaCarta("player2");
         rodada++;
         document.getElementById("rodada").innerHTML = rodada;
         estadoRodada = 1;
         document.getElementById("botao").innerHTML = "ataque";
+        puxaCarta("player2");
     }
     else{
-        Player2Stats.card.Atlas = 'Assets/cards.png';
         document.getElementById("botao").innerHTML = "proxima rodada";
     }
 }
@@ -165,28 +163,19 @@ function Carta(carta, P){
     canvas = document.getElementById('CartaP1');
     img.src = carta.Atlas;
     }
+
     if (P == "P2"){
     canvas = document.getElementById('CartaP2');
-        if (comecou == 1){
-        img.src = 'Assets/ExemploCartaFundo.png';
-        comecou = 0;
-
-        }
-        else{
-        img.src = Player2Stats.card.Atlas;
-
-        }
+    img.src = Player2Stats.card.Atlas;
     } 
     debug();
     const ctx = canvas.getContext('2d');
     
     img.onload = () => {
-        // Define the source rectangle (x, y, width, height) from the original image
-        const sourceX = carta.CoordsX; // X-coordinate of the top-left corner of the desired part
-        const sourceY = carta.CoordsY; // Y-coordinate of the top-left corner of the desired part
-        const sourceWidth = carta.AlturaX; // Width of the desired part
-        const sourceHeight = carta.AlturaY; // Height of the desired part
-
+        const sourceX = carta.CoordsX;
+        const sourceY = carta.CoordsY; 
+        const sourceWidth = carta.AlturaX;
+        const sourceHeight = carta.AlturaY;
         // Define the destination rectangle (x, y, width, height) on the canvas
         const destX = 0; // X-coordinate on the canvas to draw the part
         const destY = 0; // Y-coordinate on the canvas to draw the part
@@ -212,13 +201,8 @@ function Carta(carta, P){
 
 }
 
-function criarDeck(){
-    const DeckArea = document.getElementById("DeckYou");
-    const Carta = [];
-
-}
 function puxaCarta(P){
-    let random = Math.floor(Math.random() * 3);
+    let random = Math.floor(Math.random() * 4);
     if (P == "player1"){
         let c = random;
         Carta(DeckPlayer[c], "P1");
@@ -236,7 +220,7 @@ function puxaCarta(P){
 function debug(){
     document.getElementById('debug').innerHTML = Player1Stats.card.nome;
 }
-window.onload = criarDeck();
+
 window.onload = puxaCarta("player2");
 window.onload = puxaCarta("player1");
 window.onload = debug;
