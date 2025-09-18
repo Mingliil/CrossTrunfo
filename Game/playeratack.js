@@ -128,11 +128,35 @@ Deck.Circus = {
         magia: 100
     }
 }
-
+Deck.Sisyphus = {
+    code:996,
+    nome:"prime",
+    Atlas:'Assets/cards.png',
+    AlturaX:528,
+    AlturaY:747,
+    CoordsX:780,
+    CoordsY:0,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"80%",
+    Status : {
+        poder: 0,
+        defesa: 0,
+        magia: 100
+    }
+}
 let estadoRodada = 0;
 let CartaRel=1; //0 = escondido - 1 =revelado
+const DeckLenda = [Deck.Sisyphus];
 const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals, Deck.Ubi, Deck.Gaster, Deck.Circus];
-
+function fim(x){
+    if (x==0){
+    location.reload();
+    }
+    if (x==1){
+    window.open('Menu.html', '_self').focus();
+    }
+}
 function ataque(P){
     const P1card = Player1Stats.card.Status;
     const P2card = Player2Stats.card.Status;
@@ -142,7 +166,8 @@ function ataque(P){
     let result = 0;
     //cartaRel=0;
     if (estadoRodada == 2){
-        
+        const bt = document.getElementById("botao");
+       bt.setAttribute("data-bs-target","#exampleModal");
     }
     else if(estadoRodada == 1){
         estadoRodada = 0;
@@ -174,7 +199,16 @@ function ataque(P){
                     Player2Stats.Aura -= result;
                     document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
                     if (Player2Stats.Aura <=0){
+                        document.getElementById("Estado").innerHTML = "VENCEU!";
+                        document.getElementById("auraP2").innerHTML = 0;
+                        if (rodada == 1){
+                            document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADA";
+                            document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADA";
+                        }
+                        else{
                         document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
+                        document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
+                        }
                         EstadoRodada(2);
                     }
                     else{
@@ -185,7 +219,16 @@ function ataque(P){
                     Player1Stats.Aura -= -result;
                     document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
                     if(Player1Stats.Aura <=0){
+                        document.getElementById("Estado").innerHTML = "PERDEU!";
+                        document.getElementById("auraP1").innerHTML = 0;
+                        if (rodada == 1){
+                            document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADA";
+                            document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADA";
+                        }
+                        else{
                         document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
+                        document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
+                        }
                         EstadoRodada(2);
                     }
                     else{
@@ -216,6 +259,8 @@ function EstadoRodada(x){
         document.getElementById("botao").innerHTML = "proxima rodada";
     }
     if (x == 2){
+         const bt = document.getElementById("botao");
+       bt.setAttribute("data-bs-target","#exampleModal");
         estadoRodada = 2;
         document.getElementById("botao").innerHTML = "main menu";
     }
@@ -299,14 +344,24 @@ function Carta(carta, P){
 }
 
 function puxaCarta(P){
-    let random = Math.floor(Math.random() * 7);
+    const random = Math.floor(Math.random() * 7);
+    let lenda = Math.floor(Math.random() * 500);
     if (P == "player1"){
-        let c = random;
-        Carta(DeckPlayer[c], "P1");
-        Player1Stats.card = DeckPlayer[c];
-        document.getElementById("cartaPoder").innerHTML = "Poder: " +DeckPlayer[c].Status.poder + "<br>";
-        document.getElementById("cartaDefesa").innerHTML = "Defesa: " +DeckPlayer[c].Status.defesa + "<br>";
-        document.getElementById("cartaMagia").innerHTML = "Magia: " +DeckPlayer[c].Status.magia + "<br>";
+        let c = 0; 
+        lenda =0;
+        if (lenda == 0){
+            c = lenda;
+            Player1Stats.card = DeckLenda[c];
+        }
+        else{
+            c = random;
+            Player1Stats.card = DeckPlayer[c];
+        }
+        
+        Carta(Player1Stats.card, "P1");
+        document.getElementById("cartaPoder").innerHTML = "Poder: " +Player1Stats.card.Status.poder + "<br>";
+        document.getElementById("cartaDefesa").innerHTML = "Defesa: " +Player1Stats.card.Status.defesa + "<br>";
+        document.getElementById("cartaMagia").innerHTML = "Magia: " +Player1Stats.card.Status.magia + "<br>";
     }
     if (P == "player2"){
         let c2 = random;
