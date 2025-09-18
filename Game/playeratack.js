@@ -345,20 +345,30 @@ function Carta(carta, P){
 
 function puxaCarta(P){
     const random = Math.floor(Math.random() * 7);
-    let lenda = Math.floor(Math.random() * 500);
+    const lenda = Math.floor(Math.random() * 4);
+    
     if (P == "player1"){
-        let c = 0; 
-        lenda =0;
-        if (lenda == 0){
-            c = lenda;
+        let c = 0;
+
+        if (lenda == 1){
+            c = 0;
             Player1Stats.card = DeckLenda[c];
+            Carta(Player1Stats.card, "P1");
+            audio = document.getElementById("audio");
+            document.getElementById("audioScr").src = "Assets/audios/Prison.mp3";
+            document.getElementById("audioScr").type = "audio/mp3";
+            audio.load();
+            audio.play();
         }
         else{
             c = random;
+            document.getElementById("audioScr").src = "";
+            document.getElementById("audioScr").type = "";
             Player1Stats.card = DeckPlayer[c];
+            Carta(Player1Stats.card, "P1");
         }
         
-        Carta(Player1Stats.card, "P1");
+        
         document.getElementById("cartaPoder").innerHTML = "Poder: " +Player1Stats.card.Status.poder + "<br>";
         document.getElementById("cartaDefesa").innerHTML = "Defesa: " +Player1Stats.card.Status.defesa + "<br>";
         document.getElementById("cartaMagia").innerHTML = "Magia: " +Player1Stats.card.Status.magia + "<br>";
