@@ -19,6 +19,7 @@ Deck.Morshu = {
     CoordsY:0,
     DescX: 1,
     DescY: 0,
+    ImgTamanho:"50%",
     Status : {
         poder: 20,
         defesa: 20,
@@ -35,6 +36,7 @@ Deck.Superman = {
     CoordsY:538,
     DescX: 1,
     DescY: 0,
+    ImgTamanho:"50%",
     Status : {
         poder: 100,
         defesa: 0,
@@ -51,6 +53,7 @@ Deck.SOAD = {
     CoordsY:1080,
     DescX: 1,
     DescY: 0,
+    ImgTamanho:"63%",
     Status : {
         poder: 40,
         defesa: 10,
@@ -67,10 +70,11 @@ Deck.GlassAnimals = {
     CoordsY:1635,
     DescX: 1,
     DescY: 0,
+    ImgTamanho:"50%",
     Status : {
-        poder: 40,
-        defesa: 10,
-        magia: 50
+        poder: 0,
+        defesa: 40,
+        magia: 60
     }
 }
 Deck.Ubi = {
@@ -83,10 +87,11 @@ Deck.Ubi = {
     CoordsY:2150,
     DescX: 1,
     DescY: 0,
+    ImgTamanho:"50%",
     Status : {
-        poder: 40,
-        defesa: 10,
-        magia: 50
+        poder: 50,
+        defesa: 50,
+        magia: 0
     }
 }
 Deck.Gaster = {
@@ -99,26 +104,28 @@ Deck.Gaster = {
     CoordsY:2726,
     DescX: 1,
     DescY: 0,
+    ImgTamanho:"50%",
     Status : {
-        poder: 40,
-        defesa: 10,
-        magia: 50
+        poder: 90,
+        defesa: 0,
+        magia: 90
     }
 }
 Deck.Circus = {
     code:6,
-    nome:"TOSoTP",
+    nome:"TADC",
     Atlas:'Assets/cards.png',
     AlturaX:528,
     AlturaY:717,
-    CoordsX:380,
+    CoordsX:313,
     CoordsY:3273,
     DescX: 1,
     DescY: 0,
+    ImgTamanho:"70%",
     Status : {
-        poder: 40,
-        defesa: 10,
-        magia: 50
+        poder: 0,
+        defesa: 0,
+        magia: 100
     }
 }
 
@@ -218,6 +225,7 @@ function Carta(carta, P){
     if (P == "P1"){
     canvas = document.getElementById('CartaP1');
     img.src = carta.Atlas;
+    document.getElementById("CartaP1").style.width = carta.ImgTamanho;
     }
 
     if (P == "P2"){
@@ -257,6 +265,7 @@ function Carta(carta, P){
                 sourceHeight = carta.AlturaY;
             }
         }
+
         // Define the destination rectangle (x, y, width, height) on the canvas
         const destX = 0; // X-coordinate on the canvas to draw the part
         const destY = 0; // Y-coordinate on the canvas to draw the part
@@ -283,9 +292,9 @@ function Carta(carta, P){
 }
 
 function puxaCarta(P){
-    let random = Math.floor(Math.random() * 4);
+    let random = Math.floor(Math.random() * 7);
     if (P == "player1"){
-        let c = 6;
+        let c = random;
         Carta(DeckPlayer[c], "P1");
         Player1Stats.card = DeckPlayer[c];
         document.getElementById("cartaPoder").innerHTML = "Poder: " +DeckPlayer[c].Status.poder + "<br>";
