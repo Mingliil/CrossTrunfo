@@ -141,7 +141,10 @@ function ataque(P){
     let ataqueP2 = 0;
     let result = 0;
     //cartaRel=0;
-    if(estadoRodada == 1){
+    if (estadoRodada == 2){
+        
+    }
+    else if(estadoRodada == 1){
         estadoRodada = 0;
         if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
         atacando++;
@@ -172,7 +175,7 @@ function ataque(P){
                     document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
                     if (Player2Stats.Aura <=0){
                         document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
-                        myModal.show();
+                        EstadoRodada(2);
                     }
                     else{
                         EstadoRodada(0);
@@ -183,7 +186,7 @@ function ataque(P){
                     document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
                     if(Player1Stats.Aura <=0){
                         document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
-                        myModal.show();
+                        EstadoRodada(2);
                     }
                     else{
                         EstadoRodada(0);
@@ -212,8 +215,9 @@ function EstadoRodada(x){
         Carta(Player2Stats.card, "P2");
         document.getElementById("botao").innerHTML = "proxima rodada";
     }
-    if (estadoRodada == 2){
-        
+    if (x == 2){
+        estadoRodada = 2;
+        document.getElementById("botao").innerHTML = "main menu";
     }
 }
 let comecou = 1
