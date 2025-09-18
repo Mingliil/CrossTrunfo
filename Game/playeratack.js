@@ -140,9 +140,9 @@ Deck.Sisyphus = {
     DescY: 0,
     ImgTamanho:"80%",
     Status : {
-        poder: 0,
-        defesa: 0,
-        magia: 100
+        poder: 200,
+        defesa: 200,
+        magia: 200
     }
 }
 let estadoRodada = 0;
