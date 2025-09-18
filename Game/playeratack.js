@@ -275,11 +275,11 @@ function SuperTrunfo(carta){
     const audio = document.getElementById("audio");
     const AudioScr = document.getElementById("audioScr");
     AudioScr.type = carta.AudioType;
-    audio.load();
-    audio.onload = () =>{
-        AudioScr.src = carta.Audiofont;
+    AudioScr.src = 'Assets/audios/Prison.mp3';//carta.Audiofont;
+    //audio.onload = () =>{  
+        audio.load();
         audio.play();
-    }
+    //}
 }
 
 function Carta(carta, P){
