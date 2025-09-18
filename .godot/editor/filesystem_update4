@@ -1,9 +1,0 @@
-res://Scenes/bar.tscn
-res://Fonts/label_settings.tres
-res://Managers/Interact/InteractManager.gd
-res://Scenes/player.tscn
-res://Managers/Interact/interact_action.tscn
-res://Npcs/Bar/Gambler/Gambler.tscn
-res://Managers/Interact/interact_label.tscn
-res://Npcs/Bar/Gambler/gambler.gd
-res://Managers/Interact/interact_action.gd
