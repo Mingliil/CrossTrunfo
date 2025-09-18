@@ -132,6 +132,8 @@ Deck.Sisyphus = {
     code:996,
     nome:"prime",
     Atlas:'Assets/cards.png',
+    Audiofont:'Assets/audios/Prison.mp3',
+    AudioType: 'audio/mp3',
     AlturaX:528,
     AlturaY:747,
     CoordsX:780,
@@ -140,11 +142,12 @@ Deck.Sisyphus = {
     DescY: 0,
     ImgTamanho:"80%",
     Status : {
-        poder: 200,
-        defesa: 200,
-        magia: 200
+        poder: 100,
+        defesa: 100,
+        magia: 100
     }
 }
+
 let estadoRodada = 0;
 let CartaRel=1; //0 = escondido - 1 =revelado
 const DeckLenda = [Deck.Sisyphus];
@@ -268,6 +271,17 @@ function EstadoRodada(x){
 
 let comecou = 1;
 
+function SuperTrunfo(carta){
+    const audio = document.getElementById("audio");
+    const AudioScr = document.getElementById("audioScr");
+    AudioScr.type = carta.AudioType;
+    audio.load();
+    audio.onload = () =>{
+        AudioScr.src = carta.Audiofont;
+        audio.play();
+    }
+}
+
 function Carta(carta, P){
    /* const cardDesc = document.getElementById('CartaP1Desc');
     const contextoDesc = canvas.getContext('2d');
@@ -347,25 +361,19 @@ function Carta(carta, P){
 
 function puxaCarta(P){
     const random = Math.floor(Math.random() * 7);
-    const lenda = Math.floor(Math.random() * 99);
+    let lenda = Math.floor(Math.random() * 99);
     
     if (P == "player1"){
         let c = 0;
-
-        if (lenda == 1){
+        lenda = 0;
+        if (lenda == 0){
             c = 0;
             Player1Stats.card = DeckLenda[c];
             Carta(Player1Stats.card, "P1");
-            audio = document.getElementById("audio");
-            document.getElementById("audioScr").src = "Assets/audios/Prison.mp3";
-            document.getElementById("audioScr").type = "audio/mp3";
-            audio.load();
-            audio.play();
+            SuperTrunfo(Player1Stats.card); 
         }
         else{
             c = random;
-            document.getElementById("audioScr").src = "";
-            document.getElementById("audioScr").type = "";
             Player1Stats.card = DeckPlayer[c];
             Carta(Player1Stats.card, "P1");
         }
