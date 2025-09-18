@@ -212,6 +212,9 @@ function EstadoRodada(x){
         Carta(Player2Stats.card, "P2");
         document.getElementById("botao").innerHTML = "proxima rodada";
     }
+    if (estadoRodada == 2){
+        
+    }
 }
 let comecou = 1
 function Carta(carta, P){
