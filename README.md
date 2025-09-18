@@ -4,22 +4,22 @@
 Criadores: Afonso Cesar, Caio Lopes, Felipe Goes, João Vitor, Julia Oliveira, Matheus Cardoso, Matheus Gomes, Miguel Fernandes, Miguel Lima
 
 Personagens até o momento:
-Caine (TADC)
-Ubirajara (Ubirajara)
-YAAI Noli (Forsaken)
-Morshu (Zelda)
-System of a Down
-Glass Animals
-Gaster (Undertale)
-Superman (DC)
-Sysiphus Prime (Ultrakill)
+Caine (TADC),
+Ubirajara (Ubirajara),
+YAAI Noli (Forsaken),
+Morshu (Zelda),
+System of a Down,
+Glass Animals,
+Gaster (Undertale),
+Superman (DC),
+Sysiphus Prime (Ultrakill),
 
 Personagens com cartas prontas, mas ainda não estão no jogo:
-2011X (SONIC 2011)
-Kris (Deltarune)
-Batman (DC)
-Escrava Isaura
-Luffy (One Piece)
+2011X (SONIC 2011),
+Kris (Deltarune),
+Batman (DC),
+Escrava Isaura,
+Luffy (One Piece),
 
 
 Atributos: 
