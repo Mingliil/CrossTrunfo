@@ -361,8 +361,8 @@ function Carta(carta, P){
 }
 
 function puxaCarta(P){
-    const random = Math.floor(Math.random() * 7);
-    let lenda = Math.floor(Math.random() * 4);
+    const random = Math.floor(Math.random() * 8);
+    let lenda = Math.floor(Math.random() * 99);
     if (P == "player1"){
         let c = 0;
         if (lenda == 0){
