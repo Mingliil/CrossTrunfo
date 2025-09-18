@@ -73,8 +73,9 @@ Deck.GlassAnimals = {
         magia: 50
     }
 }
-let estadoRodada = 1;
 
+let estadoRodada = 0;
+let CartaRel=0; //0 = escondido - 1 =revelado
 const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
 
 function ataque(P){
@@ -84,6 +85,7 @@ function ataque(P){
     let atacando = 0;
     let ataqueP2 = 0;
     let result = 0;
+    //cartaRel=0;
     if(estadoRodada == 1){
         estadoRodada = 0;
         if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
@@ -133,12 +135,14 @@ function ataque(P){
         }
     }
     else{
+        
         EstadoRodada(1);
     }
 }
-function EstadoRodada(x){
 
+function EstadoRodada(x){
     if (x == 1){
+        CartaRel++;
         puxaCarta("player1");
         rodada++;
         document.getElementById("rodada").innerHTML = rodada;
@@ -147,6 +151,7 @@ function EstadoRodada(x){
         puxaCarta("player2");
     }
     else{
+        CartaRel = 0;
         document.getElementById("botao").innerHTML = "proxima rodada";
     }
 }
@@ -166,7 +171,12 @@ function Carta(carta, P){
 
     if (P == "P2"){
     canvas = document.getElementById('CartaP2');
-    img.src = Player2Stats.card.Atlas;
+        if (CartaRel == 0){
+        img.src = 'Assets/ExemploCartaFundo.png';
+        }
+        else{
+        img.src = Player2Stats.card.Atlas;
+        }
     } 
     debug();
     const ctx = canvas.getContext('2d');
@@ -219,8 +229,9 @@ function puxaCarta(P){
 }
 function debug(){
     document.getElementById('debug').innerHTML = Player1Stats.card.nome;
+    document.getElementById('debug').innerHTML = CartaRel;
 }
-
+window.onload = EstadoRodada(1);
 window.onload = puxaCarta("player2");
 window.onload = puxaCarta("player1");
 window.onload = debug;
