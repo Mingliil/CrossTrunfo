@@ -73,10 +73,58 @@ Deck.GlassAnimals = {
         magia: 50
     }
 }
+Deck.Ubi = {
+    code:4,
+    nome:"Ubirajara",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:519,
+    CoordsX:380,
+    CoordsY:2150,
+    DescX: 1,
+    DescY: 0,
+    Status : {
+        poder: 40,
+        defesa: 10,
+        magia: 50
+    }
+}
+Deck.Gaster = {
+    code:5,
+    nome:"Gaster",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:519,
+    CoordsX:380,
+    CoordsY:2726,
+    DescX: 1,
+    DescY: 0,
+    Status : {
+        poder: 40,
+        defesa: 10,
+        magia: 50
+    }
+}
+Deck.Circus = {
+    code:6,
+    nome:"TOSoTP",
+    Atlas:'Assets/cards.png',
+    AlturaX:528,
+    AlturaY:717,
+    CoordsX:380,
+    CoordsY:3273,
+    DescX: 1,
+    DescY: 0,
+    Status : {
+        poder: 40,
+        defesa: 10,
+        magia: 50
+    }
+}
 
 let estadoRodada = 0;
 let CartaRel=1; //0 = escondido - 1 =revelado
-const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals];
+const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals, Deck.Ubi, Deck.Gaster, Deck.Circus];
 
 function ataque(P){
     const P1card = Player1Stats.card.Status;
@@ -117,6 +165,7 @@ function ataque(P){
                     document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
                     if (Player2Stats.Aura <=0){
                         document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
+                        myModal.show();
                     }
                     else{
                         EstadoRodada(0);
@@ -127,6 +176,7 @@ function ataque(P){
                     document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
                     if(Player1Stats.Aura <=0){
                         document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
+                        myModal.show();
                     }
                     else{
                         EstadoRodada(0);
@@ -235,7 +285,7 @@ function Carta(carta, P){
 function puxaCarta(P){
     let random = Math.floor(Math.random() * 4);
     if (P == "player1"){
-        let c = random;
+        let c = 6;
         Carta(DeckPlayer[c], "P1");
         Player1Stats.card = DeckPlayer[c];
         document.getElementById("cartaPoder").innerHTML = "Poder: " +DeckPlayer[c].Status.poder + "<br>";
