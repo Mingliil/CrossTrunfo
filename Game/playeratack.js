@@ -1,3 +1,4 @@
+
 Player1Stats = {
     Aura : 100,
     card: 0
@@ -7,8 +8,10 @@ Player2Stats = {
     card: 0
 }
 rodada = 0;
-
 Deck = [];
+
+
+
 Deck.Morshu = {
     code:0,
     nome:"Morshu",
@@ -128,6 +131,7 @@ Deck.Circus = {
         magia: 100
     }
 }
+
 Deck.Sisyphus = {
     code:996,
     nome:"prime",
