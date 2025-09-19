@@ -412,7 +412,7 @@ function Carta(carta, P){
     let random = Math.floor(Math.random() * DeckPlayer.length);
     let lenda = Math.floor(Math.random() * 100);
     if (P == "player1"){
-        //random =0;
+        random =0;
         let c = 0;
         if (lenda == 0){
             c = 0;
