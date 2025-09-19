@@ -1,18 +1,24 @@
+//import { DeckFull } from "./Cards/Stats.js";
+let DeckFull = [];
 
-Player1Stats = {
-    Aura : 100,
-    card: 0
+DeckFull.Sherma = {
+    code:7,
+    nome:"bestBoi",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:519,
+    CoordsX:1218,
+    CoordsY:2140,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"70%",
+    Status : {
+        poder: 0,
+        defesa: 50,
+        magia: 50
+    }
 }
-Player2Stats = {
-    Aura : 100,
-    card: 0
-}
-rodada = 0;
-Deck = [];
-
-
-
-Deck.Morshu = {
+DeckFull.Morshu = {
     code:0,
     nome:"Morshu",
     Atlas:'Assets/cards.png',
@@ -28,8 +34,8 @@ Deck.Morshu = {
         defesa: 20,
         magia: 20
     }
-}
-Deck.Superman = {
+};
+DeckFull.Superman = {
     code:1,
     nome:"super",
     Atlas:'Assets/cards.png',
@@ -45,8 +51,8 @@ Deck.Superman = {
         defesa: 0,
         magia: 0
     }
-}
-Deck.SOAD = {
+};
+DeckFull.SOAD = {
     code:2,
     nome:"SOAD",
     Atlas:'Assets/cards.png',
@@ -62,8 +68,8 @@ Deck.SOAD = {
         defesa: 10,
         magia: 50
     }
-}
-Deck.GlassAnimals = {
+};
+DeckFull.GlassAnimals = {
     code:3,
     nome:"TOSoTP",
     Atlas:'Assets/cards.png',
@@ -79,8 +85,8 @@ Deck.GlassAnimals = {
         defesa: 40,
         magia: 60
     }
-}
-Deck.Ubi = {
+};
+DeckFull.Ubi = {
     code:4,
     nome:"Ubirajara",
     Atlas:'Assets/cards.png',
@@ -96,15 +102,15 @@ Deck.Ubi = {
         defesa: 50,
         magia: 0
     }
-}
-Deck.Gaster = {
+};
+DeckFull.Gaster = {
     code:5,
     nome:"Gaster",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
     CoordsX:0,
-    CoordsY:2726,
+    CoordsY:2701,
     DescX: 1,
     DescY: 0,
     ImgTamanho:"50%",
@@ -113,8 +119,9 @@ Deck.Gaster = {
         defesa: 0,
         magia: 90
     }
-}
-Deck.Circus = {
+};
+// superTrunfos
+DeckFull.Circus = {
     code:6,
     nome:"TADC",
     Atlas:'Assets/cards.png',
@@ -130,8 +137,8 @@ Deck.Circus = {
         defesa: 0,
         magia: 100
     }
-}
-Deck.YAAI = {
+};
+DeckFull.YAAI = {
     code:6,
     nome:"TADC",
     Atlas:'Assets/cards.png',
@@ -147,9 +154,9 @@ Deck.YAAI = {
         defesa: 0,
         magia: 100
     }
-}
+};
 
-Deck.Sisyphus = {
+DeckFull.Sisyphus = {
     code:996,
     nome:"prime",
     Atlas:'Assets/cards.png',
@@ -167,21 +174,35 @@ Deck.Sisyphus = {
         defesa: 100,
         magia: 100
     }
-}
+};
 
+
+let Player1Stats = {
+    Aura : 100,
+    card: 0
+};
+let Player2Stats = {
+    Aura : 100,
+    card: 0
+};
+let rodada = 0;
 let estadoRodada = 0;
 let CartaRel=1; //0 = escondido - 1 =revelado
-const DeckLenda = [Deck.Sisyphus];
-const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals, Deck.Ubi, Deck.Gaster, Deck.Circus,Deck.YAAI];
-function fim(x){
+const DeckLenda = [DeckFull.Sisyphus,  DeckFull.Circus, DeckFull.YAAI];
+const DeckPlayer = [DeckFull.Morshu, DeckFull.Superman, DeckFull.SOAD, DeckFull.GlassAnimals, DeckFull.Ubi, DeckFull.Gaster, DeckFull.Sherma];
+
+ function fim(x){
     if (x==0){
     location.reload();
     }
     if (x==1){
     window.open('Menu.html', '_self').focus();
     }
-}
-function ataque(P){
+};
+
+
+ function ataque(P){
+    document.getElementById('debug').innerHTML = P;
     const P1card = Player1Stats.card.Status;
     const P2card = Player2Stats.card.Status;
     let escolha = 0;
@@ -381,20 +402,20 @@ function Carta(carta, P){
 
 }
 
-function puxaCarta(P){
-    let random = Math.floor(Math.random() * 8);
-    let lenda = Math.floor(Math.random() * 99);
+ function puxaCarta(P){
+    let random = Math.floor(Math.random() * DeckPlayer.length);
+    let lenda = Math.floor(Math.random() * 100);
     if (P == "player1"){
-        random = 5;
+        random =6;
         let c = 0;
         if (lenda == 0){
             c = 0;
-            Player1Stats.card = DeckLenda[c];
+
+            Player1Stats.card = DeckLenda[Math.floor(Math.random() * DeckLenda.length)];
             Carta(Player1Stats.card, "P1");
             SuperTrunfo(Player1Stats.card); 
         }
         else{
-            
             c = random;
             Player1Stats.card = DeckPlayer[c];
             Carta(Player1Stats.card, "P1");
@@ -411,7 +432,7 @@ function puxaCarta(P){
         Carta(Player2Stats.card, "P2");
     }
 }
-function debug(){
+ function debug(){
     document.getElementById('debug').innerHTML = Player1Stats.card.nome;
     document.getElementById('debug').innerHTML = CartaRel;
 }
