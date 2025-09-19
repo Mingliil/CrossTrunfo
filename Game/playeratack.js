@@ -18,12 +18,44 @@ DeckFull.Sherma = {
     }
 }
 DeckFull.Goku = {
-    nome:"goku",
+    nome:"Sola a ficção",
     Atlas:'Assets/cards.png',
     AlturaX:387,
     AlturaY:559,
     CoordsX:1209,
     CoordsY:1600,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"70%",
+    Status : {
+        poder: 0,
+        defesa: 50,
+        magia: 50
+    }
+}
+DeckFull.Ghost = {
+    nome:"pequeno fantasma",
+    Atlas:'Assets/cards.png',
+    AlturaX:382,
+    AlturaY:524,
+    CoordsX:1619,
+    CoordsY:1620,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"70%",
+    Status : {
+        poder: 0,
+        defesa: 50,
+        magia: 50
+    }
+}
+DeckFull.CJ = {
+    nome:"Carl Johnson",
+    Atlas:'Assets/cards.png',
+    AlturaX:382,
+    AlturaY:524,
+    CoordsX:1619,
+    CoordsY:1620,
     DescX: 1,
     DescY: 0,
     ImgTamanho:"70%",
@@ -194,8 +226,9 @@ let Player2Stats = {
 let rodada = 0;
 let estadoRodada = 0;
 let CartaRel=1; //0 = escondido - 1 =revelado
+const DeckRaro = [];
 const DeckLenda = [DeckFull.Sisyphus,  DeckFull.Circus, DeckFull.YAAI];
-const DeckPlayer = [DeckFull.Morshu, DeckFull.Superman, DeckFull.SOAD, DeckFull.GlassAnimals, DeckFull.Ubi, DeckFull.Gaster, DeckFull.Goku ,DeckFull.Sherma];
+const DeckPlayer = [DeckFull.Ghost, DeckFull.Morshu, DeckFull.Superman, DeckFull.SOAD, DeckFull.GlassAnimals, DeckFull.Ubi, DeckFull.Gaster, DeckFull.Goku ,DeckFull.Sherma];
 
  function fim(x){
     if (x==0){
