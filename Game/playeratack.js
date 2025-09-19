@@ -52,7 +52,7 @@ Deck.SOAD = {
     Atlas:'Assets/cards.png',
     AlturaX:442,
     AlturaY:549,
-    CoordsX:380,
+    CoordsX:0,
     CoordsY:1080,
     DescX: 1,
     DescY: 0,
@@ -69,7 +69,7 @@ Deck.GlassAnimals = {
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
-    CoordsX:380,
+    CoordsX:0,
     CoordsY:1635,
     DescX: 1,
     DescY: 0,
@@ -86,8 +86,8 @@ Deck.Ubi = {
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
-    CoordsX:380,
-    CoordsY:2150,
+    CoordsX:0,
+    CoordsY:2128,
     DescX: 1,
     DescY: 0,
     ImgTamanho:"50%",
@@ -103,7 +103,7 @@ Deck.Gaster = {
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
-    CoordsX:380,
+    CoordsX:0,
     CoordsY:2726,
     DescX: 1,
     DescY: 0,
@@ -120,7 +120,7 @@ Deck.Circus = {
     Atlas:'Assets/cards.png',
     AlturaX:528,
     AlturaY:717,
-    CoordsX:313,
+    CoordsX:0,
     CoordsY:3273,
     DescX: 1,
     DescY: 0,
@@ -385,6 +385,7 @@ function puxaCarta(P){
     let random = Math.floor(Math.random() * 8);
     let lenda = Math.floor(Math.random() * 99);
     if (P == "player1"){
+        random = 4;
         let c = 0;
         if (lenda == 0){
             c = 0;
