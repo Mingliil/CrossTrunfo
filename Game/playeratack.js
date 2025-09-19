@@ -49,6 +49,22 @@ DeckFull.Ghost = {
         magia: 50
     }
 }
+DeckFull.Chara = {
+    nome:"A criança alterada",
+    Atlas:'Assets/cards.png',
+    AlturaX:382,
+    AlturaY:524,
+    CoordsX:404,
+    CoordsY:1620,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"70%",
+    Status : {
+        poder: 0,
+        defesa: 50,
+        magia: 50
+    }
+}
 DeckFull.CJ = {
     nome:"Carl Johnson",
     Atlas:'Assets/cards.png',
@@ -228,7 +244,7 @@ let estadoRodada = 0;
 let CartaRel=1; //0 = escondido - 1 =revelado
 const DeckRaro = [];
 const DeckLenda = [DeckFull.Sisyphus,  DeckFull.Circus, DeckFull.YAAI];
-const DeckPlayer = [DeckFull.Ghost, DeckFull.Morshu, DeckFull.Superman, DeckFull.SOAD, DeckFull.GlassAnimals, DeckFull.Ubi, DeckFull.Gaster, DeckFull.Goku ,DeckFull.Sherma];
+const DeckPlayer = [DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Superman, DeckFull.SOAD, DeckFull.GlassAnimals, DeckFull.Ubi, DeckFull.Gaster, DeckFull.Goku ,DeckFull.Sherma];
 
  function fim(x){
     if (x==0){
@@ -445,7 +461,7 @@ function Carta(carta, P){
     let random = Math.floor(Math.random() * DeckPlayer.length);
     let lenda = Math.floor(Math.random() * 100);
     if (P == "player1"){
-        random =0;
+        random = 0;
         let c = 0;
         if (lenda == 0){
             c = 0;
