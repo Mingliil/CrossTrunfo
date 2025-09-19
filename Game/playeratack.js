@@ -2,7 +2,6 @@
 let DeckFull = [];
 
 DeckFull.Sherma = {
-    code:7,
     nome:"bestBoi",
     Atlas:'Assets/cards.png',
     AlturaX:387,
@@ -18,8 +17,23 @@ DeckFull.Sherma = {
         magia: 50
     }
 }
+DeckFull.Goku = {
+    nome:"goku",
+    Atlas:'Assets/cards.png',
+    AlturaX:387,
+    AlturaY:559,
+    CoordsX:1209,
+    CoordsY:1600,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"70%",
+    Status : {
+        poder: 0,
+        defesa: 50,
+        magia: 50
+    }
+}
 DeckFull.Morshu = {
-    code:0,
     nome:"Morshu",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -36,7 +50,6 @@ DeckFull.Morshu = {
     }
 };
 DeckFull.Superman = {
-    code:1,
     nome:"super",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -53,7 +66,6 @@ DeckFull.Superman = {
     }
 };
 DeckFull.SOAD = {
-    code:2,
     nome:"SOAD",
     Atlas:'Assets/cards.png',
     AlturaX:442,
@@ -70,7 +82,6 @@ DeckFull.SOAD = {
     }
 };
 DeckFull.GlassAnimals = {
-    code:3,
     nome:"TOSoTP",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -87,7 +98,6 @@ DeckFull.GlassAnimals = {
     }
 };
 DeckFull.Ubi = {
-    code:4,
     nome:"Ubirajara",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -104,7 +114,6 @@ DeckFull.Ubi = {
     }
 };
 DeckFull.Gaster = {
-    code:5,
     nome:"Gaster",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -122,7 +131,6 @@ DeckFull.Gaster = {
 };
 // superTrunfos
 DeckFull.Circus = {
-    code:6,
     nome:"TADC",
     Atlas:'Assets/cards.png',
     AlturaX:528,
@@ -139,7 +147,6 @@ DeckFull.Circus = {
     }
 };
 DeckFull.YAAI = {
-    code:6,
     nome:"TADC",
     Atlas:'Assets/cards.png',
     AlturaX:598,
@@ -157,7 +164,6 @@ DeckFull.YAAI = {
 };
 
 DeckFull.Sisyphus = {
-    code:996,
     nome:"prime",
     Atlas:'Assets/cards.png',
     Audiofont:'Assets/audios/Prison.mp3',
@@ -189,7 +195,7 @@ let rodada = 0;
 let estadoRodada = 0;
 let CartaRel=1; //0 = escondido - 1 =revelado
 const DeckLenda = [DeckFull.Sisyphus,  DeckFull.Circus, DeckFull.YAAI];
-const DeckPlayer = [DeckFull.Morshu, DeckFull.Superman, DeckFull.SOAD, DeckFull.GlassAnimals, DeckFull.Ubi, DeckFull.Gaster, DeckFull.Sherma];
+const DeckPlayer = [DeckFull.Morshu, DeckFull.Superman, DeckFull.SOAD, DeckFull.GlassAnimals, DeckFull.Ubi, DeckFull.Gaster, DeckFull.Goku ,DeckFull.Sherma];
 
  function fim(x){
     if (x==0){
@@ -406,7 +412,7 @@ function Carta(carta, P){
     let random = Math.floor(Math.random() * DeckPlayer.length);
     let lenda = Math.floor(Math.random() * 100);
     if (P == "player1"){
-        random =6;
+        //random =0;
         let c = 0;
         if (lenda == 0){
             c = 0;
