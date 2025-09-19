@@ -53,10 +53,10 @@ Deck.SOAD = {
     AlturaX:442,
     AlturaY:549,
     CoordsX:0,
-    CoordsY:1080,
+    CoordsY:1057,
     DescX: 1,
     DescY: 0,
-    ImgTamanho:"63%",
+    ImgTamanho:"64%",
     Status : {
         poder: 40,
         defesa: 10,
@@ -70,10 +70,10 @@ Deck.GlassAnimals = {
     AlturaX:373,
     AlturaY:519,
     CoordsX:0,
-    CoordsY:1635,
+    CoordsY:1606,
     DescX: 1,
     DescY: 0,
-    ImgTamanho:"50%",
+    ImgTamanho:"55%",
     Status : {
         poder: 0,
         defesa: 40,
@@ -385,7 +385,7 @@ function puxaCarta(P){
     let random = Math.floor(Math.random() * 8);
     let lenda = Math.floor(Math.random() * 99);
     if (P == "player1"){
-        random = 4;
+        random = 5;
         let c = 0;
         if (lenda == 0){
             c = 0;
