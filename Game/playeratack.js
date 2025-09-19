@@ -131,6 +131,23 @@ Deck.Circus = {
         magia: 100
     }
 }
+Deck.YAAI = {
+    code:6,
+    nome:"TADC",
+    Atlas:'Assets/cards.png',
+    AlturaX:598,
+    AlturaY:717,
+    CoordsX:0,
+    CoordsY:3983,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"80%",
+    Status : {
+        poder: 0,
+        defesa: 0,
+        magia: 100
+    }
+}
 
 Deck.Sisyphus = {
     code:996,
@@ -155,7 +172,7 @@ Deck.Sisyphus = {
 let estadoRodada = 0;
 let CartaRel=1; //0 = escondido - 1 =revelado
 const DeckLenda = [Deck.Sisyphus];
-const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals, Deck.Ubi, Deck.Gaster, Deck.Circus];
+const DeckPlayer = [Deck.Morshu, Deck.Superman, Deck.SOAD, Deck.GlassAnimals, Deck.Ubi, Deck.Gaster, Deck.Circus,Deck.YAAI];
 function fim(x){
     if (x==0){
     location.reload();
@@ -365,7 +382,7 @@ function Carta(carta, P){
 }
 
 function puxaCarta(P){
-    const random = Math.floor(Math.random() * 8);
+    let random = Math.floor(Math.random() * 8);
     let lenda = Math.floor(Math.random() * 99);
     if (P == "player1"){
         let c = 0;
@@ -376,6 +393,7 @@ function puxaCarta(P){
             SuperTrunfo(Player1Stats.card); 
         }
         else{
+            
             c = random;
             Player1Stats.card = DeckPlayer[c];
             Carta(Player1Stats.card, "P1");
