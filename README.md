@@ -1,7 +1,8 @@
 # O maior e mais insano jogo de Trunfo!
 **Ou ao menos algo do tipo**
 
-Criadores: 
+## Criadores
+- [Miguel Lima Santos](https://github.com/Mingliil)
 Afonso Cesar, 
 Caio Lopes, 
 Felipe Goes, 
@@ -12,7 +13,7 @@ Matheus Gomes,
 Miguel Fernandes, 
 Miguel Lima Santos.
 
-Personagens até o momento:
+### Personagens até o momento:
 - Caine (TADC),
 - Ubirajara (Ubirajara),
 - YAAI Noli (Forsaken),
@@ -36,7 +37,7 @@ Personagens até o momento:
 
 
 
-Personagens com cartas prontas, mas ainda não estão no jogo:
+### Personagens com cartas prontas, mas ainda não estão no jogo:
 - Lord X (Sonic PC Port),
 - Kris (Deltarune),
 - Susie (Deltarune),
