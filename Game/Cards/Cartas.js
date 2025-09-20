@@ -385,7 +385,7 @@ DeckFull.Sisyphus = {
     raridade:"SuperTrunfo",
     descricao:"",
     Atlas:'Assets/cards.png',
-    Audiofont:'Assets/audios/Prison.mp3',
+    Audiofont:'Assets/audios/intros/Prison.mp3',
     AudioType: 'audio/mp3',
     AlturaX:528,
     AlturaY:747,
@@ -400,8 +400,28 @@ DeckFull.Sisyphus = {
         magia: 150
     }
 };
-
+DeckFull.EGGMAN = {
+    nome:"O Império de Eggman",
+    raridade:"SuperTrunfo",
+    descricao:"'Eles' ousam se chamar de Deus quando EU estou acima.",
+    Atlas:'Assets/cards.png',
+    Audiofont:'Assets/audios/intros/EggmanIntro.mp3',
+    AudioST:'',
+    AudioType: 'audio/mp3',
+    AlturaX:672,
+    AlturaY:810,
+    CoordsX:0,
+    CoordsY:5252,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"100%",
+    Status : {
+        poder: 150,
+        defesa: 150,
+        magia: 150
+    }
+};
 export const DeckRaro = [DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
 export const DeckEpico = [DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
-export const DeckLenda = [DeckFull.Sisyphus];
+export const DeckLenda = [DeckFull.EGGMAN, DeckFull.Sisyphus];
 export const DeckPlayer = [DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];
