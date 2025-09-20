@@ -1,7 +1,16 @@
 # O maior e mais insano jogo de Trunfo!
 **Ou ao menos algo do tipo**
 
-Criadores: Afonso Cesar, Caio Lopes, Felipe Goes, João Vitor, Julia Oliveira, Matheus Cardoso, Matheus Gomes, Miguel Fernandes, Miguel Lima
+Criadores: 
+Afonso Cesar, 
+Caio Lopes, 
+Felipe Goes, 
+João Vitor, 
+Julia Oliveira, 
+Matheus Cardoso, 
+Matheus Gomes, 
+Miguel Fernandes, 
+Miguel Lima Santos.
 
 Personagens até o momento:
 Caine (TADC),
