@@ -2,7 +2,9 @@
 let DeckFull = [];
 
 DeckFull.Sherma = {
-    nome:"bestBoi",
+    nome:"Sherma",
+    raridade:"normal",
+    descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:387,
     AlturaY:559,
@@ -18,7 +20,9 @@ DeckFull.Sherma = {
     }
 }
 DeckFull.Goku = {
-    nome:"Sola a ficção",
+    nome:"Goku",
+    raridade:"normal",
+    descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:387,
     AlturaY:559,
@@ -34,7 +38,9 @@ DeckFull.Goku = {
     }
 }
 DeckFull.Ghost = {
-    nome:"pequeno fantasma",
+    nome:"O receptáculo",
+    raridade:"normal",
+    descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:382,
     AlturaY:524,
@@ -50,7 +56,9 @@ DeckFull.Ghost = {
     }
 }
 DeckFull.Chara = {
-    nome:"A criança alterada",
+    nome:"Chara",
+    raridade:"normal",
+    descricao:"A primeira criança que caiu no dominio dos monstros",
     Atlas:'Assets/cards.png',
     AlturaX:382,
     AlturaY:524,
@@ -67,6 +75,8 @@ DeckFull.Chara = {
 }
 DeckFull.CJ = {
     nome:"Carl Johnson",
+    raridade:"normal",
+    descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:382,
     AlturaY:524,
@@ -83,6 +93,8 @@ DeckFull.CJ = {
 }
 DeckFull.Morshu = {
     nome:"Morshu",
+    raridade:"normal",
+    descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
@@ -98,7 +110,9 @@ DeckFull.Morshu = {
     }
 };
 DeckFull.Superman = {
-    nome:"super",
+    nome:"Superman",
+    raridade:"normal",
+    descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
@@ -115,6 +129,8 @@ DeckFull.Superman = {
 };
 DeckFull.SOAD = {
     nome:"SOAD",
+    raridade:"raro",
+    descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:442,
     AlturaY:549,
@@ -129,8 +145,28 @@ DeckFull.SOAD = {
         magia: 50
     }
 };
+DeckFull.Batman = {
+    nome:"Batman",
+    raridade:"normal",
+    descricao:"",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:540,
+    CoordsX:848,
+    CoordsY:1057,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"64%",
+    Status : {
+        poder: 40,
+        defesa: 10,
+        magia: 50
+    }
+};
 DeckFull.GlassAnimals = {
     nome:"TOSoTP",
+    raridade:"raro",
+    descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
@@ -147,6 +183,8 @@ DeckFull.GlassAnimals = {
 };
 DeckFull.Ubi = {
     nome:"Ubirajara",
+    raridade:"normal",
+    descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
@@ -163,6 +201,8 @@ DeckFull.Ubi = {
 };
 DeckFull.Gaster = {
     nome:"Gaster",
+    raridade:"normal",
+    descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
@@ -180,6 +220,8 @@ DeckFull.Gaster = {
 // superTrunfos
 DeckFull.Circus = {
     nome:"TADC",
+    raridade:"Épico",
+    descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:528,
     AlturaY:717,
@@ -195,7 +237,9 @@ DeckFull.Circus = {
     }
 };
 DeckFull.YAAI = {
-    nome:"TADC",
+    nome:"N0li YAAI",
+    raridade:"Épico",
+    descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:598,
     AlturaY:717,
@@ -212,7 +256,9 @@ DeckFull.YAAI = {
 };
 
 DeckFull.Sisyphus = {
-    nome:"prime",
+    nome:"Sisyphus Prime",
+    raridade:"SuperTrunfo",
+    descricao:"",
     Atlas:'Assets/cards.png',
     Audiofont:'Assets/audios/Prison.mp3',
     AudioType: 'audio/mp3',
@@ -239,12 +285,14 @@ let Player2Stats = {
     Aura : 100,
     card: 0
 };
+
 let rodada = 0;
 let estadoRodada = 0;
 let CartaRel=1; //0 = escondido - 1 =revelado
-const DeckRaro = [];
-const DeckLenda = [DeckFull.Sisyphus,  DeckFull.Circus, DeckFull.YAAI];
-const DeckPlayer = [DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Superman, DeckFull.SOAD, DeckFull.GlassAnimals, DeckFull.Ubi, DeckFull.Gaster, DeckFull.Goku ,DeckFull.Sherma];
+const DeckRaro = [DeckFull.SOAD, DeckFull.GlassAnimals];
+const DeckEpico = [DeckFull.Circus, DeckFull.YAAI];
+const DeckLenda = [DeckFull.Sisyphus];
+const DeckPlayer = [DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Superman, DeckFull.Ubi, DeckFull.Gaster, DeckFull.Goku ,DeckFull.Sherma];
 
  function fim(x){
     if (x==0){
@@ -350,17 +398,24 @@ function EstadoRodada(x){
         rodada++;
         document.getElementById("rodada").innerHTML = rodada;
         estadoRodada = 1;
+        document.getElementById("CartaP2Nome").innerHTML = "";
+        document.getElementById("CartaP2Rari").innerHTML = "";
+        document.getElementById("CartaP2Desc").innerHTML = "";
         document.getElementById("botao").innerHTML = "ataque";
         puxaCarta("player2");
     }
     else{
         CartaRel++;
         Carta(Player2Stats.card, "P2");
+        document.getElementById("CartaP2Nome").innerHTML = Player2Stats.card.nome;
+        document.getElementById("CartaP2Rari").innerHTML = Player2Stats.card.raridade;
+        document.getElementById("CartaP2Desc").innerHTML = Player2Stats.card.descricao;  
         document.getElementById("botao").innerHTML = "proxima rodada";
+
     }
     if (x == 2){
-         const bt = document.getElementById("botao");
-       bt.setAttribute("data-bs-target","#exampleModal");
+        const bt = document.getElementById("botao");
+        bt.setAttribute("data-bs-target","#exampleModal");
         estadoRodada = 2;
         document.getElementById("botao").innerHTML = "main menu";
     }
@@ -458,31 +513,43 @@ function Carta(carta, P){
 }
 
  function puxaCarta(P){
-    let random = Math.floor(Math.random() * DeckPlayer.length);
+    let comum = Math.floor(Math.random() * DeckPlayer.length);
+    let raro = Math.floor(Math.random() * 24);
+    let epico = Math.floor(Math.random() * 74);
     let lenda = Math.floor(Math.random() * 100);
+
     if (P == "player1"){
-        random = 0;
+        comum = 0;
         let c = 0;
         if (lenda == 0){
             c = 0;
-
             Player1Stats.card = DeckLenda[Math.floor(Math.random() * DeckLenda.length)];
             Carta(Player1Stats.card, "P1");
             SuperTrunfo(Player1Stats.card); 
         }
+        else if (epico == 0){
+            Player1Stats.card = DeckEpico[Math.floor(Math.random() * DeckEpico.length)];
+            Carta(Player1Stats.card, "P1");
+        }
+        else if (raro == 0){
+            Player1Stats.card = DeckRaro[Math.floor(Math.random() * DeckRaro.length)];
+            Carta(Player1Stats.card, "P1");
+        }
         else{
-            c = random;
+            c = comum;
             Player1Stats.card = DeckPlayer[c];
             Carta(Player1Stats.card, "P1");
         }
         
-        
+        document.getElementById("CartaP1Nome").innerHTML = Player1Stats.card.nome;
+        document.getElementById("CartaP1Rari").innerHTML = Player1Stats.card.raridade;
+        document.getElementById("CartaP1Desc").innerHTML = Player1Stats.card.descricao;        
         document.getElementById("cartaPoder").innerHTML = "Poder: " +Player1Stats.card.Status.poder + "<br>";
         document.getElementById("cartaDefesa").innerHTML = "Defesa: " +Player1Stats.card.Status.defesa + "<br>";
         document.getElementById("cartaMagia").innerHTML = "Magia: " +Player1Stats.card.Status.magia + "<br>";
     }
     if (P == "player2"){
-        let c2 = random;
+        let c2 = comum;
         Player2Stats.card = DeckPlayer[c2];
         Carta(Player2Stats.card, "P2");
     }
