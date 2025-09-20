@@ -32,9 +32,9 @@ DeckFull.Goku = {
     DescY: 0,
     ImgTamanho:"70%",
     Status : {
-        poder: 0,
-        defesa: 50,
-        magia: 50
+        poder: 70,
+        defesa: 20,
+        magia: 10
     }
 }
 DeckFull.Ghost = {
@@ -50,11 +50,29 @@ DeckFull.Ghost = {
     DescY: 0,
     ImgTamanho:"70%",
     Status : {
+        poder: 60,
+        defesa: 0,
+        magia: 40
+    }
+};
+DeckFull.Kerbeus = {
+    nome:"Kerbeus",
+    raridade:"normal",
+    descricao:"A DEFESA é o melhor ataque.",
+    Atlas:'Assets/cards.png',
+    AlturaX:382,
+    AlturaY:524,
+    CoordsX:2040,
+    CoordsY:1620,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"70%",
+    Status : {
         poder: 0,
         defesa: 50,
         magia: 50
     }
-}
+};
 DeckFull.Chara = {
     nome:"Chara",
     raridade:"normal",
@@ -68,9 +86,9 @@ DeckFull.Chara = {
     DescY: 0,
     ImgTamanho:"70%",
     Status : {
-        poder: 0,
-        defesa: 50,
-        magia: 50
+        poder: 90,
+        defesa: 10,
+        magia: 0
     }
 }
 DeckFull.CJ = {
@@ -86,9 +104,9 @@ DeckFull.CJ = {
     DescY: 0,
     ImgTamanho:"70%",
     Status : {
-        poder: 0,
-        defesa: 50,
-        magia: 50
+        poder: 80,
+        defesa: 20,
+        magia: 0
     }
 }
 DeckFull.Morshu = {
@@ -104,14 +122,14 @@ DeckFull.Morshu = {
     DescY: 0,
     ImgTamanho:"50%",
     Status : {
-        poder: 20,
-        defesa: 20,
-        magia: 20
+        poder: 33,
+        defesa: 33,
+        magia: 34
     }
 };
 DeckFull.Superman = {
     nome:"Superman",
-    raridade:"normal",
+    raridade:"Épico",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -123,7 +141,7 @@ DeckFull.Superman = {
     ImgTamanho:"50%",
     Status : {
         poder: 100,
-        defesa: 0,
+        defesa: 50,
         magia: 0
     }
 };
@@ -150,17 +168,71 @@ DeckFull.Batman = {
     raridade:"normal",
     descricao:"",
     Atlas:'Assets/cards.png',
-    AlturaX:373,
+    AlturaX:400,
     AlturaY:540,
-    CoordsX:848,
+    CoordsX:850,
     CoordsY:1057,
     DescX: 1,
     DescY: 0,
-    ImgTamanho:"64%",
+    ImgTamanho:"55%",
     Status : {
-        poder: 40,
+        poder: 30,
+        defesa: 70,
+        magia: 0
+    }
+};
+DeckFull.EXE = {
+    nome:"Sonic Exe",
+    raridade:"normal",
+    descricao:"",
+    Atlas:'Assets/cards.png',
+    AlturaX:400,
+    AlturaY:540,
+    CoordsX:450,
+    CoordsY:1057,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"55%",
+    Status : {
+        poder: 30,
+        defesa: 0,
+        magia: 70
+    }
+};
+DeckFull.LordX = {
+    nome:"LordX",
+    raridade:"raro",
+    descricao:"",
+    Atlas:'Assets/cards.png',
+    AlturaX:400,
+    AlturaY:540,
+    CoordsX:1250,
+    CoordsY:1057,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"55%",
+    Status : {
+        poder: 90,
         defesa: 10,
-        magia: 50
+        magia: 30
+    }
+};
+DeckFull.Ragnaruk  = {
+    nome:"Ragnaruk ",
+    raridade:"comum",
+    descricao:"Vença com sua RESISTÊNCIA.",
+    Atlas:'Assets/cards.png',
+    AlturaX:400,
+    AlturaY:540,
+    CoordsX:1660,
+    CoordsY:1057,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"55%",
+    Status : {
+        poder: 0,
+        defesa: 20,
+        magia: 80
     }
 };
 DeckFull.GlassAnimals = {
@@ -199,6 +271,60 @@ DeckFull.Ubi = {
         magia: 0
     }
 };
+DeckFull.Spriggan = {
+    nome:"Spriggan",
+    raridade:"normal",
+    descricao:"Que tal um EQUILÍBRIO de tudo?",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:529,
+    CoordsX:400,
+    CoordsY:2160,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"50%",
+    Status : {
+        poder: 40,
+        defesa: 20,
+        magia: 40
+    }
+};
+DeckFull.Shadow = {
+    nome:"Shadow",
+    raridade:"normal",
+    descricao:"A forma de vida perfeita, e extremamente edgy",
+    Atlas:'Assets/cards.png',
+    AlturaX:375,
+    AlturaY:529,
+    CoordsX:810,
+    CoordsY:2160,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"50%",
+    Status : {
+        poder: 30,
+        defesa: 70,
+        magia: 0
+    }
+};
+DeckFull.Valkyrie = {
+    nome:"Valkyrie",
+    raridade:"normal",
+    descricao:"ATAQUE sem parar!",
+    Atlas:'Assets/cards.png',
+    AlturaX:375,
+    AlturaY:529,
+    CoordsX:1630,
+    CoordsY:2160,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"50%",
+    Status : {
+        poder: 80,
+        defesa: 20,
+        magia: 0
+    }
+};
 DeckFull.Gaster = {
     nome:"Gaster",
     raridade:"normal",
@@ -212,12 +338,12 @@ DeckFull.Gaster = {
     DescY: 0,
     ImgTamanho:"50%",
     Status : {
-        poder: 90,
-        defesa: 0,
-        magia: 90
+        poder: Math.floor(Math.random() * 100),
+        defesa: Math.floor(Math.random() * 100),
+        magia: Math.floor(Math.random() * 100),
     }
 };
-// superTrunfos
+
 DeckFull.Circus = {
     nome:"TADC",
     raridade:"Épico",
@@ -231,7 +357,7 @@ DeckFull.Circus = {
     DescY: 0,
     ImgTamanho:"70%",
     Status : {
-        poder: 0,
+        poder: 50,
         defesa: 0,
         magia: 100
     }
@@ -249,9 +375,9 @@ DeckFull.YAAI = {
     DescY: 0,
     ImgTamanho:"80%",
     Status : {
-        poder: 0,
-        defesa: 0,
-        magia: 100
+        poder: 50,
+        defesa: 10,
+        magia: 90
     }
 };
 
@@ -270,9 +396,9 @@ DeckFull.Sisyphus = {
     DescY: 0,
     ImgTamanho:"80%",
     Status : {
-        poder: 100,
-        defesa: 100,
-        magia: 100
+        poder: 150,
+        defesa: 150,
+        magia: 150
     }
 };
 
@@ -289,10 +415,10 @@ let Player2Stats = {
 let rodada = 0;
 let estadoRodada = 0;
 let CartaRel=1; //0 = escondido - 1 =revelado
-const DeckRaro = [DeckFull.SOAD, DeckFull.GlassAnimals];
-const DeckEpico = [DeckFull.Circus, DeckFull.YAAI];
+const DeckRaro = [DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
+const DeckEpico = [DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
 const DeckLenda = [DeckFull.Sisyphus];
-const DeckPlayer = [DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Superman, DeckFull.Ubi, DeckFull.Gaster, DeckFull.Goku ,DeckFull.Sherma];
+const DeckPlayer = [DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];
 
  function fim(x){
     if (x==0){
@@ -312,82 +438,101 @@ const DeckPlayer = [DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Mo
     let atacando = 0;
     let ataqueP2 = 0;
     let result = 0;
+    let curaPlayer = false;
     //cartaRel=0;
     if (estadoRodada == 2){
         const bt = document.getElementById("botao");
        bt.setAttribute("data-bs-target","#exampleModal");
     }
     else if(estadoRodada == 1){
-        estadoRodada = 0;
-        if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
-        atacando++;
-        if(document.getElementById("status1").checked){
-            escolha = P1card.poder;
-            ataqueP2 = P2card.poder;
-        }
-        if(document.getElementById("status2").checked){
-            escolha = P1card.defesa;
-            ataqueP2 = P2card.defesa;
-        }
-        if(document.getElementById("status3").checked){
-            escolha = P1card.magia;
-            ataqueP2 = P2card.magia;
-        }
-        result = escolha - ataqueP2; 
-        }
-        else{
-            alert("escolha 1 opção");
-        }
-            if (P == "P1" && atacando==1){
-                if (result == 0){
-                    alert("EMPATE!!");
+    estadoRodada = 0;
+    if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
+    atacando++;
+    if(document.getElementById("status1").checked){
+        escolha = P1card.poder;
+        ataqueP2 = P2card.poder;
+    }
+    if(document.getElementById("status2").checked){
+        escolha = P1card.defesa;
+        ataqueP2 = P2card.defesa;
+    }
+    if(document.getElementById("status3").checked){
+        escolha = P1card.magia;
+        ataqueP2 = P2card.magia;
+    }
+    result = escolha - ataqueP2; 
+    }
+    else{
+        alert("escolha 1 opção");
+    }
+        if (P == "P1" && atacando==1){
+            if (Player1Stats.card.nome=="Gaster"){
+                if (escolha < 0){
+                
+                curaPlayer == true;
+                }
+            }
+            if (result == 0){
+                alert("EMPATE!!");
+                EstadoRodada(0);
+            }
+            else if (result>0){
+                if (curaPlayer == true){
+                    Player1Stats.Aura  += -(escolha);
+                }
+                else{
+                Player2Stats.Aura -= result;
+                document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
+                }
+                if (Player2Stats.Aura <=0){
+                    document.getElementById("Estado").innerHTML = "VENCEU!";
+                    document.getElementById("auraP2").innerHTML = 0;
+                    if (rodada == 1){
+                        document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADA";
+                        document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADA";
+                    }
+                    else{
+                    document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
+                    document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
+                    }
+                    EstadoRodada(2);
+                }
+                else{
                     EstadoRodada(0);
                 }
-                else if (result>0){
-                    Player2Stats.Aura -= result;
-                    document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
-                    if (Player2Stats.Aura <=0){
-                        document.getElementById("Estado").innerHTML = "VENCEU!";
-                        document.getElementById("auraP2").innerHTML = 0;
-                        if (rodada == 1){
-                            document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADA";
-                            document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADA";
-                        }
-                        else{
-                        document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
-                        document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
-                        }
-                        EstadoRodada(2);
-                    }
-                    else{
-                        EstadoRodada(0);
-                    }
+            }
+            else if (result<0)
+            {
+                if (curaPlayer == true){
+                    alert("CURA!!");
+                    Player1Stats.Aura += -(escolha);
                 }
-                else if (result<0){
-                    Player1Stats.Aura -= -result;
-                    document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
-                    if(Player1Stats.Aura <=0){
-                        document.getElementById("Estado").innerHTML = "PERDEU!";
-                        document.getElementById("auraP1").innerHTML = 0;
-                        if (rodada == 1){
-                            document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADA";
-                            document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADA";
-                        }
-                        else{
-                        document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
-                        document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
-                        }
-                        EstadoRodada(2);
+                else{
+                Player1Stats.Aura -= -result;
+                document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
+                }
+                if(Player1Stats.Aura <=0){
+                    document.getElementById("Estado").innerHTML = "PERDEU!";
+                    document.getElementById("auraP1").innerHTML = 0;
+                    if (rodada == 1){
+                        document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADA";
+                        document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADA";
                     }
                     else{
-                        EstadoRodada(0);
+                    document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
+                    document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
+                    }
+                    EstadoRodada(2);
+                }
+                else{
+                    EstadoRodada(0);
                 }
             }
         }
     }
     else{
-        
-        EstadoRodada(1);
+    
+    EstadoRodada(1);
     }
 }
 
@@ -519,7 +664,7 @@ function Carta(carta, P){
     let lenda = Math.floor(Math.random() * 100);
 
     if (P == "player1"){
-        comum = 0;
+        comum =0 ;
         let c = 0;
         if (lenda == 0){
             c = 0;
@@ -532,7 +677,7 @@ function Carta(carta, P){
             Carta(Player1Stats.card, "P1");
         }
         else if (raro == 0){
-            Player1Stats.card = DeckRaro[Math.floor(Math.random() * DeckRaro.length)];
+            Player1Stats.card =  DeckRaro[Math.floor(Math.random() * DeckRaro.length)];
             Carta(Player1Stats.card, "P1");
         }
         else{
@@ -540,7 +685,28 @@ function Carta(carta, P){
             Player1Stats.card = DeckPlayer[c];
             Carta(Player1Stats.card, "P1");
         }
-        
+        if (Player1Stats.card.nome == "Gaster")
+        {  
+        let cura = Math.floor(Math.random() * 10);
+            if(cura == 0){
+                 Player1Stats.card.Status.poder -= Math.floor(Math.random() * 101);
+            }
+            else{
+                 Player1Stats.card.Status.poder = Math.floor(Math.random() * 101);
+            }
+            if(cura == 6){
+                 Player1Stats.card.Status.defesa -= Math.floor(Math.random() * 101);
+            }
+            else{
+                 Player1Stats.card.Status.defesa = Math.floor(Math.random() * 101);
+            }
+            if(cura == 9){
+                 Player1Stats.card.Status.magia -= Math.floor(Math.random() * 101);
+            }
+            else{
+                 Player1Stats.card.Status.magia -= Math.floor(Math.random() * 101);
+            }
+        }
         document.getElementById("CartaP1Nome").innerHTML = Player1Stats.card.nome;
         document.getElementById("CartaP1Rari").innerHTML = Player1Stats.card.raridade;
         document.getElementById("CartaP1Desc").innerHTML = Player1Stats.card.descricao;        
