@@ -429,7 +429,6 @@ const DeckPlayer = [DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull
     }
 };
 
-
  function ataque(P){
     document.getElementById('debug').innerHTML = P;
     const P1card = Player1Stats.card.Status;
@@ -445,94 +444,91 @@ const DeckPlayer = [DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull
        bt.setAttribute("data-bs-target","#exampleModal");
     }
     else if(estadoRodada == 1){
-    estadoRodada = 0;
-    if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
-    atacando++;
-    if(document.getElementById("status1").checked){
-        escolha = P1card.poder;
-        ataqueP2 = P2card.poder;
-    }
-    if(document.getElementById("status2").checked){
-        escolha = P1card.defesa;
-        ataqueP2 = P2card.defesa;
-    }
-    if(document.getElementById("status3").checked){
-        escolha = P1card.magia;
-        ataqueP2 = P2card.magia;
-    }
-    result = escolha - ataqueP2; 
-    }
-    else{
-        alert("escolha 1 opção");
-    }
-        if (P == "P1" && atacando==1){
-            if (Player1Stats.card.nome=="Gaster"){
-                if (escolha < 0){
-                
-                curaPlayer == true;
-                }
-            }
-            if (result == 0){
-                alert("EMPATE!!");
-                EstadoRodada(0);
-            }
-            else if (result>0){
-                if (curaPlayer == true){
-                    Player1Stats.Aura  += -(escolha);
-                }
-                else{
-                Player2Stats.Aura -= result;
-                document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
-                }
-                if (Player2Stats.Aura <=0){
-                    document.getElementById("Estado").innerHTML = "VENCEU!";
-                    document.getElementById("auraP2").innerHTML = 0;
-                    if (rodada == 1){
-                        document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADA";
-                        document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADA";
+        estadoRodada = 0;
+        if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
+        atacando++;
+        if(document.getElementById("status1").checked){
+            escolha = P1card.poder;
+            ataqueP2 = P2card.poder;
+        }
+        if(document.getElementById("status2").checked){
+            escolha = P1card.defesa;
+            ataqueP2 = P2card.defesa;
+        }
+        if(document.getElementById("status3").checked){
+            escolha = P1card.magia;
+            ataqueP2 = P2card.magia;
+        }
+        result = escolha - ataqueP2; 
+        }
+        else{
+            alert("escolha 1 opção");
+        }
+            if (P == "P1" && atacando==1){
+                if (Player1Stats.card.nome=="Gaster"){
+                    if (escolha < 0){
+                    curaPlayer == true;
                     }
-                    else{
-                    document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
-                    document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
-                    }
-                    EstadoRodada(2);
                 }
-                else{
+                if (result == 0){
+                    alert("EMPATE!!");
                     EstadoRodada(0);
                 }
-            }
-            else if (result<0)
-            {
-                if (curaPlayer == true){
-                    alert("CURA!!");
-                    Player1Stats.Aura += -(escolha);
-                }
-                else{
-                Player1Stats.Aura -= -result;
-                document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
-                }
-                if(Player1Stats.Aura <=0){
-                    document.getElementById("Estado").innerHTML = "PERDEU!";
-                    document.getElementById("auraP1").innerHTML = 0;
-                    if (rodada == 1){
-                        document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADA";
-                        document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADA";
+                else if (result>0){
+                    if (curaPlayer == 1){
+                        Player1Stats.Aura -= escolha;
                     }
                     else{
-                    document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
-                    document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
+                    Player2Stats.Aura -= result;
+                    document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
                     }
-                    EstadoRodada(2);
+                    if (Player2Stats.Aura <=0){
+                        document.getElementById("Estado").innerHTML = "VENCEU!";
+                        document.getElementById("auraP2").innerHTML = 0;
+                        if (rodada == 1){
+                            document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADA";
+                            document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADA";
+                        }
+                        else{
+                        document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
+                        document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + rodada+" RODADAS";
+                        }
+                        EstadoRodada(2);
+                    }
+                    else{
+                        EstadoRodada(0);
+                    }
                 }
-                else{
-                    EstadoRodada(0);
+                else if (result<0){
+                    if (curaPlayer == 1){
+                        Player1Stats.Aura += -(escolha);
+                    }
+                    else{
+                    Player1Stats.Aura -= -result;
+                    document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
+                    }
+                    if(Player1Stats.Aura <=0){
+                        document.getElementById("Estado").innerHTML = "PERDEU!";
+                        document.getElementById("auraP1").innerHTML = 0;
+                        if (rodada == 1){
+                            document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADA";
+                            document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADA";
+                        }
+                        else{
+                        document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
+                        document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + rodada+" RODADAS";
+                        }
+                        EstadoRodada(2);
+                    }
+                    else{
+                        EstadoRodada(0);
                 }
             }
         }
     }
     else{
-    
-    EstadoRodada(1);
+        
+        EstadoRodada(1);
     }
 }
 
@@ -664,7 +660,6 @@ function Carta(carta, P){
     let lenda = Math.floor(Math.random() * 100);
 
     if (P == "player1"){
-        comum =0 ;
         let c = 0;
         if (lenda == 0){
             c = 0;
@@ -685,27 +680,27 @@ function Carta(carta, P){
             Player1Stats.card = DeckPlayer[c];
             Carta(Player1Stats.card, "P1");
         }
-        if (Player1Stats.card.nome == "Gaster")
-        {  
+        if (Player1Stats.card.nome == "Gaster"
+        ){  
         let cura = Math.floor(Math.random() * 10);
-            if(cura == 0){
-                 Player1Stats.card.Status.poder -= Math.floor(Math.random() * 101);
-            }
-            else{
-                 Player1Stats.card.Status.poder = Math.floor(Math.random() * 101);
-            }
-            if(cura == 6){
-                 Player1Stats.card.Status.defesa -= Math.floor(Math.random() * 101);
-            }
-            else{
-                 Player1Stats.card.Status.defesa = Math.floor(Math.random() * 101);
-            }
-            if(cura == 9){
-                 Player1Stats.card.Status.magia -= Math.floor(Math.random() * 101);
-            }
-            else{
-                 Player1Stats.card.Status.magia -= Math.floor(Math.random() * 101);
-            }
+        if(cura == 0){
+             Player1Stats.card.Status.poder -= Math.floor(Math.random() * 101);
+        }
+        else{
+             Player1Stats.card.Status.poder = Math.floor(Math.random() * 101);
+        }
+        if(cura == 6){
+             Player1Stats.card.Status.defesa -= Math.floor(Math.random() * 101);
+        }
+        else{
+             Player1Stats.card.Status.defesa = Math.floor(Math.random() * 101);
+        }
+        if(cura == 9){
+             Player1Stats.card.Status.magia -= Math.floor(Math.random() * 101);
+        }
+        else{
+             Player1Stats.card.Status.magia -= Math.floor(Math.random() * 101);
+        }
         }
         document.getElementById("CartaP1Nome").innerHTML = Player1Stats.card.nome;
         document.getElementById("CartaP1Rari").innerHTML = Player1Stats.card.raridade;
