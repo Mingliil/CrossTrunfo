@@ -44,7 +44,7 @@
                 <input class="form-check-input" type="radio" name="statuscard" id="status2"><label class="form-check-label" id="cartaDefesa" for="status2"></label><br>
                 <input class="form-check-input" type="radio" name="statuscard" id="status3"><label class="form-check-label" id="cartaMagia" for="status3"></label>
                 </p>
-                <button id="botao" data-bs-toggle="modal" data-bs-target="" onclick="ataque('P1')"></button>
+                <button id="botao" data-bs-toggle="modal" data-bs-target="" ></button>
             </div>
             <div class="col">
                 <h6>aura</h6>
@@ -81,14 +81,13 @@
         <p id="rodadaFim" class="fs-6">1</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" onclick="fim(1)">Menu</button>
-        <button type="button" class="btn btn-primary" onclick="fim(0)">Novo Jogo</button>
+        <button type="button" id="fim1"class="btn btn-secondary">Menu</button>
+        <button type="button" id="fim2"class="btn btn-primary" >Novo Jogo</button>
       </div>
     </div>
   </div>
 </div>
-    <script src="Cards/Stats.js" type="module"></script>
-    <script src="playeratack.js" ></script>
+    <script src="Cards/Cartas.js" type="module"></script>
     <script src="Cards/Rework.js" type="module"></script>
     <script src="Cards/main.js" type="module"></script>
     <script src="js/bootstrap.min.js"></script>
