@@ -12,29 +12,30 @@ System of a Down,
 Glass Animals,
 Gaster (Undertale),
 Superman (DC),
+Batman (DC),
 Sysiphus Prime (Ultrakill),
+Valkyrie (Beyblade Burst),
+Kerbeus (Beyblade Burst),
+Ragnaruk (Beyblade Burst),
+Spriggan (Beyblade Burst),
+Knight (Hollow Knight),
+Sherma (Hollow Knight),
+2011X (SONIC 2011),
+Shadow the Hedgehog,
+Goku (Dragon Ball),
+Chara (Undertale)
+
+
 
 Personagens com cartas prontas, mas ainda não estão no jogo:
-2011X (SONIC 2011),
 Lord X (Sonic PC Port),
 Kris (Deltarune),
 Susie (Deltarune),
 Frisk (Undertale),
-Chara (Undertale),
-Batman (DC),
 Escrava Isaura,
 Luffy (One Piece),
 CJ (GTA),
-Goku (Dragon Ball),
-Knight (Hollow Knight),
-Shadow the Hedgehog,
 Obito (Naruto Shippuden),
-Valkyrie (Beyblade Burst),
-Kerbeus (Beyblade Burst),
-Ragnaruk (Beyblade Burst),
-Spriggan (Beyblade Burst)
-
-
 
 
 Atributos: 
