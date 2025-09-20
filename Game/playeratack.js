@@ -715,11 +715,10 @@ function Carta(carta, P){
         Carta(Player2Stats.card, "P2");
     }
 }
- function debug(){
+function debug(){
     document.getElementById('debug').innerHTML = Player1Stats.card.nome;
     document.getElementById('debug').innerHTML = CartaRel;
 }
 window.onload = EstadoRodada(1);
 window.onload = puxaCarta("player2");
 window.onload = puxaCarta("player1");
-window.onload = debug;

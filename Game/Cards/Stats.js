@@ -404,5 +404,4 @@ DeckFull.Sisyphus = {
 export const DeckRaro = [DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
 export const DeckEpico = [DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
 export const DeckLenda = [DeckFull.Sisyphus];
-export const DeckPlayer = 
-[DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];
+export const DeckPlayer = [DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];
