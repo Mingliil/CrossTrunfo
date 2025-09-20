@@ -3,15 +3,15 @@
 
 ## Criadores
 - [Miguel Lima Santos](https://github.com/Mingliil)
-Afonso Cesar, 
-Caio Lopes, 
-Felipe Goes, 
-João Vitor, 
-Julia Oliveira, 
-Matheus Cardoso, 
-Matheus Gomes, 
-Miguel Fernandes, 
-Miguel Lima Santos.
+- Afonso Cesar, 
+- Caio Lopes, 
+- Felipe Goes, 
+- João Vitor, 
+- Julia Oliveira, 
+- Matheus Cardoso, 
+- Matheus Gomes, 
+- Miguel Fernandes, 
+- Miguel Lima Santos.
 
 ### Personagens até o momento:
 - Caine (TADC),
