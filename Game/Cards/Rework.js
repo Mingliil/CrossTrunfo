@@ -1,9 +1,11 @@
+import { AudioST, SuperIntro} from "./GerenciaAudio.js";
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda} from "./Cartas.js";
-let Player1Stats = {
+
+export let Player1Stats = {
     Aura : 100,
     card: 0
 };
-let Player2Stats = {
+export let Player2Stats = {
     Aura : 100,
     card: 0
 };
@@ -155,18 +157,6 @@ export function EstadoRodada(x){
 
 let comecou = 1;
 
-export function SuperTrunfo(carta){
-    const audio = document.getElementById("audio");
-    const AudioScr = document.getElementById("audioScr");
-    AudioScr.type = carta.AudioType;
-    AudioScr.src = Player1Stats.card.Audiofont;
-    //audio.onload = () =>{  
-        audio.load();
-        audio.play();
-    //}
-    //window.onload = audio.play();
-}
-
 export function Carta(carta, P){
    /* const cardDesc = document.getElementById('CartaP1Desc');
     const contextoDesc = canvas.getContext('2d');
@@ -243,20 +233,22 @@ export function Carta(carta, P){
     };
 
 }
-
+let ultimaCarta = 0;
 export function puxaCarta(P){
     let comum = Math.floor(Math.random() * DeckPlayer.length);
     let raro = Math.floor(Math.random() * 24);
     let epico = Math.floor(Math.random() * 74);
     let lenda = Math.floor(Math.random() * 100);
-    lenda = 0;
+    //lenda = 0;
     if (P == "player1"){
         let c = 0;
         if (lenda == 0){
             c = 0;
-            Player1Stats.card = DeckLenda[0];//[Math.floor(Math.random() * DeckLenda.length)];
+            Player1Stats.card = DeckLenda[Math.floor(Math.random() * DeckLenda.length)];
             Carta(Player1Stats.card, "P1");
-            SuperTrunfo(Player1Stats.card); 
+            if (Player1Stats.card != ultimaCarta){
+            SuperIntro(Player1Stats.card);
+            }
         }
         else if (epico == 0){
             Player1Stats.card = DeckEpico[Math.floor(Math.random() * DeckEpico.length)];
@@ -299,6 +291,7 @@ export function puxaCarta(P){
         document.getElementById("cartaPoder").innerHTML = "Poder: " +Player1Stats.card.Status.poder + "<br>";
         document.getElementById("cartaDefesa").innerHTML = "Defesa: " +Player1Stats.card.Status.defesa + "<br>";
         document.getElementById("cartaMagia").innerHTML = "Magia: " +Player1Stats.card.Status.magia + "<br>";
+    ultimaCarta = Player1Stats.card;
     }
     if (P == "player2"){
         let c2 = comum;

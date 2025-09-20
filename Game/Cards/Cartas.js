@@ -386,6 +386,7 @@ DeckFull.Sisyphus = {
     descricao:"",
     Atlas:'Assets/cards.png',
     Audiofont:'Assets/audios/intros/Prison.mp3',
+    AudioST:'Assets/audios/SoundTracks/War.mp3',
     AudioType: 'audio/mp3',
     AlturaX:528,
     AlturaY:747,
@@ -406,7 +407,7 @@ DeckFull.EGGMAN = {
     descricao:"'Eles' ousam se chamar de Deus quando EU estou acima.",
     Atlas:'Assets/cards.png',
     Audiofont:'Assets/audios/intros/EggmanIntro.mp3',
-    AudioST:'',
+    AudioST:'Assets/audios/SoundTracks/EggmanMetal.mp3',
     AudioType: 'audio/mp3',
     AlturaX:672,
     AlturaY:810,
@@ -421,7 +422,27 @@ DeckFull.EGGMAN = {
         magia: 150
     }
 };
+DeckFull.pandemonium = {
+    nome:"PANDEMONIUM",
+    raridade:"???",
+    descricao:"",
+    Atlas:'Assets/cards.png',
+    AudioST:'Assets/audios/SoundTracks/PANDEMONIUM.mp3',
+    AudioType: 'audio/mp3',
+    AlturaX:597,
+    AlturaY:597,
+    CoordsX:1329,
+    CoordsY:42,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"100%",
+    Status : {
+        poder: 30,
+        defesa: 40,
+        magia: 40
+    }
+};
 export const DeckRaro = [DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
 export const DeckEpico = [DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
-export const DeckLenda = [DeckFull.EGGMAN, DeckFull.Sisyphus];
+export const DeckLenda = [DeckFull.Sisyphus, DeckFull.pandemonium, DeckFull.EGGMAN];
 export const DeckPlayer = [DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];
