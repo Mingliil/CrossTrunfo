@@ -76,9 +76,6 @@ export function ataque(P){
                     }
                 }
                 else if (result<0){
-                    if (curaPlayer == 1){
-                        Player1Stats.Aura += -(escolha);
-                    }
                     else{
                     Player1Stats.Aura -= -result;
                     document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
