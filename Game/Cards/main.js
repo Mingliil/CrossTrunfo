@@ -1,5 +1,7 @@
-import { debug, Carta, puxaCarta, ataque, fim } from "./Rework.js";
+import { debug, Carta, fim } from "./Rework.js";
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda} from "./Cartas.js";
+import { puxaCarta } from "./GerenciaRaridade.js";
+import { ataque } from "./GerenciaAtaque.js";
 document.getElementById("btDebug").onclick = () =>{
     debug();
     puxaCarta("player1");

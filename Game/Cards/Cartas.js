@@ -2,7 +2,7 @@ let DeckFull = [];
 
 DeckFull.Sherma = {
     nome:"Sherma",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:387,
@@ -20,7 +20,7 @@ DeckFull.Sherma = {
 }
 DeckFull.Goku = {
     nome:"Goku",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:387,
@@ -38,7 +38,7 @@ DeckFull.Goku = {
 }
 DeckFull.Ghost = {
     nome:"O receptáculo",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:382,
@@ -56,7 +56,7 @@ DeckFull.Ghost = {
 };
 DeckFull.Kerbeus = {
     nome:"Kerbeus",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"A DEFESA é o melhor ataque.",
     Atlas:'Assets/cards.png',
     AlturaX:382,
@@ -74,7 +74,7 @@ DeckFull.Kerbeus = {
 };
 DeckFull.Chara = {
     nome:"Chara",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"A primeira criança que caiu no dominio dos monstros",
     Atlas:'Assets/cards.png',
     AlturaX:382,
@@ -92,7 +92,7 @@ DeckFull.Chara = {
 }
 DeckFull.CJ = {
     nome:"Carl Johnson",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:382,
@@ -110,7 +110,7 @@ DeckFull.CJ = {
 }
 DeckFull.Morshu = {
     nome:"Morshu",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -164,7 +164,7 @@ DeckFull.SOAD = {
 };
 DeckFull.Batman = {
     nome:"Batman",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:400,
@@ -182,7 +182,7 @@ DeckFull.Batman = {
 };
 DeckFull.EXE = {
     nome:"Sonic Exe",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:400,
@@ -254,7 +254,7 @@ DeckFull.GlassAnimals = {
 };
 DeckFull.Ubi = {
     nome:"Ubirajara",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -272,7 +272,7 @@ DeckFull.Ubi = {
 };
 DeckFull.Spriggan = {
     nome:"Spriggan",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"Que tal um EQUILÍBRIO de tudo?",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -290,7 +290,7 @@ DeckFull.Spriggan = {
 };
 DeckFull.Shadow = {
     nome:"Shadow",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"A forma de vida perfeita, e extremamente edgy",
     Atlas:'Assets/cards.png',
     AlturaX:375,
@@ -308,7 +308,7 @@ DeckFull.Shadow = {
 };
 DeckFull.Valkyrie = {
     nome:"Valkyrie",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"ATAQUE sem parar!",
     Atlas:'Assets/cards.png',
     AlturaX:375,
@@ -326,7 +326,7 @@ DeckFull.Valkyrie = {
 };
 DeckFull.Gaster = {
     nome:"Gaster",
-    raridade:"normal",
+    raridade:"comum",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,

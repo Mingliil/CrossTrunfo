@@ -1,6 +1,5 @@
 import { Player1Stats, Player2Stats } from "./Rework.js";
 
-
 export function AudioST(carta){
     const audio = document.getElementById("audioST");
     const AudioScr = document.getElementById("audioSTSrc");
