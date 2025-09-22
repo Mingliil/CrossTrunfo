@@ -1,7 +1,7 @@
 import { puxaCarta } from "./GerenciaRaridade.js";
 import { estados, Carta, Player1Stats,Player2Stats } from "./Rework.js";
 
-export function ModoRodada(x){
+export function ModoRodada(x, perdeu){
     /*
         Estados do x
         x = 1: hora de atacar
@@ -30,10 +30,25 @@ export function ModoRodada(x){
 
     }
     if (x == 2){
-        
         const bt = document.getElementById("botao");
         bt.setAttribute("data-bs-target","#exampleModal");
         estados.estadoRodada = 2;
         document.getElementById("botao").innerHTML = "main menu";
+        if(perdeu == true){
+
+        }
+        else{
+
+        }
     }
+
 }
+
+export function fim(x){
+    if (x==0){
+    location.reload();
+    }
+    if (x==1){
+    window.open('Menu.html', '_self').focus();
+    }
+};

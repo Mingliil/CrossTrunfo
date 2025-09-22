@@ -19,14 +19,6 @@ export let Player2Stats = {
     ultimacarta:0
 };
 
-export function fim(x){
-    if (x==0){
-    location.reload();
-    }
-    if (x==1){
-    window.open('Menu.html', '_self').focus();
-    }
-};
 
 export function Carta(carta, P){
    /* const cardDesc = document.getElementById('CartaP1Desc');

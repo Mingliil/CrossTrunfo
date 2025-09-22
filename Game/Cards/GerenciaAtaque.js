@@ -7,17 +7,63 @@ import { estados } from "./Rework.js";
 */
 export function GerenciaModoAtaque(P){
     //colocar debug inicial aqui se precisar
-
     //variaveis
     let atacando = false;
     let playerEscolha = 0;
-    
-    if (estados.estadoRodada == 2){
-        const bt = document.getElementById("botao");
-       bt.setAttribute("data-bs-target","#exampleModal");
-    }
+    let ataqueP1= 0;
+    let ataqueP2 =0;
+    let ataqueResultado = 0;
+    const P1Card = Player1Stats.card;
+    const P2Card = Player2Stats.card;
+    //codigo
+    if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
+        atacando++;
+        if(document.getElementById("status1").checked){
+            ataqueP1 = P1Card.Status.poder;
+            ataqueP2 = P2Card.Status.poder;
+        }
+        if(document.getElementById("status2").checked){
+            ataqueP1 = P1Card.Status.defesa;
+            ataqueP2 = P2Card.Status.defesa;
+        }
+        if(document.getElementById("status3").checked){
+            ataqueP1 = P1Card.Status.magia;
+            ataqueP2 = P2Card.Status.magia;
+        }
+        ataqueResultado = ataqueP1-ataqueP2;
 
+        if (ataqueResultado >0){
+            Player2Stats.Aura -= ataqueResultado;
+            if (Player2Stats.Aura <= 0){
+            document.getElementById("auraP2").innerHTML = 0;
+            ModoRodada(2, false);
+            }
+            else{
+                document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
+            }
+        }
+        else if (ataqueResultado <0){
+            Player1Stats.Aura -= -ataqueResultado;
+            if (Player1Stats.Aura<=0){
+                document.getElementById("auraP1").innerHTML = 0;
+                ModoRodada(2,true);
+            }
+            else{
+            document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
+            }
+        }
+
+        else{
+            alert("EMPATE!!");
+        }
+        ModoRodada(0);
+    }
+    else{
+        alert("escolha 1 opção");
+    }
 }
+
+//ataque antigo, mal feito
 export function ataque(P){
     document.getElementById('debug').innerHTML = P;
     const P1card = Player1Stats.card.Status;
@@ -28,11 +74,7 @@ export function ataque(P){
     let result = 0;
     let curaPlayer = false;
     //cartaRel=0;
-    if (estados.estadoRodada == 2){
-        const bt = document.getElementById("botao");
-       bt.setAttribute("data-bs-target","#exampleModal");
-    }
-    else if(estados.estadoRodada == 1){
+     if(estados.estadoRodada == 1){
         estados.estadoRodada = 0;
         if(document.getElementById("status1").checked || document.getElementById("status2").checked || document.getElementById("status3").checked){
         atacando++;

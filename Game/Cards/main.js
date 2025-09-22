@@ -1,8 +1,8 @@
-import { debug, Carta, fim } from "./Rework.js";
+import { debug, Carta } from "./Rework.js";
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda} from "./Cartas.js";
 import { puxaCarta } from "./GerenciaRaridade.js";
-import { ataque } from "./GerenciaAtaque.js";
-import { ModoRodada } from "./GerenciaRodada.js";
+import { ataque, GerenciaModoAtaque } from "./GerenciaAtaque.js";
+import { ModoRodada, fim } from "./GerenciaRodada.js";
 document.getElementById("btDebug").onclick = () =>{
     debug();
     puxaCarta("player1");
@@ -10,7 +10,10 @@ document.getElementById("btDebug").onclick = () =>{
 }
 document.getElementById("botao").onclick = () =>{
     if (document.getElementById("botao").innerHTML == "ataque"){
-        ataque('P1');
+        GerenciaModoAtaque();
+        
+        //ataque('P1');
+        
     }
     else if (document.getElementById("botao").innerHTML == "proxima rodada"){
         ModoRodada(1);

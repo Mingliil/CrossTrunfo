@@ -12,7 +12,6 @@ export function puxaCarta(P){
     let raro = Math.floor(Math.random() * 24);
     let epico = Math.floor(Math.random() * 74);
     let lenda = Math.floor(Math.random() * 100);
-    epico = 0;
     if (P == "player1"){
         let c = 0;
         if (Player1Stats.ultimaCarta == DeckLenda[1]){
@@ -26,7 +25,7 @@ export function puxaCarta(P){
             }
         }
         else if (epico == 0){
-            Player1Stats.card = DeckEpico[0];//[Math.floor(Math.random() * DeckEpico.length)];
+            Player1Stats.card = DeckEpico[Math.floor(Math.random() * DeckEpico.length)];
             Carta(Player1Stats.card, "P1");
         }
         else if (raro == 0){
