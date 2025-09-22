@@ -76,10 +76,8 @@ export function ataque(P){
                     }
                 }
                 else if (result<0){
-                    else{
                     Player1Stats.Aura -= -result;
                     document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
-                    }
                     if(Player1Stats.Aura <=0){
                         document.getElementById("Estado").innerHTML = "PERDEU!";
                         document.getElementById("auraP1").innerHTML = 0;

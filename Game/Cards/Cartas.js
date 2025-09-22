@@ -442,7 +442,25 @@ DeckFull.pandemonium = {
         magia: 40
     }
 };
+DeckFull.Mesmerizer = {
+    nome:"Mesmerizer",
+    raridade: "Épico",
+    descricao:"Não é incrivel elas cantando hipnotizadas pelas cores sem saber o que está acontecendo?",
+    Atlas:'Assets/cards.png',
+    AlturaX:597,
+    AlturaY:700,
+    CoordsX:0,
+    CoordsY:6070,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"100%",
+    Status : {
+        poder: 50,
+        defesa: 10,
+        magia: 90
+    }
+};
 export const DeckRaro = [DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
-export const DeckEpico = [DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
+export const DeckEpico = [DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
 export const DeckLenda = [DeckFull.Sisyphus, DeckFull.pandemonium, DeckFull.EGGMAN];
 export const DeckPlayer = [DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];
