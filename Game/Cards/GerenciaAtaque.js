@@ -5,6 +5,7 @@ import { estados } from "./Rework.js";
     Olá eu, esse código aqui é aonde gerenciaremos não apenas os atques
     mas também as habilidadas das cartas, se der, se não der essa é a vida não? 
 */
+
 export function ataque(P){
     document.getElementById('debug').innerHTML = P;
     const P1card = Player1Stats.card.Status;
