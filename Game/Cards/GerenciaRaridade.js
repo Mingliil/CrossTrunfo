@@ -12,14 +12,13 @@ export function puxaCarta(P){
     let raro = Math.floor(Math.random() * 24);
     let epico = Math.floor(Math.random() * 74);
     let lenda = Math.floor(Math.random() * 100);
-    lenda = 0;
     if (P == "player1"){
         let c = 0;
         if (Player1Stats.ultimaCarta == DeckLenda[1]){
         }
         else if (lenda == 0){
             c = 0;
-            Player1Stats.card = DeckLenda[0]//[Math.floor(Math.random() * DeckLenda.length)];
+            Player1Stats.card = DeckLenda[Math.floor(Math.random() * DeckLenda.length)];
             Carta(Player1Stats.card, "P1");
             if(Player1Stats.ultimaCarta != Player1Stats.card){
             SuperIntro(Player1Stats.card);
