@@ -35,10 +35,24 @@ export function ModoRodada(x, perdeu){
         estados.estadoRodada = 2;
         document.getElementById("botao").innerHTML = "main menu";
         if(perdeu == true){
-
+            if (estados.rodada == 1){
+                document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADA";
+                document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADA";
+            }
+            else{
+            document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADAS";
+            document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADAS";
+            }
         }
         else{
-
+            if (estados.rodada == 1){
+                document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADA";
+                document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADA";
+            }
+            else{
+            document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
+            document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
+            }
         }
     }
 

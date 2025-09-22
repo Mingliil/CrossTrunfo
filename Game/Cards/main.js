@@ -1,7 +1,7 @@
 import { debug, Carta } from "./Rework.js";
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda} from "./Cartas.js";
 import { puxaCarta } from "./GerenciaRaridade.js";
-import { ataque, GerenciaModoAtaque } from "./GerenciaAtaque.js";
+import { GerenciaModoAtaque } from "./GerenciaAtaque.js";
 import { ModoRodada, fim } from "./GerenciaRodada.js";
 document.getElementById("btDebug").onclick = () =>{
     debug();
@@ -11,7 +11,7 @@ document.getElementById("btDebug").onclick = () =>{
 document.getElementById("botao").onclick = () =>{
     if (document.getElementById("botao").innerHTML == "ataque"){
         GerenciaModoAtaque();
-        
+
         //ataque('P1');
         
     }
