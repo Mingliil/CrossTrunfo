@@ -5,7 +5,19 @@ import { estados } from "./Rework.js";
     Olá eu, esse código aqui é aonde gerenciaremos não apenas os atques
     mas também as habilidadas das cartas, se der, se não der essa é a vida não? 
 */
+export function GerenciaModoAtaque(P){
+    //colocar debug inicial aqui se precisar
 
+    //variaveis
+    let atacando = false;
+    let playerEscolha = 0;
+    
+    if (estados.estadoRodada == 2){
+        const bt = document.getElementById("botao");
+       bt.setAttribute("data-bs-target","#exampleModal");
+    }
+
+}
 export function ataque(P){
     document.getElementById('debug').innerHTML = P;
     const P1card = Player1Stats.card.Status;

@@ -2,13 +2,22 @@ import { debug, Carta, fim } from "./Rework.js";
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda} from "./Cartas.js";
 import { puxaCarta } from "./GerenciaRaridade.js";
 import { ataque } from "./GerenciaAtaque.js";
+import { ModoRodada } from "./GerenciaRodada.js";
 document.getElementById("btDebug").onclick = () =>{
     debug();
     puxaCarta("player1");
     //Carta(DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],"P1");
 }
 document.getElementById("botao").onclick = () =>{
-    ataque('P1');
+    if (document.getElementById("botao").innerHTML == "ataque"){
+        ataque('P1');
+    }
+    else if (document.getElementById("botao").innerHTML == "proxima rodada"){
+        ModoRodada(1);
+    }
+    else if (document.getElementById("botao").innerHTML = "main menu"){
+        ModoRodada(2);
+    }
 }
 document.getElementById("fim1").onclick = () =>{
     fim(1);
