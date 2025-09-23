@@ -6,14 +6,15 @@ import { ModoRodada, fim } from "./GerenciaRodada.js";
 import { Player2Stats, Player1Stats } from "./Rework.js";
 
 document.getElementById("btDebug").onclick = () =>{
-    document.getElementById("btDebug").innerHTML = Raridade();
-    puxaCarta("player1", "", true);
+    document.getElementById("btDebug").innerHTML = Player1Stats.modos.quero;//Raridade();
+    //puxaCarta("player1", "", true);
+    Player1Stats.modos.quero = true;
     //Carta(DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],"P1");
 }
 document.getElementById("botao").onclick = () =>{
     if (document.getElementById("botao").innerHTML == "ataque"){
         GerenciaModoAtaque();
-
+        
         //ataque('P1');
         
     }

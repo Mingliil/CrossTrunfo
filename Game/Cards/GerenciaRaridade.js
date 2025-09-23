@@ -52,15 +52,16 @@ export function PegaCarta(debug){
     }
 }
 
-export function puxaCarta(P, especial, quero){
+export function puxaCarta(P, especial){
 
     let carta = PegaCarta();
 
     //quero = true;
     if (P == "player1"){
-        if (quero == true){
+        if (Player1Stats.modos.quero == true){
             carta[0] = DeckLenda[0];
-            SuperIntro(DeckLenda[0]);
+            carta[1] = 'lenda';
+            Player1Stats.modos.quero = false;
         }
         else if (Player1Stats.modos.modoPan == true){
             carta[0] = DeckFull.pandemonium;

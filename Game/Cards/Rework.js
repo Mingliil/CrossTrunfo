@@ -14,7 +14,9 @@ export let Player1Stats = {
     ultimacarta:0,
     modos : {
         modoPan: false,
-        modoPrime: false
+        modoPrime: false,
+        curaDano: true,
+        quero: false
     }
     
 };
