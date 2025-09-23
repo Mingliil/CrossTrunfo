@@ -396,9 +396,9 @@ DeckFull.Sisyphus = {
     DescY: 0,
     ImgTamanho:"80%",
     Status : {
-        poder: 30,
-        defesa: 30,
-        magia: 30
+        poder: 90,
+        defesa: 90,
+        magia: 90
     }
 };
 DeckFull.EGGMAN = {

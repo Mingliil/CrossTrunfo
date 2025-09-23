@@ -13,7 +13,7 @@ export let Player1Stats = {
     card: 0,
     ultimacarta:0,
     modos : {
-        modoPan: true,
+        modoPan: false,
         modoPrime: false
     }
     
