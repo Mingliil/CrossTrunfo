@@ -49,8 +49,7 @@ export function GerenciaModoAtaque(P){
             if (Player1Stats.Aura<=0){
                 document.getElementById("auraP1").innerHTML = 0;
                 if (Player1Stats.modos.modoPan == true){
-                    puxaCarta("player1", "prime");
-                    document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
+                    Player1Stats.modos.modoPrime = true;
                     Player1Stats.modos.modoPan = false;
                 }
                 else{
@@ -58,7 +57,7 @@ export function GerenciaModoAtaque(P){
                 }
             }
             else{
-            
+
             document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
             }
         }

@@ -59,12 +59,21 @@ export function puxaCarta(P, especial, quero){
     //quero = true;
     if (P == "player1"){
         if (quero == true){
-            Player1Stats.card = DeckLenda[0];
+            carta[0] = DeckLenda[0];
             SuperIntro(DeckLenda[0]);
         }
-        else{
-        Player1Stats.card = carta[0];
+        else if (Player1Stats.modos.modoPan == true){
+            carta[0] = DeckFull.pandemonium;
+            carta[1] = 'lenda';
         }
+        if (Player1Stats.modos.modoPrime == true){
+            carta[0] = DeckFull.Sisyphus;
+            carta[1] = 'lenda';
+            Player1Stats.Aura = 200;
+            document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
+            Player1Stats.modos.modoPrime == false;
+        }
+        Player1Stats.card = carta[0];
         if (carta[1] == 'lenda' && Player1Stats.ultimacarta.nome != Player1Stats.card.nome){
             SuperIntro(carta[0]);
         }
@@ -72,17 +81,17 @@ export function puxaCarta(P, especial, quero){
         Carta(Player1Stats.card, "P1");
         if (Player1Stats.card.nome == "Token/Femtanyl"){
             document.getElementById("cartaPoder").innerHTML = "WIRES: " +Player1Stats.card.Status.poder + "<br>";
-document.getElementById("cartaDefesa").innerHTML = "ON MY: " +Player1Stats.card.Status.defesa + "<br>"
-document.getElementById("cartaMagia").innerHTML = "NECK: " +Player1Stats.card.Status.magia + "<br>";
+            document.getElementById("cartaDefesa").innerHTML = "ON MY: " +Player1Stats.card.Status.defesa + "<br>"
+            document.getElementById("cartaMagia").innerHTML = "NECK: " +Player1Stats.card.Status.magia + "<br>";
         }
         else{        
-        document.getElementById("cartaPoder").innerHTML = "Poder: " +Player1Stats.card.Status.poder + "<br>";
-        document.getElementById("cartaDefesa").innerHTML = "Defesa: " +Player1Stats.card.Status.defesa + "<br>";
-        document.getElementById("cartaMagia").innerHTML = "Magia: " +Player1Stats.card.Status.magia + "<br>";
+            document.getElementById("cartaPoder").innerHTML = "Poder: " +Player1Stats.card.Status.poder + "<br>";
+            document.getElementById("cartaDefesa").innerHTML = "Defesa: " +Player1Stats.card.Status.defesa + "<br>";
+            document.getElementById("cartaMagia").innerHTML = "Magia: " +Player1Stats.card.Status.magia + "<br>";
         }
         document.getElementById("CartaP1Nome").innerHTML = Player1Stats.card.nome;
-document.getElementById("CartaP1Rari").innerHTML = Player1Stats.card.raridade;
-document.getElementById("CartaP1Desc").innerHTML = Player1Stats.card.descricao;
+        document.getElementById("CartaP1Rari").innerHTML = Player1Stats.card.raridade;
+        document.getElementById("CartaP1Desc").innerHTML = Player1Stats.card.descricao;
         Player1Stats.ultimacarta = Player1Stats.card;
         document.getElementById("debug").innerHTML = Player1Stats.ultimacarta.nome +" | "+ Player1Stats.card.nome;
     }
