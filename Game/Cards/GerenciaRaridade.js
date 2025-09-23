@@ -34,7 +34,7 @@ export function PegaCarta(debug){
     else{
         switch (nivelCarta) {
             case 'lenda':
-                return [DeckLenda[Math.floor(Math.random() * DeckLenda.length)], 'lenda'];
+                return [DeckLenda/*[0], 'lenda'];//*/[Math.floor(Math.random() * DeckLenda.length)], 'lenda'];
                 break;
 
             case 'epico':
@@ -55,22 +55,12 @@ export function PegaCarta(debug){
 export function puxaCarta(P, especial, quero){
 
     let carta = PegaCarta();
-    if (quero == true){
-        carta = [DeckFull.pandemonium, 'lenda'];
-    }
 
+    //quero = true;
     if (P == "player1"){
-        if(Player1Stats.modos.modoPan == true){
-            Player1Stats.card = DeckFull.pandemonium;
-        }
-        if (especial == "prime"){
-            Player1Stats.card = DeckFull.Sisyphus;
-            Player1Stats.modos.modoPrime = true;
-            Player1Stats.Aura = 200;
-        }
-        else if (Player1Stats.modos.modoPrime == true){
-            Player1Stats.card = DeckFull.Sisyphus;
-            Player1Stats.modos.modoPrime = false;
+        if (quero == true){
+            Player1Stats.card = DeckLenda[0];
+            SuperIntro(DeckLenda[0]);
         }
         else{
         Player1Stats.card = carta[0];
@@ -80,20 +70,23 @@ export function puxaCarta(P, especial, quero){
         }
         
         Carta(Player1Stats.card, "P1");
-        document.getElementById("CartaP1Nome").innerHTML = Player1Stats.card.nome;
-        document.getElementById("CartaP1Rari").innerHTML = Player1Stats.card.raridade;
-        document.getElementById("CartaP1Desc").innerHTML = Player1Stats.card.descricao;        
+        if (Player1Stats.card.nome == "Token/Femtanyl"){
+            document.getElementById("cartaPoder").innerHTML = "WIRES: " +Player1Stats.card.Status.poder + "<br>";
+document.getElementById("cartaDefesa").innerHTML = "ON MY: " +Player1Stats.card.Status.defesa + "<br>"
+document.getElementById("cartaMagia").innerHTML = "NECK: " +Player1Stats.card.Status.magia + "<br>";
+        }
+        else{        
         document.getElementById("cartaPoder").innerHTML = "Poder: " +Player1Stats.card.Status.poder + "<br>";
         document.getElementById("cartaDefesa").innerHTML = "Defesa: " +Player1Stats.card.Status.defesa + "<br>";
         document.getElementById("cartaMagia").innerHTML = "Magia: " +Player1Stats.card.Status.magia + "<br>";
+        }
+        document.getElementById("CartaP1Nome").innerHTML = Player1Stats.card.nome;
+document.getElementById("CartaP1Rari").innerHTML = Player1Stats.card.raridade;
+document.getElementById("CartaP1Desc").innerHTML = Player1Stats.card.descricao;
         Player1Stats.ultimacarta = Player1Stats.card;
         document.getElementById("debug").innerHTML = Player1Stats.ultimacarta.nome +" | "+ Player1Stats.card.nome;
-        if(Player1Stats.card.nome == "PANDEMONIUM"){
-            Player1Stats.modos.modoPan = true;
-        }
     }
-    if (P == "player2"){
-        
+    if (P == "player2"){ 
         Player2Stats.card = carta[0];
         Carta(Player2Stats.card, "P2");
         document.getElementById("debug").innerHTML = carta[0].Status.magia;

@@ -460,7 +460,27 @@ DeckFull.Mesmerizer = {
         magia: 90
     }
 };
+DeckFull.Femtanyl = {
+    nome:"Token/Femtanyl",
+    raridade:"SuperTrunfo",
+    descricao:"",
+    Atlas:'Assets/cards.png',
+    AudioST:'Assets/audios/SoundTracks/Token.mp3',
+    AudioType: 'audio/mp3',
+    AlturaX:672,
+    AlturaY:810,
+    CoordsX:0,
+    CoordsY:5252,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"100%",
+    Status : {
+        poder: 150,
+        defesa: 150,
+        magia: 150
+    }
+};
 export const DeckRaro = [DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
 export const DeckEpico = [DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
-export const DeckLenda = [DeckFull.pandemonium, DeckFull.EGGMAN];
+export const DeckLenda = [DeckFull.Femtanyl, DeckFull.pandemonium, DeckFull.EGGMAN];
 export const DeckPlayer = [DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];
