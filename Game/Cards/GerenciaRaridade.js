@@ -93,6 +93,9 @@ export function puxaCarta(P, especial, quero){
         document.getElementById("CartaP1Rari").innerHTML = Player1Stats.card.raridade;
         document.getElementById("CartaP1Desc").innerHTML = Player1Stats.card.descricao;
         Player1Stats.ultimacarta = Player1Stats.card;
+        if(Player1Stats.card == DeckFull.pandemonium ){
+            Player1Stats.modos.modoPan = true;
+        }
         document.getElementById("debug").innerHTML = Player1Stats.ultimacarta.nome +" | "+ Player1Stats.card.nome;
     }
     if (P == "player2"){ 
