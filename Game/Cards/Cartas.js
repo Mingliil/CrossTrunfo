@@ -1,4 +1,4 @@
-let DeckFull = [];
+export const DeckFull = [];
 
 DeckFull.Sherma = {
     nome:"Sherma",
@@ -396,9 +396,9 @@ DeckFull.Sisyphus = {
     DescY: 0,
     ImgTamanho:"80%",
     Status : {
-        poder: 150,
-        defesa: 150,
-        magia: 150
+        poder: 30,
+        defesa: 30,
+        magia: 30
     }
 };
 DeckFull.EGGMAN = {
@@ -462,5 +462,5 @@ DeckFull.Mesmerizer = {
 };
 export const DeckRaro = [DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
 export const DeckEpico = [DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
-export const DeckLenda = [DeckFull.Sisyphus, DeckFull.pandemonium, DeckFull.EGGMAN];
+export const DeckLenda = [DeckFull.pandemonium, DeckFull.EGGMAN];
 export const DeckPlayer = [DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];

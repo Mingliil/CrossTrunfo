@@ -11,7 +11,12 @@ export let estados ={
 export let Player1Stats = {
     Aura : 100,
     card: 0,
-    ultimacarta:0
+    ultimacarta:0,
+    modos : {
+        modoPan: true,
+        modoPrime: false
+    }
+    
 };
 export let Player2Stats = {
     Aura : 100,
@@ -43,7 +48,6 @@ export function Carta(carta, P){
         img.src = Player2Stats.card.Atlas;
         }
     } 
-    debug();
     const ctx = canvas.getContext('2d');
     
     img.onload = () => {
@@ -96,10 +100,6 @@ export function Carta(carta, P){
     };
 
 }
-export function debug(){
-    document.getElementById('debug').innerHTML = Player1Stats.card.nome;
-    document.getElementById('debug').innerHTML = estados.CartaRel;
-}
 window.onload = ModoRodada(1);
-window.onload = puxaCarta("player2");
-window.onload = puxaCarta("player1");
+//window.onload = puxaCarta("player2");
+//window.onload = puxaCarta("player1");

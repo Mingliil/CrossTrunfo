@@ -1,11 +1,13 @@
-import { debug, Carta } from "./Rework.js";
+import { Carta } from "./Rework.js";
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda} from "./Cartas.js";
-import { puxaCarta } from "./GerenciaRaridade.js";
+import { puxaCarta, Raridade, PegaCarta } from "./GerenciaRaridade.js";
 import { GerenciaModoAtaque } from "./GerenciaAtaque.js";
 import { ModoRodada, fim } from "./GerenciaRodada.js";
+import { Player2Stats, Player1Stats } from "./Rework.js";
+
 document.getElementById("btDebug").onclick = () =>{
-    debug();
-    puxaCarta("player1");
+    document.getElementById("btDebug").innerHTML = Raridade();
+    puxaCarta("player1", "", true);
     //Carta(DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],"P1");
 }
 document.getElementById("botao").onclick = () =>{

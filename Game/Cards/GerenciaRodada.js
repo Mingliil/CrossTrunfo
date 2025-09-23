@@ -1,4 +1,4 @@
-import { puxaCarta } from "./GerenciaRaridade.js";
+import { PegaCarta, puxaCarta } from "./GerenciaRaridade.js";
 import { estados, Carta, Player1Stats,Player2Stats } from "./Rework.js";
 
 export function ModoRodada(x, perdeu){
@@ -30,30 +30,30 @@ export function ModoRodada(x, perdeu){
 
     }
     if (x == 2){
-        const bt = document.getElementById("botao");
-        bt.setAttribute("data-bs-target","#exampleModal");
-        estados.estadoRodada = 2;
-        document.getElementById("botao").innerHTML = "main menu";
-        if(perdeu == true){
-            if (estados.rodada == 1){
-                document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADA";
-                document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADA";
+            const bt = document.getElementById("botao");
+            bt.setAttribute("data-bs-target","#exampleModal");
+            estados.estadoRodada = 2;
+            document.getElementById("botao").innerHTML = "main menu";
+            if(perdeu == true){
+                if (estados.rodada == 1){
+                    document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADA";
+                    document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADA";
+                }
+                else{
+                document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADAS";
+                document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADAS";
+                }
             }
             else{
-            document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADAS";
-            document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADAS";
+                if (estados.rodada == 1){
+                    document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADA";
+                    document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADA";
+                }
+                else{
+                document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
+                document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
+                }
             }
-        }
-        else{
-            if (estados.rodada == 1){
-                document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADA";
-                document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADA";
-            }
-            else{
-            document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
-            document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
-            }
-        }
     }
 
 }

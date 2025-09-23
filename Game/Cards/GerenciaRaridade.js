@@ -1,4 +1,4 @@
-import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda} from "./Cartas.js";
+import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull} from "./Cartas.js";
 import { Player1Stats, Player2Stats } from "./Rework.js";
 import { Carta } from "./Rework.js";
 import { SuperIntro } from "./GerenciaAudio.js";
@@ -7,69 +7,96 @@ import { SuperIntro } from "./GerenciaAudio.js";
     o GerenciaRaridade é aonde as cartas são puxadas e aonde vai ser como a raridade será gerenciada, ou será que eu deveria
     fazer o puxaCarta em outro lugar?
 */
-export function puxaCarta(P){
-    let comum = Math.floor(Math.random() * DeckPlayer.length);
+
+export function Raridade(){
     let raro = Math.floor(Math.random() * 24);
     let epico = Math.floor(Math.random() * 74);
     let lenda = Math.floor(Math.random() * 100);
+    if (lenda == 0){
+        return "lenda";
+    }
+    else if(epico == 0){
+        return "epico";
+    }
+    else if(raro == 0){
+        return "raro";
+    }
+    else{
+        return "comum";
+    }
+}
+
+export function PegaCarta(debug){
+    let nivelCarta = Raridade();
+    if (debug == true){
+        nivelCarta = 'lenda';
+    }
+    else{
+        switch (nivelCarta) {
+            case 'lenda':
+                return [DeckLenda[Math.floor(Math.random() * DeckLenda.length)], 'lenda'];
+                break;
+
+            case 'epico':
+                return [DeckEpico[Math.floor(Math.random() * DeckEpico.length)],'epico'];
+                break;
+
+            case 'raro':
+                return [DeckRaro[Math.floor(Math.random() * DeckRaro.length)],'raro'];
+                break;
+
+            default:
+                return [DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],'comum'];
+                break;
+        }
+    }
+}
+
+export function puxaCarta(P, especial, quero){
+
+    let carta = PegaCarta();
+    if (quero == true){
+        carta = [DeckFull.pandemonium, 'lenda'];
+    }
+
     if (P == "player1"){
-        let c = 0;
-        if (Player1Stats.ultimaCarta == DeckLenda[1]){
+        if(Player1Stats.modos.modoPan == true){
+            Player1Stats.card = DeckFull.pandemonium;
         }
-        else if (lenda == 0){
-            c = 0;
-            Player1Stats.card = DeckLenda[Math.floor(Math.random() * DeckLenda.length)];
-            Carta(Player1Stats.card, "P1");
-            if(Player1Stats.ultimaCarta != Player1Stats.card){
-            SuperIntro(Player1Stats.card);
-            }
+        if (especial == "prime"){
+            Player1Stats.card = DeckFull.Sisyphus;
+            Player1Stats.modos.modoPrime = true;
+            Player1Stats.Aura = 200;
         }
-        else if (epico == 0){
-            Player1Stats.card = DeckEpico[Math.floor(Math.random() * DeckEpico.length)];
-            Carta(Player1Stats.card, "P1");
-        }
-        else if (raro == 0){
-            Player1Stats.card =  DeckRaro[Math.floor(Math.random() * DeckRaro.length)];
-            Carta(Player1Stats.card, "P1");
+        else if (Player1Stats.modos.modoPrime == true){
+            Player1Stats.card = DeckFull.Sisyphus;
+            Player1Stats.modos.modoPrime = false;
         }
         else{
-            c = comum;
-            Player1Stats.card = DeckPlayer[c];
-            Carta(Player1Stats.card, "P1");
+        Player1Stats.card = carta[0];
         }
-        if (Player1Stats.card.nome == "Gaster"
-        ){  
-        let cura = Math.floor(Math.random() * 10);
-        if(cura == 0){
-             Player1Stats.card.Status.poder -= Math.floor(Math.random() * 101);
+        if (carta[1] == 'lenda' && Player1Stats.ultimacarta.nome != Player1Stats.card.nome){
+            SuperIntro(carta[0]);
         }
-        else{
-             Player1Stats.card.Status.poder = Math.floor(Math.random() * 101);
-        }
-        if(cura == 6){
-             Player1Stats.card.Status.defesa -= Math.floor(Math.random() * 101);
-        }
-        else{
-             Player1Stats.card.Status.defesa = Math.floor(Math.random() * 101);
-        }
-        if(cura == 9){
-             Player1Stats.card.Status.magia -= Math.floor(Math.random() * 101);
-        }
-        else{
-             Player1Stats.card.Status.magia -= Math.floor(Math.random() * 101);
-        }
-        }
+        
+        Carta(Player1Stats.card, "P1");
         document.getElementById("CartaP1Nome").innerHTML = Player1Stats.card.nome;
         document.getElementById("CartaP1Rari").innerHTML = Player1Stats.card.raridade;
         document.getElementById("CartaP1Desc").innerHTML = Player1Stats.card.descricao;        
         document.getElementById("cartaPoder").innerHTML = "Poder: " +Player1Stats.card.Status.poder + "<br>";
         document.getElementById("cartaDefesa").innerHTML = "Defesa: " +Player1Stats.card.Status.defesa + "<br>";
         document.getElementById("cartaMagia").innerHTML = "Magia: " +Player1Stats.card.Status.magia + "<br>";
-    Player1Stats.ultimaCarta = Player1Stats.card;
+        Player1Stats.ultimacarta = Player1Stats.card;
+        document.getElementById("debug").innerHTML = Player1Stats.ultimacarta.nome +" | "+ Player1Stats.card.nome;
+        if(Player1Stats.card.nome == "PANDEMONIUM"){
+            Player1Stats.modos.modoPan = true;
+        }
     }
     if (P == "player2"){
-        let c2 = comum;
-        Player2Stats.card = DeckPlayer[c2];
+        
+        Player2Stats.card = carta[0];
         Carta(Player2Stats.card, "P2");
+        document.getElementById("debug").innerHTML = carta[0].Status.magia;
     }
+    document.getElementById("debug").innerHTML = Player1Stats.modos.modoPan;
 }
