@@ -8,6 +8,7 @@ export let estados ={
     estaAtacando : true, // se estaAtacando = true, esconde carta do inimigo, senão mostra carta
     CartaRel : 1 //0 = escondido - 1 =revelado
 }
+
 export let Player1Stats = {
     Aura : 100,
     card: 0,
@@ -16,12 +17,14 @@ export let Player1Stats = {
         modoPan: false,
         modoPrime: false,
         curaDano: true,
+        curaTempo: 5,
         quero: false
     }
     
 };
+
 export let Player2Stats = {
-    Aura : 100,
+    Aura : 100000,
     card: 0,
     ultimacarta:0
 };

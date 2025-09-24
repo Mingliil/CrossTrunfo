@@ -97,12 +97,14 @@ export function puxaCarta(P, especial){
         if(Player1Stats.card == DeckFull.pandemonium ){
             Player1Stats.modos.modoPan = true;
         }
+        
         document.getElementById("debug").innerHTML = Player1Stats.ultimacarta.nome +" | "+ Player1Stats.card.nome;
+        document.getElementById("debug").innerHTML = Player1Stats.modos.curaDano;
     }
     if (P == "player2"){ 
         Player2Stats.card = carta[0];
         Carta(Player2Stats.card, "P2");
         document.getElementById("debug").innerHTML = carta[0].Status.magia;
     }
-    document.getElementById("debug").innerHTML = Player1Stats.modos.modoPan;
+    document.getElementById("debug").innerHTML = Player1Stats.modos.curaDano + " | "+Player1Stats.modos.curaTempo;
 }
