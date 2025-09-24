@@ -1,6 +1,6 @@
 import { PegaCarta, puxaCarta } from "./GerenciaRaridade.js";
 import { estados, Carta, Player1Stats,Player2Stats } from "./Rework.js";
-
+import { EstiloRaro } from "./GerenciaRaridade.js";
 export function ModoRodada(x, perdeu){
     /*
         Estados do x
@@ -9,6 +9,7 @@ export function ModoRodada(x, perdeu){
         x = 2: fim
     */
     if (x == 1){
+        
         estados.CartaRel--;
         puxaCarta("player1");
         estados.rodada++;
@@ -19,15 +20,18 @@ export function ModoRodada(x, perdeu){
         document.getElementById("CartaP2Desc").innerHTML = "";
         document.getElementById("botao").innerHTML = "ataque";
         puxaCarta("player2");
+        Carta(Player2Stats.card, "P2");
+        EstiloRaro(Player2Stats.card.raridade, "P2");
     }
-    else{
+    else if (x==0){
         estados.CartaRel++;
         Carta(Player2Stats.card, "P2");
         document.getElementById("CartaP2Nome").innerHTML = Player2Stats.card.nome;
         document.getElementById("CartaP2Rari").innerHTML = Player2Stats.card.raridade;
-        document.getElementById("CartaP2Desc").innerHTML = Player2Stats.card.descricao;  
+        document.getElementById("CartaP2Desc").innerHTML = Player2Stats.card.descricao;
         document.getElementById("botao").innerHTML = "proxima rodada";
-
+        estados.estadoRodada = 0;
+        EstiloRaro(Player2Stats.card.raridade, "P2");
     }
     if (x == 2){
             const bt = document.getElementById("botao");

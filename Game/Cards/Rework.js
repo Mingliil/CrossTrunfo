@@ -5,6 +5,7 @@ import { ModoRodada } from "./GerenciaRodada.js";
 export let estados ={
     estadoRodada:0,
     rodada : 0,
+    estiloP2: false,
     estaAtacando : true, // se estaAtacando = true, esconde carta do inimigo, senão mostra carta
     CartaRel : 1 //0 = escondido - 1 =revelado
 }

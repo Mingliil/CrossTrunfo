@@ -2,7 +2,7 @@ export const DeckFull = [];
 
 DeckFull.Sherma = {
     nome:"Sherma",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:387,
@@ -20,7 +20,7 @@ DeckFull.Sherma = {
 }
 DeckFull.Goku = {
     nome:"Goku",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:387,
@@ -38,7 +38,7 @@ DeckFull.Goku = {
 }
 DeckFull.Ghost = {
     nome:"O receptáculo",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:382,
@@ -57,7 +57,7 @@ DeckFull.Ghost = {
 };
 DeckFull.Kerbeus = {
     nome:"Kerbeus",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"A DEFESA é o melhor ataque.",
     Atlas:'Assets/cards.png',
     AlturaX:382,
@@ -75,7 +75,7 @@ DeckFull.Kerbeus = {
 };
 DeckFull.Chara = {
     nome:"Chara",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"A primeira criança que caiu no dominio dos monstros",
     Atlas:'Assets/cards.png',
     AlturaX:382,
@@ -93,7 +93,7 @@ DeckFull.Chara = {
 }
 DeckFull.CJ = {
     nome:"Carl Johnson",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:382,
@@ -111,7 +111,7 @@ DeckFull.CJ = {
 }
 DeckFull.Morshu = {
     nome:"Morshu",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -129,7 +129,7 @@ DeckFull.Morshu = {
 };
 DeckFull.Superman = {
     nome:"Superman",
-    raridade:"Épico",
+    raridade:"ÉPICO",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -147,7 +147,7 @@ DeckFull.Superman = {
 };
 DeckFull.SOAD = {
     nome:"SOAD",
-    raridade:"raro",
+    raridade:"RARO",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:442,
@@ -165,7 +165,7 @@ DeckFull.SOAD = {
 };
 DeckFull.Batman = {
     nome:"Batman",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:400,
@@ -183,7 +183,7 @@ DeckFull.Batman = {
 };
 DeckFull.EXE = {
     nome:"Sonic Exe",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:400,
@@ -201,7 +201,7 @@ DeckFull.EXE = {
 };
 DeckFull.LordX = {
     nome:"LordX",
-    raridade:"raro",
+    raridade:"RARO",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:400,
@@ -219,7 +219,7 @@ DeckFull.LordX = {
 };
 DeckFull.Ragnaruk  = {
     nome:"Ragnaruk ",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"Vença com sua RESISTÊNCIA.",
     Atlas:'Assets/cards.png',
     AlturaX:400,
@@ -237,7 +237,7 @@ DeckFull.Ragnaruk  = {
 };
 DeckFull.GlassAnimals = {
     nome:"TOSoTP",
-    raridade:"raro",
+    raridade:"RARO",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -255,7 +255,7 @@ DeckFull.GlassAnimals = {
 };
 DeckFull.Ubi = {
     nome:"Ubirajara",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -273,7 +273,7 @@ DeckFull.Ubi = {
 };
 DeckFull.Spriggan = {
     nome:"Spriggan",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"Que tal um EQUILÍBRIO de tudo?",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -291,7 +291,7 @@ DeckFull.Spriggan = {
 };
 DeckFull.Shadow = {
     nome:"Shadow",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"A forma de vida perfeita, e extremamente edgy",
     Atlas:'Assets/cards.png',
     AlturaX:375,
@@ -309,7 +309,7 @@ DeckFull.Shadow = {
 };
 DeckFull.Valkyrie = {
     nome:"Valkyrie",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"ATAQUE sem parar!",
     Atlas:'Assets/cards.png',
     podeCurar: true,
@@ -328,7 +328,7 @@ DeckFull.Valkyrie = {
 };
 DeckFull.Gaster = {
     nome:"Gaster",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:373,
@@ -348,7 +348,7 @@ DeckFull.Gaster = {
 
 DeckFull.Circus = {
     nome:"TADC",
-    raridade:"Épico",
+    raridade:"ÉPICO",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:528,
@@ -366,12 +366,13 @@ DeckFull.Circus = {
 };
 DeckFull.YAAI = {
     nome:"N0li YAAI",
-    raridade:"Épico",
+    raridade:"ÉPICO",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:598,
-    AlturaY:717,
+    AlturaY:570,
     CoordsX:0,
+    podeCurar: true,
     CoordsY:3983,
     DescX: 1,
     DescY: 0,
@@ -447,7 +448,7 @@ DeckFull.pandemonium = {
 };
 DeckFull.Mesmerizer = {
     nome:"Mesmerizer",
-    raridade: "Épico",
+    raridade: "ÉPICO",
     descricao:"Não é incrivel elas cantando hipnotizadas pelas cores sem saber o que está acontecendo?",
     Atlas:'Assets/cards.png',
     AlturaX:597,
@@ -485,7 +486,7 @@ DeckFull.Femtanyl = {
 };
 DeckFull.Silver = {
     nome:"Silver",
-    raridade:"raro",
+    raridade:"RARO",
     descricao:"",
     Atlas:'Assets/cards.png',
     AlturaX:375,
@@ -503,7 +504,7 @@ DeckFull.Silver = {
 };
 DeckFull.Kris = {
     nome:"Kris Dreemurr",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"VO<b>CÊ POSSU</b>I A <b>[[LUZ.]]</b>.<br> ENTÃO <b>PORQ</b>UE NÃO MOST<b>RA </b> ISSO A [<b>[[\"NÓ</b>S\"]]]?</b>?<b>??</b>?",
     Atlas:'Assets/cards.png',
     AlturaX:380,
@@ -521,7 +522,7 @@ DeckFull.Kris = {
 };
 DeckFull.Susie = {
     nome:"Susie",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"A Monstra que será a Heroí da Luz, como profetizada na lenda de <span style='color:red;'><b>DELTARUNE</b></span>.",
     Atlas:'Assets/cards.png',
     AlturaX:380,
@@ -540,7 +541,7 @@ DeckFull.Susie = {
 };
 DeckFull.Frisk = {
     nome:"Frisk",
-    raridade:"comum",
+    raridade:"COMUM",
     descricao:"<b>-_-",
     Atlas:'Assets/cards.png',
     AlturaX:382,

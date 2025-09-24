@@ -1,5 +1,5 @@
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull} from "./Cartas.js";
-import { Player1Stats, Player2Stats } from "./Rework.js";
+import { Player1Stats, Player2Stats, estados } from "./Rework.js";
 import { Carta } from "./Rework.js";
 import { SuperIntro } from "./GerenciaAudio.js";
 import { GasterRandom } from "./GerenciaEspeciais.js";
@@ -8,22 +8,112 @@ import { GasterRandom } from "./GerenciaEspeciais.js";
     o GerenciaRaridade é aonde as cartas são puxadas e aonde vai ser como a raridade será gerenciada, ou será que eu deveria
     fazer o puxaCarta em outro lugar?
 */
+export function EstiloRaro(x, p){
+    const P1Desc = document.getElementById("CartaP1Rari");
+    const P2Desc = document.getElementById("CartaP2Rari");
+    switch (x) {
+        case '???':
 
+            break;
+        case 'SuperTrunfo':
+            if(p == "P2"){
+                if(estados.estiloP2== false){
+                    P2Desc.classList.remove("border-success");
+                    P2Desc.classList.remove("border-2");
+                    P2Desc.classList.remove("border");
+                    P2Desc.classList.remove("bg-light");
+                    P2Desc.classList.remove("text-dark");
+                    P2Desc.classList.remove("rounded");
+                }
+                else if (estados.estiloP2== true){
+                    P2Desc.classList.add("border-success");
+                    P2Desc.classList.add("border-2");
+                    P2Desc.classList.add("border");
+                    P2Desc.classList.add("bg-light");
+                    P2Desc.classList.add("text-dark");
+                    P2Desc.classList.add("rounded");
+                }
+            }
+            break;
+        case 'ÉPICO':
+            if(p == "P2"){
+                if(estados.estiloP2== false){
+                    P2Desc.classList.remove("border-warning");
+                    P2Desc.classList.remove("border-2");
+                    P2Desc.classList.remove("border");
+                    P2Desc.classList.remove("bg-danger");
+                    P2Desc.classList.remove("text-white");
+                    P2Desc.classList.remove("rounded");
+                }
+                else if (estados.estiloP2== true){
+                    P2Desc.classList.add("border-warning");
+                    P2Desc.classList.add("border-2");
+                    P2Desc.classList.add("border");
+                    P2Desc.classList.add("bg-danger");
+                    P2Desc.classList.add("text-white");
+                    P2Desc.classList.add("rounded");
+                }
+            }
+            break;
+        case 'RARO':
+            if(p == "P2"){
+                if(estados.estiloP2== false){
+                    P2Desc.classList.remove("border-info");
+                    P2Desc.classList.remove("border-2");
+                    P2Desc.classList.remove("border");
+                    P2Desc.classList.remove("bg-primary");
+                    P2Desc.classList.remove("text-white");
+                    P2Desc.classList.remove("rounded");
+                }
+                else if (estados.estiloP2== true){
+                    P2Desc.classList.add("border-info");
+                    P2Desc.classList.add("border-2");
+                    P2Desc.classList.add("border");
+                    P2Desc.classList.add("bg-primary");
+                    P2Desc.classList.add("text-white");
+                    P2Desc.classList.add("rounded");
+                }
+            }
+            break;
+        case 'COMUM':
+            if(p == "P2"){
+                if(estados.estiloP2== false){
+                    P2Desc.classList.remove("border-light");
+                    P2Desc.classList.remove("border-2");
+                    P2Desc.classList.remove("border");
+                    P2Desc.classList.remove("bg-secondary");
+                    P2Desc.classList.remove("text-white");
+                    P2Desc.classList.remove("rounded");
+                }
+                else if (estados.estiloP2== true){
+                    P2Desc.classList.add("border-light");
+                    P2Desc.classList.add("border-2");
+                    P2Desc.classList.add("border");
+                    P2Desc.classList.add("bg-secondary");
+                    P2Desc.classList.add("text-white");
+                    P2Desc.classList.add("rounded");
+                }
+            }
+            break;
+        default:
+        break;
+    }
+}
 export function Raridade(){
-    let raro = Math.floor(Math.random() * 24);
-    let epico = Math.floor(Math.random() * 74);
+    let raro = Math.floor(Math.random() * 20);
+    let epico = Math.floor(Math.random() * 60);
     let lenda = Math.floor(Math.random() * 100);
     if (lenda == 0){
-        return "lenda";
+        return 'lenda';
     }
     else if(epico == 0){
-        return "epico";
+        return 'epico';
     }
     else if(raro == 0){
-        return "raro";
+        return 'raro';
     }
     else{
-        return "comum";
+        return 'comum';
     }
 }
 
@@ -59,7 +149,7 @@ export function puxaCarta(P, especial){
     //carta[0] = DeckFull.Gaster;
     //quero = true;
     if (P == "player1"){
-        //carta[0] = DeckFull.Gaster;
+        //carta[0] = DeckFull.YAAI;
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
@@ -105,6 +195,7 @@ export function puxaCarta(P, especial){
         
         document.getElementById("debug").innerHTML = Player1Stats.ultimacarta.nome +" | "+ Player1Stats.card.nome;
         document.getElementById("debug").innerHTML = Player1Stats.modos.curaDano;
+        EstiloRaro(Carta[1]);
     }
     if (P == "player2"){ 
         if (carta[0].nome == "Gaster"){
@@ -113,6 +204,8 @@ export function puxaCarta(P, especial){
         Player2Stats.card = carta[0];
         Carta(Player2Stats.card, "P2");
         document.getElementById("debug").innerHTML = carta[0].Status.magia;
+        
     }
     document.getElementById("debug").innerHTML = Player1Stats.modos.curaDano + " | "+Player1Stats.modos.curaTempo;
+    
 }
