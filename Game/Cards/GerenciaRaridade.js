@@ -2,6 +2,7 @@ import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull} from "./Cartas.js
 import { Player1Stats, Player2Stats } from "./Rework.js";
 import { Carta } from "./Rework.js";
 import { SuperIntro } from "./GerenciaAudio.js";
+import { GasterRandom } from "./GerenciaEspeciais.js";
 /*
     como apemas EU faço as coisas aqui, ao menos no codigo, vou deixar certas "cartas" para eu me lembrar o que fazer
     o GerenciaRaridade é aonde as cartas são puxadas e aonde vai ser como a raridade será gerenciada, ou será que eu deveria
@@ -55,9 +56,13 @@ export function PegaCarta(debug){
 export function puxaCarta(P, especial){
 
     let carta = PegaCarta();
-
+    //carta[0] = DeckFull.Gaster;
     //quero = true;
     if (P == "player1"){
+        carta[0] = DeckFull.Gaster;
+        if (carta[0].nome == "Gaster"){
+            GasterRandom();
+        }
         if (Player1Stats.modos.quero == true){
             carta[0] = DeckLenda[0];
             carta[1] = 'lenda';
@@ -81,9 +86,9 @@ export function puxaCarta(P, especial){
         
         Carta(Player1Stats.card, "P1");
         if (Player1Stats.card.nome == "Token/Femtanyl"){
-            document.getElementById("cartaPoder").innerHTML = "WIRES: " +Player1Stats.card.Status.poder + "<br>";
-            document.getElementById("cartaDefesa").innerHTML = "ON MY: " +Player1Stats.card.Status.defesa + "<br>"
-            document.getElementById("cartaMagia").innerHTML = "NECK: " +Player1Stats.card.Status.magia + "<br>";
+            document.getElementById("cartaPoder").innerHTML = "WIRES: " +1999 + "<br>";
+            document.getElementById("cartaDefesa").innerHTML = "ON MY: " + 1999 + "<br>"
+            document.getElementById("cartaMagia").innerHTML = "NECK: " + 1999 + "<br>";
         }
         else{        
             document.getElementById("cartaPoder").innerHTML = "Poder: " +Player1Stats.card.Status.poder + "<br>";
@@ -102,6 +107,9 @@ export function puxaCarta(P, especial){
         document.getElementById("debug").innerHTML = Player1Stats.modos.curaDano;
     }
     if (P == "player2"){ 
+        if (carta[0].nome == "Gaster"){
+            GasterRandom();
+        }
         Player2Stats.card = carta[0];
         Carta(Player2Stats.card, "P2");
         document.getElementById("debug").innerHTML = carta[0].Status.magia;

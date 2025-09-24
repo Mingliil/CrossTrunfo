@@ -42,14 +42,21 @@ export function GerenciaModoAtaque(P){
         else{
             if (ataqueResultado >0){
                 Player2Stats.Aura -= ataqueResultado;
-                if (Player1Stats.modos.curaDano == true){
+                if (P1Card.podeCurar == true){
+                    if (P1Card.nome == "Gaster"){
+                        Player1Stats.Aura +=  Math.floor(ataqueResultado/2);
+                    }
+                    Player1Stats.Aura +=  Math.floor(ataqueResultado/3);
+                }
+                else if (Player1Stats.modos.curaDano == true){
                     Player1Stats.Aura +=  Math.floor(ataqueResultado/3);
                     Player1Stats.modos.curaTempo --;
-                    if (Player1Stats.modos.curaTempo == 0){
+                    if (Player1Stats.modos.curaTempo <= 0){
                         Player1Stats.modos.curaDano = false;
                         Player1Stats.modos.curaTempo = 5;
                     }
                 }
+
                 if (Player2Stats.Aura <= 0){ //vitoria
                 document.getElementById("auraP2").innerHTML = 0;
                 ModoRodada(2, false);
@@ -60,9 +67,13 @@ export function GerenciaModoAtaque(P){
                 }
             }
             else if (ataqueResultado <0){
-                Player1Stats.Aura -= -ataqueResultado;
-
-
+                if (P2Card.podeCurar == true){
+                    if (P2Card.nome == "Gaster"){
+                        Player1Stats.Aura +=  Math.floor(ataqueResultado/2);
+                    }
+                    Player2Stats.Aura -= Math.floor(ataqueResultado/3);
+                }
+                    Player1Stats.Aura -= -ataqueResultado;
                 if (Player1Stats.Aura<=0){ //derrota
                     document.getElementById("auraP1").innerHTML = 0;
                     if (Player1Stats.modos.modoPan == true){

@@ -16,7 +16,7 @@ export let Player1Stats = {
     modos : {
         modoPan: false,
         modoPrime: false,
-        curaDano: true,
+        curaDano: false,
         curaTempo: 5,
         quero: false
     }
@@ -24,7 +24,7 @@ export let Player1Stats = {
 };
 
 export let Player2Stats = {
-    Aura : 100000,
+    Aura : 100,
     card: 0,
     ultimacarta:0
 };

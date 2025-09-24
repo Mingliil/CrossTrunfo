@@ -1,5 +1,30 @@
+import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull} from "./Cartas.js";
+
 /*
     Aqui vai ser aonde as habilidades especiais irão interagir com
     as cartas e os ataques
 
 */
+export function GasterRandom(){
+    let Neg = Math.floor(Math.random() * 2);
+    if (Neg == 0){
+        DeckFull.Gaster.Status.poder = Math.floor(Math.random() * 150);
+    }
+    else{
+        DeckFull.Gaster.Status.poder = -Math.floor(Math.random() * 150);
+    }
+    Neg = Math.floor(Math.random() * 2);
+    if (Neg == 0){
+        DeckFull.Gaster.Status.defesa = Math.floor(Math.random() * 150);
+    }
+    else{
+        DeckFull.Gaster.Status.defesa = -Math.floor(Math.random() * 150);
+    }
+    Neg = Math.floor(Math.random() * 2);
+    if (Neg == 0){
+        DeckFull.Gaster.Status.magia = Math.floor(Math.random() * 150);
+    }
+    else{
+        DeckFull.Gaster.Status.magia = -Math.floor(Math.random() * 150);
+    }
+}

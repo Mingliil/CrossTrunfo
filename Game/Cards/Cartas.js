@@ -43,6 +43,7 @@ DeckFull.Ghost = {
     Atlas:'Assets/cards.png',
     AlturaX:382,
     AlturaY:524,
+    podeCurar: true,
     CoordsX:1619,
     CoordsY:1620,
     DescX: 1,
@@ -311,6 +312,7 @@ DeckFull.Valkyrie = {
     raridade:"comum",
     descricao:"ATAQUE sem parar!",
     Atlas:'Assets/cards.png',
+    podeCurar: true,
     AlturaX:375,
     AlturaY:529,
     CoordsX:1630,
@@ -331,15 +333,16 @@ DeckFull.Gaster = {
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
+    podeCurar: true,
     CoordsX:0,
     CoordsY:2701,
     DescX: 1,
     DescY: 0,
     ImgTamanho:"50%",
     Status : {
-        poder: Math.floor(Math.random() * 100),
-        defesa: Math.floor(Math.random() * 100),
-        magia: Math.floor(Math.random() * 100),
+        poder: 0,//Math.floor(Math.random() * 100),
+        defesa: 0,//Math.floor(Math.random() * 100),
+        magia: 0//Math.floor(Math.random() * 100),
     }
 };
 
@@ -480,7 +483,81 @@ DeckFull.Femtanyl = {
         magia: 150
     }
 };
-export const DeckRaro = [DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
+DeckFull.Silver = {
+    nome:"Silver",
+    raridade:"raro",
+    descricao:"",
+    Atlas:'Assets/cards.png',
+    AlturaX:375,
+    AlturaY:527,
+    CoordsX:2038,
+    CoordsY:2155,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"50%",
+    Status : {
+        poder: 80,
+        defesa: 20,
+        magia: 30
+    }
+};
+DeckFull.Kris = {
+    nome:"Kris Dreemurr",
+    raridade:"comum",
+    descricao:"VO<b>CÊ POSSU</b>I A <b>[[LUZ.]]</b>.<br> ENTÃO <b>PORQ</b>UE NÃO MOST<b>RA </b> ISSO A [<b>[[\"NÓ</b>S\"]]]?</b>?<b>??</b>?",
+    Atlas:'Assets/cards.png',
+    AlturaX:380,
+    AlturaY:527,
+    CoordsX:2421,
+    CoordsY:2169,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"50%",
+    Status : {
+        poder: 70,
+        defesa: 20,
+        magia: 10
+    }
+};
+DeckFull.Susie = {
+    nome:"Susie",
+    raridade:"comum",
+    descricao:"A Monstra que será a Heroí da Luz, como profetizada na lenda de <span style='color:red;'><b>DELTARUNE</b></span>.",
+    Atlas:'Assets/cards.png',
+    AlturaX:380,
+    AlturaY:527,
+    CoordsX:2070,
+    CoordsY:1060,
+    podeCurar: true,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"50%",
+    Status : {
+        poder: 60,
+        defesa: 0,
+        magia: 40
+    }
+};
+DeckFull.Frisk = {
+    nome:"Frisk",
+    raridade:"comum",
+    descricao:"<b>-_-",
+    Atlas:'Assets/cards.png',
+    AlturaX:382,
+    AlturaY:534,
+    CoordsX:2430,
+    CoordsY:1620,
+    podeCurar: true,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"70%",
+    Status : {
+        poder: 0,
+        defesa: 60,
+        magia: 40
+    }
+};
+export const DeckRaro = [DeckFull.Silver, DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
 export const DeckEpico = [DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
 export const DeckLenda = [DeckFull.Femtanyl, DeckFull.pandemonium, DeckFull.EGGMAN];
-export const DeckPlayer = [DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];
+export const DeckPlayer = [DeckFull.Frisk, DeckFull.Susie, DeckFull.Kris, DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];
