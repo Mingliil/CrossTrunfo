@@ -59,7 +59,7 @@ export function puxaCarta(P, especial){
     //carta[0] = DeckFull.Gaster;
     //quero = true;
     if (P == "player1"){
-        carta[0] = DeckFull.Gaster;
+        //carta[0] = DeckFull.Gaster;
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
