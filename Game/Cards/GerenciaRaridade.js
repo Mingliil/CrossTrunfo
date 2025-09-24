@@ -103,6 +103,7 @@ export function Raridade(){
     let raro = Math.floor(Math.random() * 20);
     let epico = Math.floor(Math.random() * 60);
     let lenda = Math.floor(Math.random() * 100);
+    //lenda = 0;
     if (lenda == 0){
         return 'lenda';
     }
