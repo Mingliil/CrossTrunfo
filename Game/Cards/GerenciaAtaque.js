@@ -41,7 +41,12 @@ export function GerenciaModoAtaque(P){
         }
         else{
             if (ataqueResultado >0){
-                Player2Stats.Aura -= ataqueResultado;
+                if (Player1Stats.modos.modoPrime == true){
+                    Player2Stats.Aura -=  ataqueP1+ataqueP2
+                }
+                else{
+                    Player2Stats.Aura -= ataqueResultado;
+                }
                 if (P1Card.podeCurar == true){
                     if (P1Card.nome == "Gaster"){
                         Player1Stats.Aura +=  Math.floor(ataqueResultado/2);
@@ -67,13 +72,18 @@ export function GerenciaModoAtaque(P){
                 }
             }
             else if (ataqueResultado <0){
+                if (Player1Stats.modos.modoPrime == true){
+                    Player2Stats.Aura -=  ataqueP1+ataqueP2
+                }
+                else{
+                    Player1Stats.Aura -= -ataqueResultado;
+                }
                 if (P2Card.podeCurar == true){
                     if (P2Card.nome == "Gaster"){
                         Player1Stats.Aura +=  Math.floor(ataqueResultado/2);
                     }
                     Player2Stats.Aura -= Math.floor(ataqueResultado/3);
                 }
-                    Player1Stats.Aura -= -ataqueResultado;
                 if (Player1Stats.Aura<=0){ //derrota
                     document.getElementById("auraP1").innerHTML = 0;
                     if (Player1Stats.modos.modoPan == true){

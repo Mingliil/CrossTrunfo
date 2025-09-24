@@ -11,6 +11,8 @@ import { GasterRandom } from "./GerenciaEspeciais.js";
 export function EstiloRaro(x, p){
     const P1Desc = document.getElementById("CartaP1Rari");
     const P2Desc = document.getElementById("CartaP2Rari");
+    P2Desc.classList.remove("border-success");
+    P1Desc.classList.remove("border-2");
     switch (x) {
         case '???':
 
@@ -34,16 +36,21 @@ export function EstiloRaro(x, p){
                     P2Desc.classList.add("rounded");
                 }
             }
+            else{
+                P1Desc.classList.remove(...P1Desc.classList);
+                P1Desc.classList.add("border-success");
+                P1Desc.classList.add("border-2");
+                P1Desc.classList.add("border");
+                P1Desc.classList.add("bg-warning");
+                P1Desc.classList.add("text-dark");
+                P1Desc.classList.add("strong");
+                P1Desc.classList.add("rounded");
+            }
             break;
         case 'ÉPICO':
             if(p == "P2"){
                 if(estados.estiloP2== false){
-                    P2Desc.classList.remove("border-warning");
-                    P2Desc.classList.remove("border-2");
-                    P2Desc.classList.remove("border");
-                    P2Desc.classList.remove("bg-danger");
-                    P2Desc.classList.remove("text-white");
-                    P2Desc.classList.remove("rounded");
+                    P2Desc.classList.remove(...P2Desc.classList);
                 }
                 else if (estados.estiloP2== true){
                     P2Desc.classList.add("border-warning");
@@ -54,16 +61,20 @@ export function EstiloRaro(x, p){
                     P2Desc.classList.add("rounded");
                 }
             }
+            else{
+                P1Desc.classList.remove(...P1Desc.classList);
+                P1Desc.classList.add("border-warning");
+                P1Desc.classList.add("border-2");
+                P1Desc.classList.add("border");
+                P1Desc.classList.add("bg-danger");
+                P1Desc.classList.add("text-white");
+                P1Desc.classList.add("rounded");
+            }
             break;
         case 'RARO':
             if(p == "P2"){
                 if(estados.estiloP2== false){
-                    P2Desc.classList.remove("border-info");
-                    P2Desc.classList.remove("border-2");
-                    P2Desc.classList.remove("border");
-                    P2Desc.classList.remove("bg-primary");
-                    P2Desc.classList.remove("text-white");
-                    P2Desc.classList.remove("rounded");
+                    P2Desc.classList.remove(...P2Desc.classList);
                 }
                 else if (estados.estiloP2== true){
                     P2Desc.classList.add("border-info");
@@ -74,16 +85,20 @@ export function EstiloRaro(x, p){
                     P2Desc.classList.add("rounded");
                 }
             }
+            else{
+                P1Desc.classList.remove(...P1Desc.classList);
+                P1Desc.classList.add("border-info");
+                P1Desc.classList.add("border-2");
+                P1Desc.classList.add("border");
+                P1Desc.classList.add("bg-primary");
+                P1Desc.classList.add("text-white");
+                P1Desc.classList.add("rounded");
+            }
             break;
         case 'COMUM':
             if(p == "P2"){
                 if(estados.estiloP2== false){
-                    P2Desc.classList.remove("border-light");
-                    P2Desc.classList.remove("border-2");
-                    P2Desc.classList.remove("border");
-                    P2Desc.classList.remove("bg-secondary");
-                    P2Desc.classList.remove("text-white");
-                    P2Desc.classList.remove("rounded");
+                    P2Desc.classList.remove(...P2Desc.classList);
                 }
                 else if (estados.estiloP2== true){
                     P2Desc.classList.add("border-light");
@@ -93,6 +108,15 @@ export function EstiloRaro(x, p){
                     P2Desc.classList.add("text-white");
                     P2Desc.classList.add("rounded");
                 }
+            }
+            else{
+                P1Desc.classList.remove(...P1Desc.classList);
+                P1Desc.classList.add("border-light");
+                P1Desc.classList.add("border-2");
+                P1Desc.classList.add("border");
+                P1Desc.classList.add("bg-secondary");
+                P1Desc.classList.add("text-white");
+                P1Desc.classList.add("rounded");
             }
             break;
         default:
@@ -155,7 +179,7 @@ export function puxaCarta(P, especial){
             GasterRandom();
         }
         if (Player1Stats.modos.quero == true){
-            carta[0] = DeckLenda[0];
+            carta[0] = DeckLenda[1];
             carta[1] = 'lenda';
             Player1Stats.modos.quero = false;
         }
@@ -168,7 +192,6 @@ export function puxaCarta(P, especial){
             carta[1] = 'lenda';
             Player1Stats.Aura = 200;
             document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
-            Player1Stats.modos.modoPrime == false;
         }
         Player1Stats.card = carta[0];
         if (carta[1] == 'lenda' && Player1Stats.ultimacarta.nome != Player1Stats.card.nome){
@@ -196,7 +219,7 @@ export function puxaCarta(P, especial){
         
         document.getElementById("debug").innerHTML = Player1Stats.ultimacarta.nome +" | "+ Player1Stats.card.nome;
         document.getElementById("debug").innerHTML = Player1Stats.modos.curaDano;
-        EstiloRaro(Carta[1]);
+        EstiloRaro(Player1Stats.card.raridade, "P1");
     }
     if (P == "player2"){ 
         if (carta[0].nome == "Gaster"){
