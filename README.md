@@ -13,7 +13,7 @@
 - Miguel Fernandes, 
 - Miguel Lima Santos.
 ## Créditos
-
+  
 
 ### Personagens até o momento:
 - Caine (TADC),
@@ -35,20 +35,17 @@
 - 2011X (SONIC 2011),
 - Shadow the Hedgehog,
 - Goku (Dragon Ball),
-- Chara (Undertale)
-
-
-
-### Personagens com cartas prontas, mas ainda não estão no jogo:
+- Chara (Undertale),
+- CJ (GTA),
 - Lord X (Sonic PC Port),
 - Kris (Deltarune),
 - Susie (Deltarune),
-- Frisk (Undertale),
+- Frisk (Undertale)
+
+### Personagens com cartas prontas, mas ainda não estão no jogo:
 - Escrava Isaura,
 - Luffy (One Piece),
-- CJ (GTA),
-- Obito (Naruto Shippuden),
-
+- Obito (Naruto Shippuden)
 
 # Versão 0.01B de pé!
 Cartas com raridades diferentes junto com um superTrunfo!
