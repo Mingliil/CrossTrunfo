@@ -47,6 +47,7 @@ export function ModoRodada(x, perdeu){
                 document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADAS";
                 document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADAS";
                 }
+                document.getElementById("Estado").innerHTML = "PERDEU";
             }
             else{
                 if (estados.rodada == 1){
@@ -57,6 +58,7 @@ export function ModoRodada(x, perdeu){
                 document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
                 document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
                 }
+                document.getElementById("Estado").innerHTML = "GANHOU";
             }
     }
 

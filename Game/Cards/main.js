@@ -13,6 +13,8 @@ document.getElementById("btDebug").onclick = () =>{
     //Carta(DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],"P1");
 }
 document.getElementById("botao").onclick = () =>{
+    
+
     if (document.getElementById("botao").innerHTML == "ataque"){ 
         estados.estiloP2 = true;
         GerenciaModoAtaque();
@@ -22,9 +24,19 @@ document.getElementById("botao").onclick = () =>{
         estados.estiloP2 = false;
         ModoRodada(1);
     }
+    
     else if (document.getElementById("botao").innerHTML = "main menu"){
         ModoRodada(2);
     }
+    if (Player1Stats.Aura <= 0 && Player1Stats.modos.modoPan == false && Player1Stats.modos.modoPrime == false|| Player2Stats.Aura <=0 ){
+        if (Player1Stats.Aura <= 0){
+            ModoRodada(2, true);
+        }
+        else{
+            ModoRodada(2, false);
+        }
+    }
+
     EstiloRaro(Player2Stats.card.Raridade,"P2")
     document.getElementById("debug").innerHTML = estados.estiloP2;
 }
