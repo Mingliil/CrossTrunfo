@@ -179,7 +179,7 @@ export function puxaCarta(P, especial){
             GasterRandom();
         }
         if (Player1Stats.modos.quero == true){
-            carta[0] = DeckLenda[1];
+            carta[0] = DeckLenda[0];
             carta[1] = 'lenda';
             Player1Stats.modos.quero = false;
         }
