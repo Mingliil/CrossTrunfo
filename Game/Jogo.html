@@ -5,17 +5,16 @@
     <title>CrossTrunfo!</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body  data-bs-theme="dark"> 
+<body background="Assets/CROSSTRUNFO.png" cover data-bs-theme="dark"> 
 
 
-
-    <div class="container text-center" style="background-color: black; color:aliceblue">
+    <div class="container text-center"color:aliceblue">
         <div class="row">
             <div class="col">
 
             </div>
         </div>
-        <div class="row">
+        <div class="row rounded-bottom" style="background-color: black;">
             <div class="col">
                 PLAYER 1
             </div>
@@ -26,8 +25,8 @@
                 PLAYER 2
             </div>
         </div><BR>
-        <div class="row">
-            <div class="col">
+        <div class="row" >
+            <div class="col rounded-3"style="background-color: black;">
                 <h6>aura</h6>
                 <p id="auraP1">100</p>
                 <canvas id="CartaP1" style="width: 50%;"></canvas>
@@ -43,7 +42,10 @@
                 <p id="CartaP1Desc">teste</p>
                 <canvas id="CartaP1DescImg" style="width: 50%;"></canvas>
             </div>
-            <div class="col">
+            <div class="col-1"></div>
+            <div class="col ">
+                <div class="row-1"></div>
+                <div class="row-4 rounded-3" style="background-color: black;">
                 <h5 class="fs-6">RODADA</h5>
                 <p id="rodada" class="fs-6">1</p>
                 <p>status da carta:<br>
@@ -52,8 +54,12 @@
                 <input class="form-check-input" type="radio" name="statuscard" id="status3"><label class="form-check-label" id="cartaMagia" for="status3"></label>
                 </p>
                 <button id="botao" data-bs-toggle="modal" data-bs-target="" ></button>
-            </div>
-            <div class="col">
+                </div>
+                <div class="row-1">
+                </div>
+                </div>
+            <div class="col-1"></div>
+            <div class="col rounded-3" style="background-color: black;" >
                 <h6>aura</h6>
                 <p id="auraP2">100</p>
                 <canvas id="CartaP2" style="width: 50%;"></canvas>
