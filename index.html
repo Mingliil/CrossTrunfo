@@ -6,35 +6,198 @@
     <title>Toletão</title>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-</head>
-<body style="background-color: rgb(80, 46, 2); font-family: 'Roboto', sans-serif; margin:0;">
+    <style>
+        .header {
+            height: 50px;
+            width: 100%;
+            background-color: #613a07;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 15px;
+        }
 
-    <br>
-    <br>
-    <div class="container mt-5" style="margin: center;">
-        <div class="row justify-content-center">
-          <div class="col-md-10 col-lg-8">
-            <div class="card shadow">
-              <div style="background-color: rgb(177, 159, 2); padding: 160px 20px; border-radius: 5px;">
-                <div class="card-body">
-                  <!-- título centralizado -->
-                  <h1 class="card-title mb-4" style="color: rgb(247, 247, 247); text-align: center;">
-                    Toletão
-                  </h1>
-                  <!-- texto justificado -->
-                  <div style="max-width: 800px; margin: 0 auto;">
-                    <p class="card-text" style="color: white; text-align: justify; font-size: 22px;">
-                      Olá, somos o Toletão! Nossa principal meta é criar jogos que não são uma merda.<br>
-                      Somos os criadores independentes do CrossTrunfo, o Super Trunfo com os seus personagens
-                      favoritos (aceitamos sugestões)! A equipe é composta por Afonso Cesar, Caio Lopes,
-                      Felipe Goes, João Vitor, Julia Oliveira, Matheus Cardoso, Matheus Gomes, Miguel Fernandes e Miguel Lima.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        .dropdown-menu {
+            background-color: #613a07 !important;
+            border: none;
+        }
+       
+        .dropdown-menu .dropdown-item {
+            color: #ddd !important;
+        }
+       
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #815020 !important;
+            color: #fff !important;
+        }
+
+        .dropdown-menu .dropdown-item:active,
+        .dropdown-menu .dropdown-item:focus {
+            background-color: #613a07 !important; 
+            color: #fff !important;
+        }
+
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #815020 !important;
+            color: #fff !important;
+        }
+
+        .dropdown-divider {
+            border-top: 1px solid #815020;
+        }
+
+        body {
+            margin-top: 30px;
+        }
+
+        .title-area {
+            position: fixed;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            height: 250px;
+            background-color: white;
+            z-index: 99;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .title-area h1 {
+            margin: 0;
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+        }
+
+        .blue-square {
+            position: fixed;
+            top: 300px;
+            right: 5px;
+            left: 0;
+            width: 55%;
+            height: calc(100vh - 70px);
+            background-color: rgb(105, 65, 5);
+            z-index: 100;
+        }
+
+        .brown-bar {
+            position: fixed;
+            top: 300px;
+            left: 55%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: calc(100vh - 70px);
+            background-color: #8B4513;
+            z-index: 101;
+        }
+
+        .yellow-square {
+            position: fixed;
+            top: 300px;
+            right: 0;
+            width: 45%;
+            height: calc(100vh - 70px);
+            background-color: rgb(212, 170, 106);
+            z-index: 100;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .black-square {
+            position: absolute;
+            top: 38%;
+            left: 40.3%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 70%;
+            background-color: black;
+            border-radius: 20px;
+            z-index: 102;
+            overflow: hidden;
+        }
+
+        .black-square iframe {
+            border-radius: 20px;
+        }
+
+        .botao-container {
+            position: absolute;
+            top: 50%;
+            left: 85%;
+            transform: translateY(-50%);
+            z-index: 103;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .video-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none; /* remove o sublinhado do link */
+            display: inline-block;
+        }
+
+        .video-button:hover {
+            background-color: #45a049;
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .arrow-image {
+            width: 120px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="dropdown">
+            <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 28px;">
+                &#8943; <!-- três pontinhos horizontais -->
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Configurações</a></li>
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sair</a></li>
+            </ul>
         </div>
+    </div>
+
+    <div class="title-area">
+        <h1>CrossTrunfo</h1>
+    </div>
+    <div class="blue-square">
+      <div class="black-square">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4pIhV7j9NEg?si=mkpKSAul5TOj1LIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <div class="botao-container">
+        <img src="imagens/seta.png" class="arrow-image" alt="Seta">
+        <a href="game\jogo.html" button class="video-button">JOGAR </a>
+      </div>
+    </div>
+
+    <div class="brown-bar"></div>
+    <div class="yellow-square">
+      <p style="color: white; text-align: justify; font-size: 18px; margin-top: 50px;">Olá, somos o Toletão! Nossa principal meta é criar jogos que não são uma merda.<br>
+                      Somos os criadores independentes do CrossTrunfo, o Super Trunfo com os seus personagens
+                      favoritos (aceitamos sugestões)!</p>
     </div>
 
     <<!-- Bloco do botão centralizado -->
@@ -58,25 +221,5 @@
     </div>
   </div>
   
-<div style="display:flex; justify-content:center; margin-top:20px;"> 
-    <div class="card shadow" style="max-width: 600px; width:100%;">
-      <div style="background-color: rgb(177, 159, 2); padding: 15px 20px; border-radius: 5px;">
-        <div class="card-body p-2">
-          <div class="d-flex align-items-center justify-content-center" style="gap: 15px;">
-            <!-- Texto -->
-            <p class="card-text mb-0" style="color: white; font-size: 20px; white-space: nowrap;">
-              Para acessar o vídeo pitch clique aqui → 
-              <a href="https://youtu.be/4pIhV7j9NEg?si=GUWI2oJQHJdI8_Zk" target="_blank"
-              class="btn btn-primary btn-sm"
-              style="background-color: rgb(80, 46, 2); border-color: rgb(80, 46, 2); color: white; padding: 8px 20px; font-size: 16px; border-radius: 6px;">
-              Assistir vídeo
-              </a>
-            </p>            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
