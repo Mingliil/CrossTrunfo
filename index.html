@@ -1,225 +1,82 @@
 <!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
     <title>Toletão</title>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        .header {
-            height: 50px;
-            width: 100%;
-            background-color: #613a07;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding-right: 15px;
-        }
-
-        .dropdown-menu {
-            background-color: #613a07 !important;
-            border: none;
-        }
-       
-        .dropdown-menu .dropdown-item {
-            color: #ddd !important;
-        }
-       
-        .dropdown-menu .dropdown-item:hover {
-            background-color: #815020 !important;
-            color: #fff !important;
-        }
-
-        .dropdown-menu .dropdown-item:active,
-        .dropdown-menu .dropdown-item:focus {
-            background-color: #613a07 !important; 
-            color: #fff !important;
-        }
-
-
-        .dropdown-menu .dropdown-item:hover {
-            background-color: #815020 !important;
-            color: #fff !important;
-        }
-
-        .dropdown-divider {
-            border-top: 1px solid #815020;
-        }
-
-        body {
-            margin-top: 30px;
-        }
-
-        .title-area {
-            position: fixed;
-            top: 100px;
-            left: 0;
-            width: 100%;
-            height: 250px;
-            background-color: white;
-            z-index: 99;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .title-area h1 {
-            margin: 0;
-            font-size: 48px;
-            font-weight: bold;
-            color: #333;
-            text-align: left;
-        }
-
-        .blue-square {
-            position: fixed;
-            top: 300px;
-            right: 5px;
-            left: 0;
-            width: 55%;
-            height: calc(100vh - 70px);
-            background-color: rgb(105, 65, 5);
-            z-index: 100;
-        }
-
-        .brown-bar {
-            position: fixed;
-            top: 300px;
-            left: 55%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: calc(100vh - 70px);
-            background-color: #8B4513;
-            z-index: 101;
-        }
-
-        .yellow-square {
-            position: fixed;
-            top: 300px;
-            right: 0;
-            width: 45%;
-            height: calc(100vh - 70px);
-            background-color: rgb(212, 170, 106);
-            z-index: 100;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        .black-square {
-            position: absolute;
-            top: 38%;
-            left: 40.3%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            height: 70%;
-            background-color: black;
-            border-radius: 20px;
-            z-index: 102;
-            overflow: hidden;
-        }
-
-        .black-square iframe {
-            border-radius: 20px;
-        }
-
-        .botao-container {
-            position: absolute;
-            top: 50%;
-            left: 85%;
-            transform: translateY(-50%);
-            z-index: 103;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .video-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none; /* remove o sublinhado do link */
-            display: inline-block;
-        }
-
-        .video-button:hover {
-            background-color: #45a049;
-            text-decoration: none;
-            color: white;
-        }
-
-
-        .arrow-image {
-            width: 120px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <div class="dropdown">
-            <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 28px;">
-                &#8943; <!-- três pontinhos horizontais -->
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#">Configurações</a></li>
-                <li><a class="dropdown-item" href="#">Perfil</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Sair</a></li>
+  </head>
+  <body>
+    <nav class="navbar" style="background-color: brown;">
+      <div class="container-fluid" ">
+        <a class="navbar-brand" href="#">
+          <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+          Toletão
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Configurações</a>
+              </li>
             </ul>
-        </div>
-    </div>
-
-    <div class="title-area">
-        <h1>CrossTrunfo</h1>
-    </div>
-    <div class="blue-square">
-      <div class="black-square">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4pIhV7j9NEg?si=mkpKSAul5TOj1LIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-
-      <div class="botao-container">
-        <img src="imagens/seta.png" class="arrow-image" alt="Seta">
-        <a href="game\jogo.html" button class="video-button">JOGAR </a>
-      </div>
-    </div>
-
-    <div class="brown-bar"></div>
-    <div class="yellow-square">
-      <p style="color: white; text-align: justify; font-size: 18px; margin-top: 50px;">Olá, somos o Toletão! Nossa principal meta é criar jogos que não são uma merda.<br>
-                      Somos os criadores independentes do CrossTrunfo, o Super Trunfo com os seus personagens
-                      favoritos (aceitamos sugestões)!</p>
-    </div>
-
-    <<!-- Bloco do botão centralizado -->
-<div style="display:flex; justify-content:center; margin-top:20px;"> 
-    <div class="card shadow" style="max-width: 600px; width:100%;">
-      <div style="background-color: rgb(177, 159, 2); padding: 15px 20px; border-radius: 5px;">
-        <div class="card-body p-2">
-          <div class="d-flex align-items-center justify-content-center" style="gap: 15px;">
-            <!-- Texto -->
-            <p class="card-text mb-0" style="color: white; font-size: 20px; white-space: nowrap;">
-              Para conhecer nosso trabalho clique aqui → 
-              <a href="Game/Menu.html"
-              class="btn btn-primary btn-sm"
-              style="background-color: rgb(80, 46, 2); border-color: rgb(80, 46, 2); color: white; padding: 8px 20px; font-size: 16px; border-radius: 6px;">
-              JOGAR
-              </a>
-            </p>            
           </div>
         </div>
       </div>
+    </nav>
+      </div>
+    </nav>
+    <header class="masthead" style="background-image: url('Game/Assets/CROSSTRUNFO.png'); background-size: cover;">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+<div class="container-fluid" style="background-color: rgb(116, 0, 0); color: aliceblue;">
+<div class="row px-4 px-lg-5">
+    <div class="col">
+        <div class="row justify-content-start">
+                    <h1 class="display-3">Video de apresentação de nosso produto!</h1>
+                    <div class="row text-center">
+                        <div 
+                        class="embed-responsive embed-responsive-4by3">
+                          <iframe style="width: 90%; height: 210%;" class="embed-responsive-item" src="https://www.youtube.com/embed/4pIhV7j9NEg?si=mkpKSAul5TOj1LIY" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <br> 
+                    <p> <br><br><br><br><br><br><br>Jogue nosso jogo aqui! <a href="game\jogo.html" button class="video-button">AQUI! </a>
+                </p>
+        </div>
     </div>
-  </div>
-  
-</body>
+    <div class="col-4">
+        <div class="row gx-4 gx-lg-5 justify-content-start">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <!-- Post preview-->
+                    <p style="color: white; text-align: justify; font-size: 18px; margin-top: 50px;">Olá, somos o Toletão! Nossa principal meta é criar jogos que não são uma merda.<br>
+                      Somos os criadores independentes do CrossTrunfo, o Super Trunfo com os seus personagens
+                      favoritos (aceitamos sugestões)!</p>
+
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  </body>
+  <script src="Bootstrap/js/bootstrap.min.js"></script>
 </html>
