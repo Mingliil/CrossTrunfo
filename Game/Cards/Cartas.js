@@ -3,7 +3,7 @@ export const DeckFull = [];
 DeckFull.Sherma = {
     nome:"Sherma",
     raridade:"COMUM",
-    descricao:"",
+    descricao:"Uma criatura deveras amigavel e  adoravel, tocando seus pequenos instrumentos faz uma melodia irresistivel para os ouvidos alheios.",
     Atlas:'Assets/cards.png',
     AlturaX:387,
     AlturaY:559,
@@ -21,7 +21,7 @@ DeckFull.Sherma = {
 DeckFull.Goku = {
     nome:"Goku",
     raridade:"COMUM",
-    descricao:"",
+    descricao:"Oi, eu sou o <b>GOKU!</b>",
     Atlas:'Assets/cards.png',
     AlturaX:387,
     AlturaY:559,
@@ -39,7 +39,7 @@ DeckFull.Goku = {
 DeckFull.Ghost = {
     nome:"O receptáculo",
     raridade:"COMUM",
-    descricao:"",
+    descricao:"O receptáculo perfeito para conter a maior das calamidades.",
     Atlas:'Assets/cards.png',
     AlturaX:382,
     AlturaY:524,
@@ -94,7 +94,7 @@ DeckFull.Chara = {
 DeckFull.CJ = {
     nome:"Carl Johnson",
     raridade:"COMUM",
-    descricao:"",
+    descricao:"Bem-vindo a San-Andreas, eu sou o CJ da Grove Street, lar dos mal olhaados, gangsters e calor frio.",
     Atlas:'Assets/cards.png',
     AlturaX:382,
     AlturaY:524,
@@ -112,7 +112,7 @@ DeckFull.CJ = {
 DeckFull.Morshu = {
     nome:"Morshu",
     raridade:"COMUM",
-    descricao:"",
+    descricao:"Cordas? Bombas? é seu meu amigo desde que tenha <b>DRIP</b>.",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
@@ -130,7 +130,7 @@ DeckFull.Morshu = {
 DeckFull.Superman = {
     nome:"Superman",
     raridade:"ÉPICO",
-    descricao:"",
+    descricao:"There's a STARRR MANNN He'd like to come and meet us. But he thinks he'd blow our minds",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
@@ -166,7 +166,7 @@ DeckFull.SOAD = {
 DeckFull.Batman = {
     nome:"Batman",
     raridade:"COMUM",
-    descricao:"",
+    descricao:"Ele se tornou uma carta com uma técnica que aprendeu no Tibete",
     Atlas:'Assets/cards.png',
     AlturaX:400,
     AlturaY:540,
@@ -184,7 +184,7 @@ DeckFull.Batman = {
 DeckFull.EXE = {
     nome:"Sonic Exe",
     raridade:"COMUM",
-    descricao:"",
+    descricao:"IM GOD!",
     Atlas:'Assets/cards.png',
     AlturaX:400,
     AlturaY:540,
@@ -202,7 +202,7 @@ DeckFull.EXE = {
 DeckFull.LordX = {
     nome:"LordX",
     raridade:"RARO",
-    descricao:"",
+    descricao:"How about a game?",
     Atlas:'Assets/cards.png',
     AlturaX:400,
     AlturaY:540,
@@ -238,7 +238,7 @@ DeckFull.Ragnaruk  = {
 DeckFull.GlassAnimals = {
     nome:"TOSoTP",
     raridade:"RARO",
-    descricao:"",
+    descricao:"Pineapples are in my head(When you were fun). Got nobodt 'cause i'm brain dead(You made me run).",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
@@ -256,7 +256,7 @@ DeckFull.GlassAnimals = {
 DeckFull.Ubi = {
     nome:"Ubirajara",
     raridade:"COMUM",
-    descricao:"",
+    descricao:"U-uu-UUbirajara",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
@@ -329,7 +329,7 @@ DeckFull.Valkyrie = {
 DeckFull.Gaster = {
     nome:"Gaster",
     raridade:"COMUM",
-    descricao:"",
+    descricao:"✌☞⚐☠💧⚐ ✌👌☼☜ ✌ 🏱⚐☼❄✌.",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:519,
@@ -349,7 +349,7 @@ DeckFull.Gaster = {
 DeckFull.Circus = {
     nome:"TADC",
     raridade:"ÉPICO",
-    descricao:"",
+    descricao:"<a target='_blank' href='https://www.youtube.com/watch?v=QsL1OgmjLN8'>Hi i'm Caine and i'm your ______ _____</a>",
     Atlas:'Assets/cards.png',
     AlturaX:528,
     AlturaY:717,
@@ -367,7 +367,7 @@ DeckFull.Circus = {
 DeckFull.YAAI = {
     nome:"N0li YAAI",
     raridade:"ÉPICO",
-    descricao:"",
+    descricao:"4 Gr4and33 VOlt44 do M410RR dos VVVI11RUUSS5555!!!!!!!!1111!!!",
     Atlas:'Assets/cards.png',
     AlturaX:598,
     AlturaY:570,
