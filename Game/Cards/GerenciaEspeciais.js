@@ -42,3 +42,17 @@ export function imsad(){
     Player1Stats.card.Status.defesa= -8;
     Player1Stats.card.Status.magia= -2011
 }
+export function PureAuraAndDrip(){
+    Player1Stats.card.Atlas = 'Assets/gokuDrip.png';
+    Player1Stats.card.AlturaX=669;
+    Player1Stats.card.AlturaY=1195;
+    Player1Stats.card.CoordsX=0;
+    Player1Stats.card.CoordsY=0;
+    Player1Stats.card.ImgTamanho="80%";
+    Player1Stats.card.nome="goku?";
+    Player1Stats.card.descricao = "Hey, i heard you Jordans are <span style='color:red;'><b>FAKE</b></span>...";
+    Player1Stats.card.raridade="DRIP";
+    Player1Stats.card.Status.poder= 100;
+    Player1Stats.card.Status.defesa= 100;
+    Player1Stats.card.Status.magia= 100
+}

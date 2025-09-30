@@ -2,7 +2,7 @@ import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull} from "./Cartas.js
 import { Player1Stats, Player2Stats, estados } from "./Rework.js";
 import { Carta } from "./Rework.js";
 import { SuperIntro } from "./GerenciaAudio.js";
-import { GasterRandom, imsad } from "./GerenciaEspeciais.js";
+import { GasterRandom, imsad, PureAuraAndDrip } from "./GerenciaEspeciais.js";
 /*
     como apemas EU faço as coisas aqui, ao menos no codigo, vou deixar certas "cartas" para eu me lembrar o que fazer
     o GerenciaRaridade é aonde as cartas são puxadas e aonde vai ser como a raridade será gerenciada, ou será que eu deveria
@@ -201,7 +201,7 @@ export function puxaCarta(P, especial){
     //carta[0] = DeckFull.Gaster;
     //quero = true;
     if (P == "player1"){
-        //carta[0]=DeckFull.EXE;
+        carta[0]=DeckFull.Goku;
         //carta[0] = DeckFull.YAAI;
         if (carta[0].nome == "Gaster"){
             GasterRandom();
@@ -232,6 +232,13 @@ export function puxaCarta(P, especial){
                 carta[1] = '???';
             }
         }
+        if (carta[0]== DeckFull.Goku){
+            const drip = 0;//Math.floor(Math.random() * 50);
+            if (drip == 0){
+                PureAuraAndDrip();
+                carta[1] = 'ÉPICO';
+            }
+        }
         Carta(Player1Stats.card, "P1");
         if (Player1Stats.card.nome == "Token/Femtanyl"){
             document.getElementById("cartaPoder").innerHTML = "WIRES: " +1999 + "<br>";
@@ -253,6 +260,9 @@ export function puxaCarta(P, especial){
         
         document.getElementById("debug").innerHTML = Player1Stats.ultimacarta.nome +" | "+ Player1Stats.card.nome;
         document.getElementById("debug").innerHTML = Player1Stats.modos.curaDano;
+        if(carta[0]== DeckFull.Goku){
+        EstiloRaro("ÉPICO", "P1");
+        }
         EstiloRaro(Player1Stats.card.raridade, "P1");
     }
     if (P == "player2"){ 
