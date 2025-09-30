@@ -387,7 +387,7 @@ DeckFull.YAAI = {
 DeckFull.Sisyphus = {
     nome:"Sisyphus Prime",
     raridade:"SuperTrunfo",
-    descricao:"",
+    descricao:"Ah, um visitante? De fato, parece que dormi o suficiente. O reino dos céus tem esquecido de meu nome a bastante tempo, e eu estou <b>ANSIOSO</b> em faze-los se lembrarem, mas, o sangue de Minos suja suas mãos, e eu tenho que admitir... Eu estou curioso sobre suas habilidades, arma. e com isso, antes de eu rasgas as cidades e <span style='rgb(255,131,122);'><b>DESTRUIR</b> os exercitos dos Céus... Você deve servir como um aperetivo. Venha <span style='color:rgb(96, 94, 224);'> Criança da humanidade</span>... E <span style='color:red;'><b>MORRA</B><span>",
     Atlas:'Assets/cards.png',
     Audiofont:'Assets/audios/intros/Prison.mp3',
     AudioST:'Assets/audios/SoundTracks/War.mp3',
@@ -487,7 +487,7 @@ DeckFull.Femtanyl = {
 DeckFull.Silver = {
     nome:"Silver",
     raridade:"RARO",
-    descricao:"...",
+    descricao:"iT'S NO USE",
     Atlas:'Assets/cards.png',
     AlturaX:375,
     AlturaY:527,

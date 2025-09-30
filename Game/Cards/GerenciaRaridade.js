@@ -2,7 +2,7 @@ import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull} from "./Cartas.js
 import { Player1Stats, Player2Stats, estados } from "./Rework.js";
 import { Carta } from "./Rework.js";
 import { SuperIntro } from "./GerenciaAudio.js";
-import { GasterRandom } from "./GerenciaEspeciais.js";
+import { GasterRandom, imsad } from "./GerenciaEspeciais.js";
 /*
     como apemas EU faço as coisas aqui, ao menos no codigo, vou deixar certas "cartas" para eu me lembrar o que fazer
     o GerenciaRaridade é aonde as cartas são puxadas e aonde vai ser como a raridade será gerenciada, ou será que eu deveria
@@ -174,7 +174,7 @@ export function puxaCarta(P, especial){
     //carta[0] = DeckFull.Gaster;
     //quero = true;
     if (P == "player1"){
-        //carta[0]=DeckFull.pandemonium;
+        carta[0]=DeckFull.EXE;
         //carta[0] = DeckFull.YAAI;
         if (carta[0].nome == "Gaster"){
             GasterRandom();
@@ -198,7 +198,12 @@ export function puxaCarta(P, especial){
         if (carta[1] == 'lenda' && Player1Stats.ultimacarta.nome != Player1Stats.card.nome){
             SuperIntro(carta[0]);
         }
-        
+        if (carta[0] == DeckFull.EXE){
+            const sad = Math.floor(Math.random() * 100);
+            if (sad == 0){
+                imsad();
+            }
+        }
         Carta(Player1Stats.card, "P1");
         if (Player1Stats.card.nome == "Token/Femtanyl"){
             document.getElementById("cartaPoder").innerHTML = "WIRES: " +1999 + "<br>";
@@ -227,7 +232,8 @@ export function puxaCarta(P, especial){
             GasterRandom();
         }
         Player2Stats.card = carta[0];
-        Carta(Player2Stats.card, "P2");
+
+        Carta(Player2Stats.card, "P2"); 
         document.getElementById("debug").innerHTML = carta[0].Status.magia;
         
     }

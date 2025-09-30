@@ -1,5 +1,5 @@
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull} from "./Cartas.js";
-
+import { Player1Stats, Player2Stats } from "./Rework.js";
 /*
     Aqui vai ser aonde as habilidades especiais irão interagir com
     as cartas e os ataques
@@ -27,4 +27,7 @@ export function GasterRandom(){
     else{
         DeckFull.Gaster.Status.magia = -Math.floor(Math.random() * 150);
     }
+}
+export function imsad(){
+    Player1Stats.card.atlas = 'Assets/exeSad.webp';
 }
