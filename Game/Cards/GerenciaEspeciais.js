@@ -29,5 +29,16 @@ export function GasterRandom(){
     }
 }
 export function imsad(){
-    Player1Stats.card.atlas = 'Assets/exeSad.webp';
+    Player1Stats.card.Atlas = 'Assets/exeSad.webp';
+    Player1Stats.card.AlturaX=1344;
+    Player1Stats.card.AlturaY=1011;
+    Player1Stats.card.CoordsX=0;
+    Player1Stats.card.CoordsY=0;
+    Player1Stats.card.ImgTamanho="80%";
+    Player1Stats.card.descricao = "I'm sad.... :(";
+    Player1Stats.card.raridade="???";
+    
+    Player1Stats.card.Status.poder= -9;
+    Player1Stats.card.Status.defesa= -8;
+    Player1Stats.card.Status.magia= -2011
 }

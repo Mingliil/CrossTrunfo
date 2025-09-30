@@ -15,7 +15,34 @@ export function EstiloRaro(x, p){
     P1Desc.classList.remove("border-2");
     switch (x) {
         case '???':
-
+             if(p == "P2"){
+                if(estados.estiloP2== false){
+                    P2Desc.classList.remove("border-success");
+                    P2Desc.classList.remove("border-2");
+                    P2Desc.classList.remove("border");
+                    P2Desc.classList.remove("bg-light");
+                    P2Desc.classList.remove("text-dark");
+                    P2Desc.classList.remove("rounded");
+                }
+                else if (estados.estiloP2== true){
+                    P2Desc.classList.add("border-success");
+                    P2Desc.classList.add("border-2");
+                    P2Desc.classList.add("border");
+                    P2Desc.classList.add("bg-light");
+                    P2Desc.classList.add("text-dark");
+                    P2Desc.classList.add("rounded");
+                }
+            }
+            else{
+                P1Desc.classList.remove(...P1Desc.classList);
+                P1Desc.classList.add("border-success");
+                P1Desc.classList.add("border-2");
+                P1Desc.classList.add("border");
+                P1Desc.classList.add("bg-warning");
+                P1Desc.classList.add("text-dark");
+                P1Desc.classList.add("strong");
+                P1Desc.classList.add("rounded");
+            }
             break;
         case 'SuperTrunfo':
             if(p == "P2"){
@@ -174,13 +201,13 @@ export function puxaCarta(P, especial){
     //carta[0] = DeckFull.Gaster;
     //quero = true;
     if (P == "player1"){
-        carta[0]=DeckFull.EXE;
+        //carta[0]=DeckFull.EXE;
         //carta[0] = DeckFull.YAAI;
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
         if (Player1Stats.modos.quero == true){
-            carta[0] = DeckLenda[0];
+            carta[0] = DeckFull.EXE;
             carta[1] = 'lenda';
             Player1Stats.modos.quero = false;
         }
@@ -202,6 +229,7 @@ export function puxaCarta(P, especial){
             const sad = Math.floor(Math.random() * 100);
             if (sad == 0){
                 imsad();
+                carta[1] = '???';
             }
         }
         Carta(Player1Stats.card, "P1");
