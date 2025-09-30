@@ -174,7 +174,7 @@ export function puxaCarta(P, especial){
     //carta[0] = DeckFull.Gaster;
     //quero = true;
     if (P == "player1"){
-        //carta[0]=DeckFull.YAAI;
+        //carta[0]=DeckFull.pandemonium;
         //carta[0] = DeckFull.YAAI;
         if (carta[0].nome == "Gaster"){
             GasterRandom();

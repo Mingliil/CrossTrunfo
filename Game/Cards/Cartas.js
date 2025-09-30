@@ -429,7 +429,7 @@ DeckFull.EGGMAN = {
 DeckFull.pandemonium = {
     nome:"PANDEMONIUM",
     raridade:"???",
-    descricao:"",
+    descricao:"Sendo uma versão superior da prisão de carne, feito não apenas para conter a alma do Rei ________, mas tambem de ter a capacidade de manter vigia de seus seguidores, mas isso nunca foi usada devido a alma de ________ prime já estivesse sendo formada, fazendo os anjos temerem sobre o que aconteceria se o ele fosse acordado.",
     Atlas:'Assets/cards.png',
     AudioST:'Assets/audios/SoundTracks/PANDEMONIUM.mp3',
     AudioType: 'audio/mp3',
@@ -467,7 +467,7 @@ DeckFull.Mesmerizer = {
 DeckFull.Femtanyl = {
     nome:"Token/Femtanyl",
     raridade:"SuperTrunfo",
-    descricao:"",
+    descricao:"\"Obrigado Femtanyl\" Dizemos todos em união",
     Atlas:'Assets/cards.png',
     AudioST:'Assets/audios/SoundTracks/Token.mp3',
     AudioType: 'audio/mp3',
@@ -487,7 +487,7 @@ DeckFull.Femtanyl = {
 DeckFull.Silver = {
     nome:"Silver",
     raridade:"RARO",
-    descricao:"",
+    descricao:"...",
     Atlas:'Assets/cards.png',
     AlturaX:375,
     AlturaY:527,
