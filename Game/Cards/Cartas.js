@@ -27,8 +27,7 @@ DeckFull.Goku = {
     AlturaY:559,
     CoordsX:1209,
     CoordsY:1600,
-    DescX: 1,
-    DescY: 0,
+    AudioST: "Assets/audios/SoundTracks/GokuDrip.mp3",
     ImgTamanho:"70%",
     Status : {
         poder: 70,
@@ -148,7 +147,7 @@ DeckFull.Superman = {
 DeckFull.SOAD = {
     nome:"SOAD",
     raridade:"RARO",
-    descricao:"",
+    descricao:"I play Russian roulette everyday, a man's sports, with a bullet called Life",
     Atlas:'Assets/cards.png',
     AlturaX:442,
     AlturaY:549,

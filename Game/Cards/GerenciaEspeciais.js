@@ -1,5 +1,6 @@
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull} from "./Cartas.js";
 import { Player1Stats, Player2Stats } from "./Rework.js";
+import { AudioST } from "./GerenciaAudio.js";
 /*
     Aqui vai ser aonde as habilidades especiais irão interagir com
     as cartas e os ataques
@@ -51,8 +52,9 @@ export function PureAuraAndDrip(){
     Player1Stats.card.ImgTamanho="80%";
     Player1Stats.card.nome="goku?";
     Player1Stats.card.descricao = "Hey, i heard you Jordans are <span style='color:red;'><b>FAKE</b></span>...";
-    Player1Stats.card.raridade="DRIP";
+    Player1Stats.card.raridade="<b>DRIP</b>";
     Player1Stats.card.Status.poder= 100;
     Player1Stats.card.Status.defesa= 100;
-    Player1Stats.card.Status.magia= 100
+    Player1Stats.card.Status.magia= 100;
+    AudioST(Player1Stats.card);
 }

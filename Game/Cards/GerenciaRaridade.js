@@ -226,14 +226,14 @@ export function puxaCarta(P, especial){
             SuperIntro(carta[0]);
         }
         if (carta[0] == DeckFull.EXE){
-            const sad = Math.floor(Math.random() * 100);
+            const sad = Math.floor(Math.random() * 20);
             if (sad == 0){
                 imsad();
                 carta[1] = '???';
             }
         }
         if (carta[0]== DeckFull.Goku){
-            const drip = 0;//Math.floor(Math.random() * 50);
+            const drip = Math.floor(Math.random() * 10);
             if (drip == 0){
                 PureAuraAndDrip();
                 carta[1] = 'ÉPICO';
