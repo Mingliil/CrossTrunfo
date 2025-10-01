@@ -177,19 +177,19 @@ export function PegaCarta(debug){
     else{
         switch (nivelCarta) {
             case 'lenda':
-                return [DeckLenda/*[0], 'lenda'];//*/[Math.floor(Math.random() * DeckLenda.length)], 'lenda'];
+                return [DeckLenda/*[0], 'lenda'];//*/[Math.floor(Math.random() * DeckLenda.length)], 'LENDA'];
                 break;
 
             case 'epico':
-                return [DeckEpico[Math.floor(Math.random() * DeckEpico.length)],'epico'];
+                return [DeckEpico[Math.floor(Math.random() * DeckEpico.length)],'ÉPICO'];
                 break;
 
             case 'raro':
-                return [DeckRaro[Math.floor(Math.random() * DeckRaro.length)],'raro'];
+                return [DeckRaro[Math.floor(Math.random() * DeckRaro.length)],'RARO'];
                 break;
 
             default:
-                return [DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],'comum'];
+                return [DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],'COMUM'];
                 break;
         }
     }
@@ -201,28 +201,28 @@ export function puxaCarta(P, especial){
     //carta[0] = DeckFull.Gaster;
     //quero = true;
     if (P == "player1"){
-        carta[0]=DeckFull.Goku;
+        //carta[0]=DeckFull.Goku;
         //carta[0] = DeckFull.YAAI;
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
         if (Player1Stats.modos.quero == true){
-            carta[0] = DeckFull.EXE;
-            carta[1] = 'lenda';
+            carta[0] = DeckFull.Goku;
+            carta[1] = 'LENDA';
             Player1Stats.modos.quero = false;
         }
         else if (Player1Stats.modos.modoPan == true){
             carta[0] = DeckFull.pandemonium;
-            carta[1] = 'lenda';
+            carta[1] = 'LENDA';
         }
         if (Player1Stats.modos.modoPrime == true){
             carta[0] = DeckFull.Sisyphus;
-            carta[1] = 'lenda';
+            carta[1] = 'LENDA';
             Player1Stats.Aura = 200;
             document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
         }
         Player1Stats.card = carta[0];
-        if (carta[1] == 'lenda' && Player1Stats.ultimacarta.nome != Player1Stats.card.nome){
+        if (carta[1] == 'LENDA' && Player1Stats.ultimacarta.nome != Player1Stats.card.nome){
             SuperIntro(carta[0]);
         }
         if (carta[0] == DeckFull.EXE){
@@ -233,7 +233,7 @@ export function puxaCarta(P, especial){
             }
         }
         if (carta[0]== DeckFull.Goku){
-            const drip = Math.floor(Math.random() * 10);
+            const drip = Math.floor(Math.random() * 1);
             if (drip == 0){
                 PureAuraAndDrip();
                 carta[1] = 'ÉPICO';
@@ -260,10 +260,8 @@ export function puxaCarta(P, especial){
         
         document.getElementById("debug").innerHTML = Player1Stats.ultimacarta.nome +" | "+ Player1Stats.card.nome;
         document.getElementById("debug").innerHTML = Player1Stats.modos.curaDano;
-        if(carta[0]== DeckFull.Goku){
-        EstiloRaro("ÉPICO", "P1");
-        }
-        EstiloRaro(Player1Stats.card.raridade, "P1");
+
+        EstiloRaro(carta[1], "P1");
     }
     if (P == "player2"){ 
         if (carta[0].nome == "Gaster"){
