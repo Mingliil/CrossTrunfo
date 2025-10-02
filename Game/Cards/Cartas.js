@@ -468,6 +468,7 @@ DeckFull.Femtanyl = {
     raridade:"SuperTrunfo",
     descricao:"\"Obrigado Femtanyl\" Dizemos todos em união",
     Atlas:'Assets/cards.png',
+    
     AudioST:'Assets/audios/SoundTracks/Token.mp3',
     AudioType: 'audio/mp3',
     AlturaX:700,
@@ -481,6 +482,27 @@ DeckFull.Femtanyl = {
         poder: 150,
         defesa: 150,
         magia: 150
+    }
+};
+DeckFull.Spam = {
+    nome:"THE EV33RY BUDDYYYY11 <b>[[Number 1 Rated Salesman1997]]</b>SPAMT////SPAMTON G. SPAMTON!!",
+    raridade:"ÉPICO",
+    descricao:"<B>HAEAHAEAHAEAHAEAH!!<><<< <span style='color:red'>[[Hyperlink Blocked]] .[[Hyperlin..k Blocked]]. [[Hyperlink Blo>>cked]].</span>",
+    Atlas:'Assets/cards.png',
+    Audiofont:'Assets/audios/Intros/SpamLaugh.mp3',
+    AudioST:'Assets/audios/SoundTracks/Your Computer Has Been Tons of Spammed - Feo the Cat.mp3',
+    AudioType: 'audio/mp3',
+    AlturaX:700,
+    AlturaY:546,
+    CoordsX:1880,
+    CoordsY:6180,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"120%",
+    Status : {
+        poder: 50,
+        defesa: 0,
+        magia: 100
     }
 };
 DeckFull.Silver = {
@@ -558,6 +580,6 @@ DeckFull.Frisk = {
     }
 };
 export const DeckRaro = [DeckFull.Silver, DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
-export const DeckEpico = [DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
+export const DeckEpico = [DeckFull.Spam, DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
 export const DeckLenda = [DeckFull.Femtanyl, DeckFull.pandemonium, DeckFull.EGGMAN];
 export const DeckPlayer = [DeckFull.Frisk, DeckFull.Susie, DeckFull.Kris, DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];

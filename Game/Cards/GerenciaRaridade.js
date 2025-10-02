@@ -201,13 +201,14 @@ export function puxaCarta(P, especial){
     //carta[0] = DeckFull.Gaster;
     //quero = true;
     if (P == "player1"){
-        //carta[0]=DeckFull.Goku;
-        //carta[0] = DeckFull.YAAI;
+        //carta[1] = "ÉPICO";
+        //carta[0] = DeckEpico[0];
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
         if (Player1Stats.modos.quero == true){
-            carta[0] = DeckFull.Goku;
+            carta[1] = "ÉPICO";
+            carta[0] = DeckEpico[0];
             Player1Stats.modos.quero = false;
         }
         else if (Player1Stats.modos.modoPan == true){
@@ -237,6 +238,9 @@ export function puxaCarta(P, especial){
                 PureAuraAndDrip();
                 carta[1] = 'ÉPICO';
             }
+        }
+        if (carta[0]==DeckFull.Spam){
+            SuperIntro(carta[0]);
         }
         Carta(Player1Stats.card, "P1");
         if (Player1Stats.card.nome == "Token/Femtanyl"){
