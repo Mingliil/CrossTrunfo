@@ -61,7 +61,26 @@ export function ModoRodada(x, perdeu){
                 document.getElementById("Estado").innerHTML = "GANHOU";
             }
     }
+    
+    if(Player1Stats.Aura>100){
+        document.getElementById("auraP1").style ="color:rgba(0, 140, 255, 1);";
+    }
+    else{
+        document.getElementById("auraP1").style ="color:rgba(150, 255, 194, 1);";
+    }
+    if(Player1Stats.Aura<45){
+        document.getElementById("auraP1").style ="color:rgba(255, 0, 0, 1);";
+    }
 
+    if(Player2Stats.Aura>100){
+        document.getElementById("auraP2").style ="color:rgba(0, 140, 255, 1);";
+    }
+    else{
+        document.getElementById("auraP2").style ="color:rgba(150, 255, 194, 1);";
+    }
+    if(Player2Stats.Aura<45){
+        document.getElementById("auraP2").style ="color:rgba(255, 0, 0, 1);";
+    }
 }
 
 export function fim(x){

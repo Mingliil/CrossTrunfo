@@ -210,6 +210,7 @@ export function puxaCarta(P, especial){
             carta[0] = DeckFull.Goku;
             carta[1] = 'LENDA';
             Player1Stats.modos.quero = false;
+            Player1Stats.Aura += 40;
         }
         else if (Player1Stats.modos.modoPan == true){
             carta[0] = DeckFull.pandemonium;
@@ -233,7 +234,7 @@ export function puxaCarta(P, especial){
             }
         }
         if (carta[0]== DeckFull.Goku){
-            const drip = Math.floor(Math.random() * 1);
+            const drip = Math.floor(Math.random() * 35);
             if (drip == 0){
                 PureAuraAndDrip();
                 carta[1] = 'ÉPICO';
