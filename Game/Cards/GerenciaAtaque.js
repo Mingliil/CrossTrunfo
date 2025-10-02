@@ -67,8 +67,8 @@ export function GerenciaModoAtaque(P){
                 ModoRodada(2, false);
                 }
                 else{
-                    document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
-                    document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
+                    document.getElementById("auraP2").innerHTML = "<b>"+ Player2Stats.Aura+"</b>";
+                    document.getElementById("auraP1").innerHTML = "<b>"+ Player1Stats.Aura+"</b>";
                 }
             }
             else if (ataqueResultado <0){
@@ -95,8 +95,8 @@ export function GerenciaModoAtaque(P){
                     }
                 }
                 else{
-                    document.getElementById("auraP2").innerHTML = Player2Stats.Aura;
-                    document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
+                    document.getElementById("auraP2").innerHTML = "<b>"+ Player2Stats.Aura+"</b>";
+                    document.getElementById("auraP1").innerHTML = "<b>"+ Player1Stats.Aura+"</b>";
                 }
             }
             else{
