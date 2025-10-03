@@ -23,13 +23,19 @@ export function SuperIntro(carta){
     }
 }
 const playList =[
-    "Assets/audios/Playlist/CastleVein.mp3"
+    "Assets/audios/Playlist/CastleVein.mp3",
+    "Assets/audios/Playlist/AreYouListening.mp3",
+    "Assets/audios/Playlist/PepperSteak.mp3",
+    "Assets/audios/Playlist/sans.mp3" 
 ]
+
 export function BackgroundST(){
+    const PlaylistChoice = playList[Math.floor(Math.random() * playList.length)];
     const audio = document.getElementById("audioST");
     const AudioScr = document.getElementById("audioSTSrc");
     AudioScr.type = "audio/mp3";
-    AudioScr.src = playList[Math.floor(Math.random() * playList.length)];
+    AudioScr.src = PlaylistChoice;
         audio.load();
         audio.play();
+    estados.ultimaST = PlaylistChoice;
 }

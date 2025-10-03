@@ -8,11 +8,15 @@ import { EstiloRaro } from "./GerenciaRaridade.js";
 //aqui é onde esta a parte de playlist de soundtrack do jogo sem que esteja relacionado as cartas
 import { BackgroundST } from "./GerenciaAudio.js";
 const Soundtrack = document.getElementById("audioST");
+    if (estados.audioRolar == 0){
+         BackgroundST();
     Soundtrack.onended = () => {
-        alert("The audio has ended");
         BackgroundST();
     }
-
+}
+ Soundtrack.onended = () => {
+        BackgroundST();
+}
 //resto do jogo
 
 document.getElementById("btDebug").onclick = () =>{

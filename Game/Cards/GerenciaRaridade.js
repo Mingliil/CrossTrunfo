@@ -207,8 +207,8 @@ export function puxaCarta(P, especial){
             GasterRandom();
         }
         if (Player1Stats.modos.quero == true){
-            carta[1] = "ÉPICO";
-            carta[0] = DeckEpico[0];
+            carta[0] = DeckLenda/*[0], 'lenda'];//*/[Math.floor(Math.random() * DeckLenda.length)];
+            carta[1] = 'LENDA';
             Player1Stats.modos.quero = false;
         }
         else if (Player1Stats.modos.modoPan == true){

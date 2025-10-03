@@ -3,6 +3,7 @@ import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda} from "./Cartas.js";
 import { puxaCarta } from "./GerenciaRaridade.js";
 import { ModoRodada } from "./GerenciaRodada.js";
 export let estados ={
+    ultimaST:0,
     audioRolar:0,
     estadoRodada:0,
     rodada : 0,
@@ -20,7 +21,7 @@ export let Player1Stats = {
         modoPrime: false,
         curaDano: false,
         curaTempo: 5,
-        quero: true
+        quero: false
     }
     
 };
