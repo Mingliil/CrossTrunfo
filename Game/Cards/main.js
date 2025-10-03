@@ -5,11 +5,21 @@ import { GerenciaModoAtaque } from "./GerenciaAtaque.js";
 import { ModoRodada, fim } from "./GerenciaRodada.js";
 import { Player2Stats, Player1Stats } from "./Rework.js";
 import { EstiloRaro } from "./GerenciaRaridade.js";
+//aqui é onde esta a parte de playlist de soundtrack do jogo sem que esteja relacionado as cartas
+import { BackgroundST } from "./GerenciaAudio.js";
+const Soundtrack = document.getElementById("audioST");
+    Soundtrack.onended = () => {
+        alert("The audio has ended");
+        BackgroundST();
+    }
+
+//resto do jogo
 
 document.getElementById("btDebug").onclick = () =>{
     document.getElementById("btDebug").innerHTML = Player1Stats.modos.quero;//Raridade();
     //puxaCarta("player1", "", true);
     Player1Stats.modos.quero = true;
+   
     //Carta(DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],"P1");
 }
 document.getElementById("botao").onclick = () =>{
