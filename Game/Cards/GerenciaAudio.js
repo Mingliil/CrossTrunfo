@@ -26,7 +26,10 @@ const playList =[
     "Assets/audios/Playlist/CastleVein.mp3",
     "Assets/audios/Playlist/AreYouListening.mp3",
     "Assets/audios/Playlist/PepperSteak.mp3",
-    "Assets/audios/Playlist/sans.mp3" 
+    "Assets/audios/Playlist/sans.mp3",
+    "Assets/audios/Playlist/YWBPPortal.mp3",
+    "Assets/audios/Playlist/Celeste-Resurrections.mp3",
+    "Assets/audios/Playlist/PapersPlease.mp3"
 ]
 
 export function BackgroundST(){
