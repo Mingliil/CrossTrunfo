@@ -22,6 +22,14 @@ export function SuperIntro(carta){
         estados.audioRolar = 1;
     }
 }
+const playList =[
+    "Assets/audios/Playlist/CastleVein.mp3"
+]
 export function BackgroundST(){
-
+    const audio = document.getElementById("audioST");
+    const AudioScr = document.getElementById("audioSTSrc");
+    AudioScr.type = "audio/mp3";
+    AudioScr.src = playList[Math.floor(Math.random() * playList.length)];
+        audio.load();
+        audio.play();
 }
