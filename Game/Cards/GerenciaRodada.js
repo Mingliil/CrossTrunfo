@@ -91,6 +91,7 @@ export function fim(x){
     bt.removeAttribute("data-bs-target");
     Player1Stats.Aura = 100;
     Player2Stats.Aura = 100;
+    Player1Stats.modos.modoPan = false;
     document.getElementById("auraP2").innerHTML = "<b>"+ Player2Stats.Aura+"</b>";
     document.getElementById("auraP1").innerHTML = "<b>"+ Player1Stats.Aura+"</b>";
     estados.estadoRodada = 0;
