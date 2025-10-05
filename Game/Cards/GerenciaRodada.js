@@ -100,6 +100,7 @@ export function fim(x){
         estados.derrotaPonto++;
         document.getElementById("placarDerrota").innerHTML = estados.derrotaPonto;
     }
+    
     else{
         estados.vitoriaPonto++;
         document.getElementById("placarVitoria").innerHTML = estados.vitoriaPonto;
