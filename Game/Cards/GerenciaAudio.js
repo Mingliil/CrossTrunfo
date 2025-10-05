@@ -34,7 +34,7 @@ export function SuperIntro(carta){
     const audio = document.getElementById("audio");
     const AudioScr = document.getElementById("audioScr");
     AudioScr.type = "audio/mp3";
-    AudioScr.src = Player1Stats.card.Audiofont; 
+    AudioScr.src = carta.Audiofont; 
         audio.load();
         audio.play();
     if (estados.audioRolar == 0){
