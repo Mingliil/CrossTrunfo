@@ -1,6 +1,7 @@
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull} from "./Cartas.js";
 import { Player1Stats, Player2Stats } from "./Rework.js";
 import { AudioST } from "./GerenciaAudio.js";
+import { CardOst } from "./musicas.js";
 /*
     Aqui vai ser aonde as habilidades especiais irão interagir com
     as cartas e os ataques

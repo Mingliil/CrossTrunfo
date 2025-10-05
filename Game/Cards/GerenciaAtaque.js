@@ -65,11 +65,14 @@ export function GerenciaModoAtaque(P){
                 if (Player2Stats.Aura <= 0){ //vitoria
                 document.getElementById("auraP2").innerHTML = 0;
                 ModoRodada(2, false);
+                document.getElementById("auraP2").innerHTML = "<b>"+0+"</b>";
+    document.getElementById("auraP1").innerHTML = "<b>"+ Player1Stats.Aura+"</b>";
                 }
                 else{
                     document.getElementById("auraP2").innerHTML = "<b>"+ Player2Stats.Aura+"</b>";
                     document.getElementById("auraP1").innerHTML = "<b>"+ Player1Stats.Aura+"</b>";
                 }
+
             }
             else if (ataqueResultado <0){
                 if (Player1Stats.modos.modoPrime == true){
@@ -92,6 +95,8 @@ export function GerenciaModoAtaque(P){
                     }
                     else{
                     ModoRodada(2,true);
+                    document.getElementById("auraP2").innerHTML = "<b>"+ Player2Stats.Aura+"</b>";
+                    document.getElementById("auraP1").innerHTML = "<b>"+ 0+"</b>";
                     }
                 }
                 else{

@@ -2,12 +2,31 @@ import { Player1Stats, Player2Stats } from "./Rework.js";
 import { estados } from "./Rework.js";
 import { playList } from "./musicas.js";
 export function AudioST(carta){
+    
     const audio = document.getElementById("audioST");
     const AudioScr = document.getElementById("audioSTSrc");
+    const CreditosDesc = document.getElementById("creditosST");
+    const CreditosNome = document.getElementById("creditosNm");
+    const AlertaOst = document.getElementById("ostDetails")
+    const CartaOST = Player1Stats.card.AudioST
     AudioScr.type = "audio/mp3";
-    AudioScr.src = Player1Stats.card.AudioST;
+    AudioScr.src = CartaOST.ST;
         audio.load();
         audio.play();
+    
+    CreditosNome.innerHTML = CartaOST.Nome;
+    CreditosDesc.innerHTML = CartaOST.Creditos;
+    AlertaOst.classList.remove(...AlertaOst.classList);
+    AlertaOst.classList.add("visible");
+    AlertaOst.classList.add("alert");
+    AlertaOst.classList.add("alert-danger");
+    AlertaOst.classList.add("overlayST");
+
+
+    setTimeout(function(){
+       // AlertaOst.classList.remove(...AlertaOst.classList);
+        AlertaOst.classList.add("desapareça");
+    }, 10000)
 }
 export function SuperIntro(carta){
     

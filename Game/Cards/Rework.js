@@ -7,6 +7,9 @@ export let estados ={
     audioRolar:0,
     estadoRodada:0,
     rodada : 0,
+    derrotaPonto:0,
+    vitoriaPonto:0,
+    derrotado: false,
     estiloP2: false,
     estaAtacando : true, // se estaAtacando = true, esconde carta do inimigo, senão mostra carta
     CartaRel : 1 //0 = escondido - 1 =revelado

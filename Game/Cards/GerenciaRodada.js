@@ -39,6 +39,7 @@ export function ModoRodada(x, perdeu){
             estados.estadoRodada = 2;
             document.getElementById("botao").innerHTML = "main menu";
             if(perdeu == true){
+                estados.derrotado = true;
                 if (estados.rodada == 1){
                     document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADA";
                     document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADA";
@@ -47,9 +48,11 @@ export function ModoRodada(x, perdeu){
                 document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADAS";
                 document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADAS";
                 }
+                
                 document.getElementById("Estado").innerHTML = "PERDEU";
             }
             else{
+                estados.derrotado = false;
                 if (estados.rodada == 1){
                     document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADA";
                     document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADA";
@@ -58,10 +61,9 @@ export function ModoRodada(x, perdeu){
                 document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
                 document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
                 }
-                document.getElementById("Estado").innerHTML = "GANHOU";
             }
+            
     }
-    
     if(Player1Stats.Aura>100){
         document.getElementById("auraP1").style ="color:rgba(0, 140, 255, 1);";
     }
@@ -85,7 +87,26 @@ export function ModoRodada(x, perdeu){
 
 export function fim(x){
     if (x==0){
-    location.reload();
+    const bt = document.getElementById("botao");
+    bt.removeAttribute("data-bs-target");
+    Player1Stats.Aura = 100;
+    Player2Stats.Aura = 100;
+    document.getElementById("auraP2").innerHTML = "<b>"+ Player2Stats.Aura+"</b>";
+    document.getElementById("auraP1").innerHTML = "<b>"+ Player1Stats.Aura+"</b>";
+    estados.estadoRodada = 0;
+    estados.CartaRel =1;
+    estados.estaAtacando = true;
+    if (estados.derrotado == true){
+        estados.derrotaPonto++;
+        document.getElementById("placarDerrota").innerHTML = estados.derrotaPonto;
+    }
+    else{
+        estados.vitoriaPonto++;
+        document.getElementById("placarVitoria").innerHTML = estados.vitoriaPonto;
+    }
+    estados.estiloP2= false;
+    ModoRodada(1);
+    //location.reload();
     }
     if (x==1){
     window.open('Menu.html', '_self').focus();
