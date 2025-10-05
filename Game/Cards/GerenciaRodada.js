@@ -107,6 +107,8 @@ export function fim(x){
         document.getElementById("placarVitoria").innerHTML = estados.vitoriaPonto;
     }
     estados.estiloP2= false;
+    estados.rodada = 0;
+    document.getElementById("rodada").innerHTML = estados.rodada;
     ModoRodada(1);
     //location.reload();
     }
