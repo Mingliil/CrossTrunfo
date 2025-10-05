@@ -5,6 +5,28 @@
     <title>CrossTrunfo!</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/Game/Assets/favicon.ico">
+<style>
+    .overlayST {
+  position: fixed; /* Sit on top of the page content */
+  width: 30%; /* Full width (cover the whole page) */
+  height: 10%; /* Full height (cover the whole page) */
+  top: 70%;
+  left: 65%;
+  right: 100%;
+  bottom: 0%;
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+.desapareça { 
+ opacity: 0; 
+ visibility: hidden;
+ -webkit-transition: visibility 0.2s linear,
+ opacity 0.2s linear;
+ -moz-transition: visibility 0.2s linear,
+ opacity 0.2s linear;
+ -o-transition: visibility 0.2s linear,
+ opacity 0.2s linear; 
+}
+</style>
 </head>
 <body background="Assets/CROSSTRUNFO.png" cover data-bs-theme="dark"> 
 
@@ -91,6 +113,11 @@
         <source id="audioSTSrc" src="" type="">
         </audio> 
     </div>
+<!--Overlay da ST-->
+<div id="ostDetails" class="visible alert alert-primary overlayST" >
+    <p id="creditosNm"></p>
+    <p id="creditosST">TESTEANDO</p>
+</div>
 
 <!-- Modal -->
 <div class="modal fade text-center" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -118,6 +145,7 @@
     <script src="Cards/Cartas.js" type="module"></script>
     <script src="Cards/Rework.js" type="module"></script>
     <script src="Cards/main.js" type="module"></script>
+    <script src="Cards/musicas.js" type="module"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
