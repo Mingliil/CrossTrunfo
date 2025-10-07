@@ -1,5 +1,6 @@
 import { CardOst } from "./musicas.js";
 export const DeckFull = [];
+
 DeckFull.Sherma = {
     nome:"Sherma",
     raridade:"COMUM",
@@ -579,6 +580,7 @@ DeckFull.Frisk = {
         magia: 40
     }
 };
+
 export const DeckRaro = [DeckFull.Silver, DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
 export const DeckEpico = [DeckFull.Spam, DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
 export const DeckLenda = [DeckFull.Femtanyl, DeckFull.pandemonium, DeckFull.EGGMAN];

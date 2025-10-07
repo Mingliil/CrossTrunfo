@@ -87,31 +87,31 @@ export function ModoRodada(x, perdeu){
 
 export function fim(x){
     if (x==0){
-    const bt = document.getElementById("botao");
-    bt.removeAttribute("data-bs-target");
-    Player1Stats.Aura = 100;
-    Player2Stats.Aura = 100;
-    Player1Stats.modos.modoPan = false;
-    document.getElementById("auraP2").innerHTML = "<b>"+ Player2Stats.Aura+"</b>";
-    document.getElementById("auraP1").innerHTML = "<b>"+ Player1Stats.Aura+"</b>";
-    estados.estadoRodada = 0;
-    estados.CartaRel =1;
-    estados.estaAtacando = true;
-    if (estados.derrotado == true){
-        estados.derrotaPonto++;
-        document.getElementById("placarDerrota").innerHTML = estados.derrotaPonto;
-    
-    }
-    else{
-        estados.vitoriaPonto++;
-        document.getElementById("placarVitoria").innerHTML = estados.vitoriaPonto;
-    }
-    estados.estiloP2= false;
-    estados.rodada = 0;
-    Player1Stats.modos.modoPrime = false;
-    document.getElementById("rodada").innerHTML = estados.rodada;
-    ModoRodada(1);
-    //location.reload();
+        const bt = document.getElementById("botao");
+        bt.removeAttribute("data-bs-target");
+        Player1Stats.Aura = 100;
+        Player2Stats.Aura = 100;
+        Player1Stats.modos.modoPan = false;
+        document.getElementById("auraP2").innerHTML = "<b>"+ Player2Stats.Aura+"</b>";
+        document.getElementById("auraP1").innerHTML = "<b>"+ Player1Stats.Aura+"</b>";
+        estados.estadoRodada = 0;
+        estados.CartaRel =1;
+        estados.estaAtacando = true;
+        if (estados.derrotado == true){
+            estados.derrotaPonto++;
+            document.getElementById("placarDerrota").innerHTML = estados.derrotaPonto;
+        
+        }
+        else{
+            estados.vitoriaPonto++;
+            document.getElementById("placarVitoria").innerHTML = estados.vitoriaPonto;
+        }
+        estados.estiloP2= false;
+        estados.rodada = 0;
+        Player1Stats.modos.modoPrime = false;
+        document.getElementById("rodada").innerHTML = estados.rodada;
+        ModoRodada(1);
+        //location.reload();
     }
     if (x==1){
     window.open('Menu.html', '_self').focus();
