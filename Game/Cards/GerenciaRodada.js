@@ -108,6 +108,7 @@ export function fim(x){
     }
     estados.estiloP2= false;
     estados.rodada = 0;
+    Player1Stats.modos.modoPrime = false;
     document.getElementById("rodada").innerHTML = estados.rodada;
     ModoRodada(1);
     //location.reload();
