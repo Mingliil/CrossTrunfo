@@ -1,12 +1,13 @@
 import { Carta, estados } from "./Rework.js";
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda} from "./Cartas.js";
 import { puxaCarta, Raridade, PegaCarta } from "./GerenciaRaridade.js";
-import { GerenciaModoAtaque } from "./GerenciaAtaque.js";
+import { GerenciaModoAtaque, HitMark } from "./GerenciaAtaque.js";
 import { ModoRodada, fim } from "./GerenciaRodada.js";
 import { Player2Stats, Player1Stats } from "./Rework.js";
 import { EstiloRaro } from "./GerenciaRaridade.js";
 //aqui é onde esta a parte de playlist de soundtrack do jogo sem que esteja relacionado as cartas
 import { BackgroundST } from "./GerenciaAudio.js";
+
 const Soundtrack = document.getElementById("audioST");
     if (estados.audioRolar == 0){
          BackgroundST();
@@ -28,7 +29,7 @@ document.getElementById("btDebug").onclick = () =>{
 }
 document.getElementById("botao").onclick = () =>{
     
-
+    HitMark();
     if (document.getElementById("botao").innerHTML == "ataque"){ 
         estados.estiloP2 = true;
         GerenciaModoAtaque();
@@ -60,3 +61,4 @@ document.getElementById("fim1").onclick = () =>{
 document.getElementById("fim2").onclick = () =>{
     fim(0);
 }
+HitMark();

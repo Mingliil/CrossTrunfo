@@ -7,7 +7,7 @@
         <link rel="icon" type="image/x-icon" href="/Game/Assets/favicon.ico">
 <style>
     .overlayST {
-  position: fixed; /* Sit on top of the page content */
+  position: absolute; /* Sit on top of the page content */
   width: 30%; /* Full width (cover the whole page) */
   height: 14.5%; /* Full height (cover the whole page) */
   top: 70%;
@@ -16,7 +16,14 @@
   bottom: 0%;
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
 }
-.desapareça { 
+    .HitP1 {
+  position:absolute; /* Sit on top of the page content */
+  background-color: blue;
+  opacity: 0.5;
+  width: 13%;
+  z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+}
+    .desapareça { 
  opacity: 0; 
  visibility: hidden;
  -webkit-transition: visibility 0.2s linear,
@@ -50,6 +57,8 @@
         </div><BR>
         <div class="row" >
             <div class="col rounded-3"style="background-color: black;">
+                <canvas class="HitP1" id="HMP1">
+                </canvas>
                 <h6>aura</h6>
                 <p id="auraP1"><b>100</b></p>
                 <canvas id="CartaP1" style="width: 50%;"></canvas>
@@ -88,6 +97,8 @@
                 </div>
             <div class="col-1"></div>
             <div class="col rounded-3" style="background-color: black;" >
+                <canvas class="HitP1" id="HMP2">
+                </canvas>
                 <h6>aura</h6>
                 <p id="auraP2" style="color: aliceblue;"><b>100</b></p>
                 <canvas id="CartaP2" style="width: 50%;"></canvas>
@@ -109,7 +120,7 @@
                 
             </div>
         </div>
-        <div class="invisible">
+        <div class="i/*nvisible">
             <p id="debug">among</p>
             <button id="btDebug"onclick="debug()">Testes</button>
         </div>

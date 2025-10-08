@@ -114,3 +114,20 @@ export function GerenciaModoAtaque(P){
         alert("escolha 1 opção");
     }
 }
+export function HitMark(x,P){
+    const hitMarkP1 = document.getElementById("HMP1");
+    const vidaP1 = document.getElementById("auraP1")
+    const ctxP1 = hitMarkP1.getContext("2d");
+        ctxP1.font = "50px Arial";
+        ctxP1.fillText("Hello World",10,80);
+    const hitMarkP2 = document.getElementById("HMP2");
+    const ctxP2 = hitMarkP2.getContext("2d");
+    // Grab the target element
+
+// Get a rect object
+var rectP1 = vidaP1.getBoundingClientRect();
+// The rect has all the data we want
+hitMarkP1.style.left = (rectP1.x+60)+'px';
+hitMarkP1.style.top = (rectP1.y-30)+'px';
+console.log(rectP1.x);
+}
