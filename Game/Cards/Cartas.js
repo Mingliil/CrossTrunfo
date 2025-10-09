@@ -522,9 +522,9 @@ DeckFull.TVTIME = {
     DescY: 0,
     ImgTamanho:"120%",
     Status : {
-        poder: 50,
+        poder: 75,
         defesa: 0,
-        magia: 100
+        magia: 75
     }
 };
 DeckFull.Silver = {
