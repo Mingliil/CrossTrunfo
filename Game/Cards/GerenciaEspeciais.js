@@ -44,7 +44,8 @@ export function imsad(){
     Player1Stats.card.Status.defesa= -8;
     Player1Stats.card.Status.magia= -2011
 }
-export function PureAuraAndDrip(){
+export function PureAuraAndDrip(P){
+    if (P=="P1"){
     Player1Stats.card.Atlas = 'Assets/gokuDrip.png';
     Player1Stats.card.AlturaX=669;
     Player1Stats.card.AlturaY=1195;
@@ -58,4 +59,22 @@ export function PureAuraAndDrip(){
     Player1Stats.card.Status.defesa= 100;
     Player1Stats.card.Status.magia= 100;
     AudioST(Player1Stats.card);
+}
+    else{
+    Player2Stats.card.Atlas = 'Assets/gokuDrip.png';
+    Player2Stats.card.AlturaX=669;
+    Player2Stats.card.AlturaY=1195;
+    Player2Stats.card.CoordsX=0;
+    Player2Stats.card.CoordsY=0;
+    Player2Stats.card.ImgTamanho="80%";
+    Player2Stats.card.nome="goku?";
+    Player2Stats.card.descricao = "Hey, i heard you Jordans are <span style='color:red;'><b>FAKE</b></span>...";
+    Player2Stats.card.raridade="<b>DRIP</b>";
+    Player2Stats.card.Status.poder= 100;
+    Player2Stats.card.Status.defesa= 100;
+    Player2Stats.card.Status.magia= 100; 
+    AudioST(Player2Stats.card);
+    return "ÉPICO"
+    }
+    
 }

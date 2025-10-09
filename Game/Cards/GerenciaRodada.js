@@ -1,6 +1,7 @@
 import { PegaCarta, puxaCarta } from "./GerenciaRaridade.js";
 import { estados, Carta, Player1Stats,Player2Stats } from "./Rework.js";
 import { EstiloRaro } from "./GerenciaRaridade.js";
+import { DeckFull } from "./Cartas.js";
 export function ModoRodada(x, perdeu){
     /*
         Estados do x
@@ -31,7 +32,11 @@ export function ModoRodada(x, perdeu){
         document.getElementById("CartaP2Desc").innerHTML = Player2Stats.card.descricao;
         document.getElementById("botao").innerHTML = "proxima rodada";
         estados.estadoRodada = 0;
-        EstiloRaro(Player2Stats.card.raridade, "P2");
+        if (Player2Stats.card == DeckFull.Goku){
+            EstiloRaro("ÉPICO", "P2");
+        }else{
+            EstiloRaro(Player2Stats.card.raridade, "P2");
+        }
     }
     if (x == 2){
             const bt = document.getElementById("botao");

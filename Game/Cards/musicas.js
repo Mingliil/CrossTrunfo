@@ -68,11 +68,12 @@ CardOst.Pandemonium={
     ST:'Assets/audios/SoundTracks/PANDEMONIUM.mp3',
     Creditos:""
 }
-/*CardOst.SPAMTON={
-    Nome:"",
-    ST:"",
+CardOst.TVTIME={
+    Nome:"IT'S T.V. TIME!! - Deltarune chapter 3+4 OST",
+    ST:"Game/Assets/audios/SoundTracks/TVTime.mp3",
     Creditos:""
 }
+/*
 CardOst.SPAMTON={
     Nome:"",
     ST:"",

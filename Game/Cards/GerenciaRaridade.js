@@ -216,16 +216,11 @@ export function puxaCarta(P, especial){
     if (P == "player1"){
         carta = PegaCarta("P1");
         //carta[1] = "ÉPICO";
-        //carta = [DeckEpico[1],"ÉPICO"];
+        carta = [DeckEpico[0],"ÉPICO"];
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
-        /*if (Player1Stats.modos.quero == true){
-            carta[0] = DeckLenda[[Math.floor(Math.random() * DeckLenda.length)]];
-             carta[0] = DeckLenda[0];
-            carta[1] = 'LENDA';
-            Player1Stats.modos.quero = false;
-        }*/
+        
         else if (Player1Stats.modos.modoPan == true){
             carta[0] = DeckFull.pandemonium;
             carta[1] = 'LENDA';
@@ -250,15 +245,16 @@ export function puxaCarta(P, especial){
         if (carta[0]== DeckFull.Goku){
             const drip = Math.floor(Math.random() * 35);
             if (drip == 0){
-                PureAuraAndDrip();
+                PureAuraAndDrip("P1");
                 carta[1] = 'ÉPICO';
             }
         }
         if (carta[0]==DeckFull.Spam){
             SuperIntro(carta[0]);
-
         }
-        else{}
+        if (carta[0]==DeckFull.TVTIME){
+            SuperIntro(carta[0]);
+        }
         Carta(Player1Stats.card, "P1");
         if (Player1Stats.card.nome == "Token/Femtanyl"){
             document.getElementById("cartaPoder").innerHTML = "WIRES: " +1999 + "<br>";
@@ -306,12 +302,23 @@ export function puxaCarta(P, especial){
     }
     if (P == "player2"){ 
         carta = PegaCarta("P2");
-        //carta = [DeckLenda[0],"ÉPICO"];
+        if (Player1Stats.modos.quero == true){
+            //carta[0] = DeckLenda[[Math.floor(Math.random() * DeckLenda.length)]];
+            carta[0] = DeckFull.Goku;
+            carta[1] = 'LENDA';
+            Player1Stats.modos.quero = false;
+        }
+        Player2Stats.card = carta[0];
+        if (Player2Stats.card == DeckFull.Goku){
+            const drip = Math.floor(Math.random() * 30);
+            if (drip == 0){
+            carta[1] = PureAuraAndDrip("P2");
+        }
+}
+        document.getElementById("debug").innerHTML =Player2Stats.card.nome
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
-        Player2Stats.card = carta[0];
-
         Carta(Player2Stats.card, "P2"); 
        switch (carta[1]) {
             case "LENDA":
@@ -335,6 +342,6 @@ export function puxaCarta(P, especial){
                 Player2Stats.raridades.lenda+=2;
                 break;
         }
-        document.getElementById("debug").innerHTML =Player2Stats.raridades.raro + "|" +Player2Stats.raridades.epico + "|" + Player2Stats.raridades.lenda  
+        
     }    
 }

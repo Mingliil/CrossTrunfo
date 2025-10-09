@@ -506,6 +506,27 @@ DeckFull.Spam = {
         magia: 100
     }
 };
+DeckFull.TVTIME = {
+    nome:"ANT. TENNA",
+    raridade:"ÉPICO",
+    descricao:"<B>HAEAHAEAHAEAHAEAH!!<><<< <span style='color:red'><a target='_blank' href='https://mingliil.github.io/CrossTrunfo/HYPERLINKBLOCKED' style='background-color: transparent; text-decoration: none; color: red;'>[[Hyperlink Blocked]] .[[Hyperlin..k Blocked]]. [[Hyperlink Blo>>cked]].</span></a>",
+    Atlas:'Assets/cards.png',
+    Audiofont:"Game/Assets/audios/Intros/tvtime.mp3",
+    AudioST:CardOst.TVTIME,
+    AudioType: 'audio/mp3',
+    AlturaX:700,
+    AlturaY:546,
+    CoordsX:1880,
+    CoordsY:6180,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"120%",
+    Status : {
+        poder: 50,
+        defesa: 0,
+        magia: 100
+    }
+};
 DeckFull.Silver = {
     nome:"Silver",
     raridade:"RARO",
@@ -582,6 +603,6 @@ DeckFull.Frisk = {
 };
 
 export const DeckRaro = [DeckFull.Silver, DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
-export const DeckEpico = [DeckFull.Spam, DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
+export const DeckEpico = [DeckFull.TVTIME, DeckFull.Spam, DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
 export const DeckLenda = [DeckFull.Femtanyl, DeckFull.pandemonium, DeckFull.EGGMAN];
 export const DeckPlayer = [DeckFull.Frisk, DeckFull.Susie, DeckFull.Kris, DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];

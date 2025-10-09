@@ -7,8 +7,10 @@ export function AudioST(carta){
     const AudioScr = document.getElementById("audioSTSrc");
     const CreditosDesc = document.getElementById("creditosST");
     const CreditosNome = document.getElementById("creditosNm");
-    const AlertaOst = document.getElementById("ostDetails")
-    const CartaOST = Player1Stats.card.AudioST
+    const AlertaOst = document.getElementById("ostDetails");
+
+    const CartaOST = carta.AudioST
+    
     AudioScr.type = "audio/mp3";
     AudioScr.src = CartaOST.ST;
         audio.load();
