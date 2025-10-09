@@ -216,7 +216,7 @@ export function puxaCarta(P, especial){
     if (P == "player1"){
         carta = PegaCarta("P1");
         //carta[1] = "ÉPICO";
-        carta = [DeckEpico[0],"ÉPICO"];
+        //carta = [DeckEpico[0],"ÉPICO"];
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
@@ -312,9 +312,9 @@ export function puxaCarta(P, especial){
         if (Player2Stats.card == DeckFull.Goku){
             const drip = Math.floor(Math.random() * 30);
             if (drip == 0){
-            carta[1] = PureAuraAndDrip("P2");
+                carta[1] = PureAuraAndDrip("P2");
+            }
         }
-}
         document.getElementById("debug").innerHTML =Player2Stats.card.nome
         if (carta[0].nome == "Gaster"){
             GasterRandom();

@@ -29,13 +29,47 @@ musica.PapersPlease={
     ST:"Assets/audios/Playlist/PapersPlease.mp3",
     Creditos:""
 }
+musica.HeartacheNo={
+    Nome:"A Little Heart to Heart - Valve Orchestra - Team Fortress 2 OST",
+    ST:"Assets/audios/Playlist/A Little Heart to Heart.mp3",
+    Creditos:""
+}
+musica.Crystals={
+    Nome:"Crystals - Hotline Miami OST",
+    ST:"Assets/audios/Playlist/Crystals -Hotline Miami.mp3",
+    Creditos:""
+}
+musica.ElitePenguin={
+    Nome:"Elite Penguin Force DS Music - Club Penguin OST",
+    ST:"Assets/audios/Playlist/Elite Penguin Force DS Music.mp3",
+    Creditos:""
+}
+musica.LightsAndCamera={
+    Nome:"Lights, Camera, Action! - Studiopolis Zone Act 1 - Sonic Mania OST",
+    ST:"Assets/audios/Playlist/Lights, Camera, Action Tee Lopes.mp3",
+    Creditos:""
+}
+musica.UpgradeStation={
+    Nome:"Upgrade Station - Valve Orchestra - Team Fortress 2 OST",
+    ST:"Assets/audios/Playlist/Upgrade Station.mp3",
+    Creditos:""
+}
+musica.Archimedes={
+    Nome:"Archimedes - Valve Orchestra - Team Fortress 2 OST",
+    ST:"Assets/audios/Playlist/Archimedes.mp3",
+    Creditos:""
+}
 
 export const playList =[
     musica.sans,
     musica.PapersPlease,
     musica.CastleVein,
     musica.YWBPPortal,
-    musica.AYL
+    musica.AYL,
+    musica.LightsAndCamera,
+    musica.ElitePenguin,
+    musica.Crystals,
+    musica.HeartacheNo
 ]
 export const CardOst = []
 CardOst.Femtanyl={
@@ -70,7 +104,7 @@ CardOst.Pandemonium={
 }
 CardOst.TVTIME={
     Nome:"IT'S T.V. TIME!! - Deltarune chapter 3+4 OST",
-    ST:"Game/Assets/audios/SoundTracks/TVTime.mp3",
+    ST:"Assets/audios/SoundTracks/TVTime.mp3",
     Creditos:""
 }
 /*

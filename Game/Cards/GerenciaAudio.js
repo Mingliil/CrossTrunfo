@@ -1,3 +1,4 @@
+import { DeckFull } from "./Cartas.js";
 import { Player1Stats, Player2Stats } from "./Rework.js";
 import { estados } from "./Rework.js";
 import { playList } from "./musicas.js";
@@ -31,8 +32,15 @@ export function AudioST(carta){
     }, 10000)
 }
 export function SuperIntro(carta){
-    
-    AudioST(carta);
+    if (carta == DeckFull.TVTIME){
+        setTimeout(function(){
+       // AlertaOst.classList.remove(...AlertaOst.classList);
+        AudioST(carta);
+    }, 5000)
+    }
+    else{
+        AudioST(carta);
+    }
     const audio = document.getElementById("audio");
     const AudioScr = document.getElementById("audioScr");
     AudioScr.type = "audio/mp3";
@@ -58,6 +66,7 @@ export function BackgroundST(){
     }
     AudioScr.type = "audio/mp3";
     AudioScr.src = PlaylistChoice.ST;
+    audio.volume = 0.2;
         audio.load();
         audio.play();
     CreditosNome.innerHTML = PlaylistChoice.Nome;
