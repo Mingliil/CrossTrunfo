@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>CrossTrunfo!</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/Game/Assets/favicon.ico">
+<style>
+    .overlayST {
+  position: absolute; /* Sit on top of the page content */
+  width: 30%; /* Full width (cover the whole page) */
+  height: 14.5%; /* Full height (cover the whole page) */
+  top: 70%;
+  left: 65%;
+  right: 100%;
+  bottom: 0%;
+  color: aliceblue;
+  z-index: 4; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+ /*@keyframes HitMarksAnim {
+    0% {top: -10px;}
+    10% {top: -2px;}
+    45% {top: -10px;}
+    100% {top: -10px;}
+ }*/
+
+    .HitP1 {
+  position:absolute; /* Sit on top of the page content */
+  width: 13%;
+  z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+
+    .desapareça { 
+ opacity: 0; 
+ visibility: hidden;
+ -webkit-transition: visibility 0.2s linear,
+ opacity 0.2s linear;
+ -moz-transition: visibility 0.2s linear,
+ opacity 0.2s linear;
+ -o-transition: visibility 0.2s linear,
+ opacity 0.2s linear; 
+}
+
+
+</style>
+</head>
+<body background="Assets/CROSSTRUNFO.png" cover data-bs-theme="dark"> 
+
+
+    <div class="container text-center"color:aliceblue">
+        <div class="row">
+            <div class="col">
+
+            </div>
+        </div>
+        <div class="row rounded-bottom" style="background-color: black;">
+            <div class="col">
+                PLAYER 1
+            </div>
+            <div class="col">
+                DECK INIMIGO
+            </div>
+            <div class="col">
+                PLAYER 2
+            </div>
+        </div><BR>
+        <div class="row" >
+            <div class="col rounded-3"style="background-color: black;">
+                <p class="HitP1" id="HMP1">
+                </p>
+                <h6>aura</h6>
+                <p id="auraP1"><b>100</b></p>
+                <canvas id="CartaP1" style="width: 50%;"></canvas>
+                <h6 id="CartaP1Nome">teste</h6>
+                <div class="row text-center">
+                    <div class="col-3"></div>
+                    <div class="col">
+                    <h6 id="CartaP1Rari">teste</h6>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+                <p id="CartaP1Desc">teste</p>
+                <canvas id="CartaP1DescImg" style="width: 50%;"></canvas>
+            </div>
+            <div class="col-1"></div>
+            <div class="col ">
+                <div class="row-1"></div>
+                <div class="row-4 rounded-3" style="background-color: black;">
+                <h5 class="fs-6">Vitórias / Derrotas</h5>
+                <p> <span id="placarVitoria">0</span>  /  <span id="placarDerrota">0</span> </p>
+                <h5 class="fs-6">RODADA</h5>
+                <p id="rodada" class="fs-6">1</p>
+                <p>status da carta:<br>
+                <div class="text">
+                    <input class="form-check-input" type="radio" name="statuscard" id="status1"><label class="form-check-label" id="cartaPoder" for="status1"></label><br>
+                    <input class="form-check-input" type="radio" name="statuscard" id="status2"><label class="form-check-label" id="cartaDefesa" for="status2"></label><br>
+                    <input class="form-check-input" type="radio" name="statuscard" id="status3"><label class="form-check-label" id="cartaMagia" for="status3"></label>
+                </div>
+                </p>
+            
+                <button id="botao" class="btn btn-dark"data-bs-toggle="modal" data-bs-target="" ></button>
+                <br><br>
+                </div>
+                <div class="row-1">
+                </div>
+                </div>
+            <div class="col-1"></div>
+            <div class="col rounded-3" style="background-color: black;" >
+                <p class="HitP1" id="HMP2">
+                </p>
+                <h6>aura</h6>
+                <p id="auraP2" style="color: aliceblue;"><b>100</b></p>
+                <canvas id="CartaP2" style="width: 50%;"></canvas>
+                <h6 id="CartaP2Nome">teste</h6>
+                <div class="row text-center">
+                    <div class="col-3"></div>
+                    <div class="col">
+                    <h6 id="CartaP2Rari"></h6>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+                <p id="CartaP2Desc">teste</p>
+                <canvas id="CartaP2DescImg" style="width: 50%;"></canvas>
+            </div>
+        </div><br>
+        
+        <div class="row">
+            <div class="col" id="DeckYou">
+                
+            </div>
+        </div>
+        <div class="invisible">
+            <b><p id="debug" style="color: rgb(0, 0, 0); background-color: aliceblue;">among</p></b>
+            <button id="btDebug"onclick="debug()">Testes</button>
+        </div>
+        <audio id="audio">
+        <source id="audioScr" src="" type="">
+        </audio> 
+        <audio id="audioST">
+        <source id="audioSTSrc" src="" type="">
+        </audio> 
+    </div>
+<!--Overlay da ST-->
+<div id="ostDetails" class="invisible alert alert-primary overlayST" >
+    <p id="creditosNm"></p>
+    <p id="creditosST">TESTEANDO</p>
+</div>
+
+<!-- Modal -->
+<div class="modal fade text-center" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="Estado">Modal title</h5>
+        <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">atque</button>-->
+      </div>
+      <div class="modal-body">
+        <p id="rodadaFim" class="fs-6">1</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="fim1"class="btn btn-secondary">Menu</button>
+        <button type="button" id="fim2"class="btn btn-primary " data-bs-dismiss="modal" aria-label="Close">Novo Jogo</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="Cards/GerenciaEspeciais.js" type="module"></script>
+    <script src="Cards/GerenciaRodada.js" type="module"></script>
+    <script src="Cards/GerenciaAtaque.js" type="module"></script>
+    <script src="Cards/GerenciaRaridade.js" type="module"></script>
+    <script src="Cards/GerenciaAudio.js" type="module"></script>
+    <script src="Cards/Cartas.js" type="module"></script>
+    <script src="Cards/Rework.js" type="module"></script>
+    <script src="Cards/main.js" type="module"></script>
+    <script src="Cards/musicas.js" type="module"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
