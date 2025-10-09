@@ -488,7 +488,7 @@ DeckFull.Femtanyl = {
 DeckFull.Spam = {
     nome:"THE EV33RY BUDDYYYY11 <b>[[Number 1 Rated Salesman1997]]</b>SPAMT////SPAMTON G. SPAMTON!!",
     raridade:"ÉPICO",
-    descricao:"<B>HAEAHAEAHAEAHAEAH!!<><<< <span style='color:red'>[[Hyperlink Blocked]] .[[Hyperlin..k Blocked]]. [[Hyperlink Blo>>cked]].</span>",
+    descricao:"<B>HAEAHAEAHAEAHAEAH!!<><<< <span style='color:red'><a target='_blank' href='https://mingliil.github.io/CrossTrunfo/HYPERLINKBLOCKED' style='background-color: transparent; text-decoration: none; color: red;'>[[Hyperlink Blocked]] .[[Hyperlin..k Blocked]]. [[Hyperlink Blo>>cked]].</span></a>",
     Atlas:'Assets/cards.png',
     Audiofont:'Assets/audios/Intros/SpamLaugh.mp3',
     AudioST:CardOst.SPAMTON,

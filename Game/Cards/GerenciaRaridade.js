@@ -202,7 +202,7 @@ export function puxaCarta(P, especial){
     //quero = true;
     if (P == "player1"){
         //carta[1] = "ÉPICO";
-        //carta[0] = DeckEpico[0];
+        //carta = [DeckEpico[0],"ÉPICO"];
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
@@ -242,7 +242,9 @@ export function puxaCarta(P, especial){
         }
         if (carta[0]==DeckFull.Spam){
             SuperIntro(carta[0]);
+
         }
+        else{}
         Carta(Player1Stats.card, "P1");
         if (Player1Stats.card.nome == "Token/Femtanyl"){
             document.getElementById("cartaPoder").innerHTML = "WIRES: " +1999 + "<br>";

@@ -12,7 +12,8 @@ export let estados ={
     derrotado: false,
     estiloP2: false,
     estaAtacando : true, // se estaAtacando = true, esconde carta do inimigo, senão mostra carta
-    CartaRel : 1 //0 = escondido - 1 =revelado
+    CartaRel : 1, //0 = escondido - 1 =revelado
+    danoDado:0
 }
 
 export let Player1Stats = {

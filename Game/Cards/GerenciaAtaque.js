@@ -43,15 +43,18 @@ export function GerenciaModoAtaque(P){
             if (ataqueResultado >0){
                 if (Player1Stats.modos.modoPrime == true){
                     Player2Stats.Aura -=  ataqueP1+ataqueP2
+                    HitMark(ataqueResultado,"P2")
                 }
                 else{
                     Player2Stats.Aura -= ataqueResultado;
+                    HitMark(-ataqueResultado,"P2")
                 }
                 if (P1Card.podeCurar == true){
                     if (P1Card.nome == "Gaster"){
                         Player1Stats.Aura +=  Math.floor(ataqueResultado/2);
                     }
                     Player1Stats.Aura +=  Math.floor(ataqueResultado/3);
+                    HitMark(Math.floor(ataqueResultado/3),"P1")
                 }
                 else if (Player1Stats.modos.curaDano == true){
                     Player1Stats.Aura +=  Math.floor(ataqueResultado/3);
@@ -77,13 +80,15 @@ export function GerenciaModoAtaque(P){
             else if (ataqueResultado <0){
                 if (Player1Stats.modos.modoPrime == true){
                     Player2Stats.Aura -=  ataqueP1+ataqueP2
+                    HitMark(ataqueResultado,"P2")
                 }
                 else{
                     Player1Stats.Aura -= -ataqueResultado;
+                    HitMark(ataqueResultado,"P1")
                 }
                 if (P2Card.podeCurar == true){
                     if (P2Card.nome == "Gaster"){
-                        Player1Stats.Aura +=  Math.floor(ataqueResultado/2);
+                        Player2Stats.Aura +=  Math.floor(ataqueResultado/2);
                     }
                     Player2Stats.Aura -= Math.floor(ataqueResultado/3);
                 }
@@ -115,19 +120,37 @@ export function GerenciaModoAtaque(P){
     }
 }
 export function HitMark(x,P){
-    const hitMarkP1 = document.getElementById("HMP1");
-    const vidaP1 = document.getElementById("auraP1")
-    const ctxP1 = hitMarkP1.getContext("2d");
-        ctxP1.font = "50px Arial";
-        ctxP1.fillText("Hello World",10,80);
-    const hitMarkP2 = document.getElementById("HMP2");
-    const ctxP2 = hitMarkP2.getContext("2d");
-    // Grab the target element
-
+    let hitMark = 0//document.getElementById("HMP1");
+    let vida = 0//document.getElementById("auraP1")
+    let rect = 0//vida.getBoundingClientRect();
+    if (P == "P1"){
+        hitMark = document.getElementById("HMP1");
+        vida = document.getElementById("auraP1")
+        rect = vida.getBoundingClientRect();
+        hitMark.style.left = (rect.x*1.65)+'px';
+        hitMark.style.top = (rect.y/1.08)+'px';
+    }
+    else{
+        hitMark = document.getElementById("HMP2");
+        vida = document.getElementById("auraP2")
+        rect = vida.getBoundingClientRect();
+        hitMark.style.left = (rect.x*1.10)+'px';
+        hitMark.style.top = (rect.y/1.08)+'px';
+    }
+        hitMark.classList.remove(...hitMark.classList);
+        hitMark.classList.add("HitP1");
+        if(x > 0){
+            hitMark.style.color = "rgba(0, 255, 13, 1)"
+        }
+        else{
+            hitMark.style.color = "rgba(255, 0, 0, 1)"
+        }
+        hitMark.innerHTML = "<b>"+x+"</b>";
+        setTimeout(function(){
+            hitMark.classList.add("desapareça");
+            }, 950);
 // Get a rect object
-var rectP1 = vidaP1.getBoundingClientRect();
 // The rect has all the data we want
-hitMarkP1.style.left = (rectP1.x+60)+'px';
-hitMarkP1.style.top = (rectP1.y-30)+'px';
-console.log(rectP1.x);
+
+
 }

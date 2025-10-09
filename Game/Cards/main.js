@@ -29,7 +29,6 @@ document.getElementById("btDebug").onclick = () =>{
 }
 document.getElementById("botao").onclick = () =>{
     
-    HitMark();
     if (document.getElementById("botao").innerHTML == "ataque"){ 
         estados.estiloP2 = true;
         GerenciaModoAtaque();
@@ -61,4 +60,3 @@ document.getElementById("fim1").onclick = () =>{
 document.getElementById("fim2").onclick = () =>{
     fim(0);
 }
-HitMark();

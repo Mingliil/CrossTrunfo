@@ -14,15 +14,24 @@
   left: 65%;
   right: 100%;
   bottom: 0%;
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  color: aliceblue;
+  z-index: 4; /* Specify a stack order in case you're using a different order for other elements */
 }
+
+ /*@keyframes HitMarksAnim {
+    0% {top: -10px;}
+    10% {top: -2px;}
+    45% {top: -10px;}
+    100% {top: -10px;}
+ }*/
+
     .HitP1 {
   position:absolute; /* Sit on top of the page content */
-  background-color: blue;
-  opacity: 0.5;
   width: 13%;
   z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
 }
+
+
     .desapareça { 
  opacity: 0; 
  visibility: hidden;
@@ -33,6 +42,8 @@
  -o-transition: visibility 0.2s linear,
  opacity 0.2s linear; 
 }
+
+
 </style>
 </head>
 <body background="Assets/CROSSTRUNFO.png" cover data-bs-theme="dark"> 
@@ -57,8 +68,8 @@
         </div><BR>
         <div class="row" >
             <div class="col rounded-3"style="background-color: black;">
-                <canvas class="HitP1" id="HMP1">
-                </canvas>
+                <p class="HitP1" id="HMP1">
+                </p>
                 <h6>aura</h6>
                 <p id="auraP1"><b>100</b></p>
                 <canvas id="CartaP1" style="width: 50%;"></canvas>
@@ -97,8 +108,8 @@
                 </div>
             <div class="col-1"></div>
             <div class="col rounded-3" style="background-color: black;" >
-                <canvas class="HitP1" id="HMP2">
-                </canvas>
+                <p class="HitP1" id="HMP2">
+                </p>
                 <h6>aura</h6>
                 <p id="auraP2" style="color: aliceblue;"><b>100</b></p>
                 <canvas id="CartaP2" style="width: 50%;"></canvas>
