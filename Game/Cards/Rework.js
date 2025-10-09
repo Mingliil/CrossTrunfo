@@ -26,14 +26,23 @@ export let Player1Stats = {
         curaDano: false,
         curaTempo: 5,
         quero: false
+    },
+    raridades:{
+        raro:0,
+        epico:0,
+        lenda:0
     }
-    
 };
 
 export let Player2Stats = {
     Aura : 100,
     card: 0,
-    ultimacarta:0
+    ultimacarta:0,
+    raridades:{
+        raro:0,
+        epico:0,
+        lenda:0
+    }
 };
 
 

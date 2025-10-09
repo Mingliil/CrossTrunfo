@@ -21,10 +21,10 @@ const Soundtrack = document.getElementById("audioST");
 //resto do jogo
 
 document.getElementById("btDebug").onclick = () =>{
-    document.getElementById("btDebug").innerHTML = Player1Stats.modos.quero;//Raridade();
+   /* document.getElementById("btDebug").innerHTML = Player1Stats.modos.quero;//Raridade();
     //puxaCarta("player1", "", true);
     Player1Stats.modos.quero = true;
-   
+   */
     //Carta(DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],"P1");
 }
 document.getElementById("botao").onclick = () =>{
@@ -52,7 +52,6 @@ document.getElementById("botao").onclick = () =>{
     }
 
     EstiloRaro(Player2Stats.card.Raridade,"P2")
-    document.getElementById("debug").innerHTML = estados.estiloP2;
 }
 document.getElementById("fim1").onclick = () =>{
     fim(1);

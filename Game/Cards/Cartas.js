@@ -452,7 +452,7 @@ DeckFull.Mesmerizer = {
     raridade: "ÉPICO",
     descricao:"Não é incrivel elas cantando hipnotizadas pelas cores sem saber o que está acontecendo?",
     Atlas:'Assets/cards.png',
-    AlturaX:597,
+    AlturaX:540,
     AlturaY:700,
     CoordsX:0,
     CoordsY:6070,

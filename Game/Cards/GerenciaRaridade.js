@@ -150,10 +150,21 @@ export function EstiloRaro(x, p){
         break;
     }
 }
-export function Raridade(){
-    let raro = Math.floor(Math.random() * 20);
-    let epico = Math.floor(Math.random() * 60);
-    let lenda = Math.floor(Math.random() * 100);
+export function Raridade(P){
+
+    let raro  = 0;
+    let epico = 0;
+    let lenda = 0;
+    if (P == "P1"){
+        raro = Math.floor(Math.random() * (20-Player1Stats.raridades.raro));
+        epico= Math.floor(Math.random() * (60-Player1Stats.raridades.epico));
+        lenda= Math.floor(Math.random() * (100-Player1Stats.raridades.lenda));
+    }
+    else{
+        raro = Math.floor(Math.random() * (20-Player2Stats.raridades.raro));
+        epico= Math.floor(Math.random() * (60-Player2Stats.raridades.epico));
+        lenda= Math.floor(Math.random() * (100-Player2Stats.raridades.lenda));
+    }
     //lenda = 0;
     if (lenda == 0){
         return 'lenda';
@@ -167,51 +178,54 @@ export function Raridade(){
     else{
         return 'comum';
     }
+
 }
 
-export function PegaCarta(debug){
-    let nivelCarta = Raridade();
-    if (debug == true){
-        nivelCarta = 'lenda';
-    }
+export function PegaCarta(P){
+    let nivelCarta = ""//Raridade();
+    if (P =="P1")
+        nivelCarta = Raridade("P1");
     else{
-        switch (nivelCarta) {
-            case 'lenda':
-                return [DeckLenda/*[0], 'lenda'];//*/[Math.floor(Math.random() * DeckLenda.length)], 'LENDA'];
-                break;
+        nivelCarta = Raridade("P2");
+    }
+    switch (nivelCarta) {
+        case 'lenda':
+            return [DeckLenda/*[0], 'lenda'];//*/[Math.floor(Math.random() * DeckLenda.length)], 'LENDA'];
+            break;
 
-            case 'epico':
-                return [DeckEpico[Math.floor(Math.random() * DeckEpico.length)],'ÉPICO'];
-                break;
+        case 'epico':
+            return [DeckEpico[Math.floor(Math.random() * DeckEpico.length)],'ÉPICO'];
+            break;
 
-            case 'raro':
-                return [DeckRaro[Math.floor(Math.random() * DeckRaro.length)],'RARO'];
-                break;
+        case 'raro':
+            return [DeckRaro[Math.floor(Math.random() * DeckRaro.length)],'RARO'];
+            break;
 
-            default:
-                return [DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],'COMUM'];
-                break;
-        }
+        default:
+            return [DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],'COMUM'];
+            break;
     }
 }
 
 export function puxaCarta(P, especial){
-
-    let carta = PegaCarta();
+    let carta = [0,0]
+    
+    
     //carta[0] = DeckFull.Gaster;
     //quero = true;
     if (P == "player1"){
+        carta = PegaCarta("P1");
         //carta[1] = "ÉPICO";
-        //carta = [DeckEpico[0],"ÉPICO"];
+        //carta = [DeckEpico[1],"ÉPICO"];
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
-        if (Player1Stats.modos.quero == true){
+        /*if (Player1Stats.modos.quero == true){
             carta[0] = DeckLenda[[Math.floor(Math.random() * DeckLenda.length)]];
              carta[0] = DeckLenda[0];
             carta[1] = 'LENDA';
             Player1Stats.modos.quero = false;
-        }
+        }*/
         else if (Player1Stats.modos.modoPan == true){
             carta[0] = DeckFull.pandemonium;
             carta[1] = 'LENDA';
@@ -266,19 +280,61 @@ export function puxaCarta(P, especial){
         
         document.getElementById("debug").innerHTML = Player1Stats.ultimacarta.nome +" | "+ Player1Stats.card.nome;
         document.getElementById("debug").innerHTML = Player1Stats.modos.curaDano;
-
         EstiloRaro(carta[1], "P1");
+        switch (carta[1]) {
+            case "LENDA":
+                Player1Stats.raridades.raro++;
+                Player1Stats.raridades.epico++;
+                Player1Stats.raridades.lenda = 0;
+                break;
+            case "ÉPICO":
+                Player1Stats.raridades.raro++;
+                Player1Stats.raridades.epico = 0;
+                Player1Stats.raridades.lenda++;
+                break;
+            case "RARO":
+                Player1Stats.raridades.raro=0;
+                Player1Stats.raridades.epico++;
+                Player1Stats.raridades.lenda++;
+                break;
+            default:
+                Player1Stats.raridades.raro+=2;
+                Player1Stats.raridades.epico+=2;
+                Player1Stats.raridades.lenda+=2;
+                break;
+        }
     }
     if (P == "player2"){ 
+        carta = PegaCarta("P2");
+        //carta = [DeckLenda[0],"ÉPICO"];
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
         Player2Stats.card = carta[0];
 
         Carta(Player2Stats.card, "P2"); 
-        document.getElementById("debug").innerHTML = carta[0].Status.magia;
-        
-    }
-    document.getElementById("debug").innerHTML = Player1Stats.modos.curaDano + " | "+Player1Stats.modos.curaTempo;
-    
+       switch (carta[1]) {
+            case "LENDA":
+                Player2Stats.raridades.raro++;
+                Player2Stats.raridades.epico++;
+                Player2Stats.raridades.lenda = 0;
+                break;
+            case "ÉPICO":
+                Player2Stats.raridades.raro++;
+                Player2Stats.raridades.epico = 0;
+                Player2Stats.raridades.lenda++;
+                break;
+            case "RARO":
+                Player2Stats.raridades.raro=0;
+                Player2Stats.raridades.epico++;
+                Player2Stats.raridades.lenda++;
+                break;
+            default:
+                Player2Stats.raridades.raro +=2;
+                Player2Stats.raridades.epico+=2;
+                Player2Stats.raridades.lenda+=2;
+                break;
+        }
+        document.getElementById("debug").innerHTML =Player2Stats.raridades.raro + "|" +Player2Stats.raridades.epico + "|" + Player2Stats.raridades.lenda  
+    }    
 }
