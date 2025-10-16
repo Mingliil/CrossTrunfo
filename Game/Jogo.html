@@ -24,8 +24,20 @@
     45% {top: -10px;}
     100% {top: -10px;}
  }*/
-
-    .HitP1 {
+.vinheta{
+position: absolute; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 10%; /* Full height (cover the whole page) */
+  top: 90%;
+  left: 0%;
+  right: 100%;
+  bottom: 0%;
+    color: black;
+  background: #000000;
+background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 53%);
+  z-index: 4; /* Specify a stack order in case you're using a different order for other elements */
+}
+.HitP1 {
   position:absolute; /* Sit on top of the page content */
   width: 13%;
   z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
@@ -191,5 +203,8 @@
     <script src="Cards/main.js" type="module"></script>
     <script src="Cards/musicas.js" type="module"></script>
     <script src="js/bootstrap.min.js"></script>
+<div class="vinheta">
+    <br><br>
+</div>
 </body>
 </html>
