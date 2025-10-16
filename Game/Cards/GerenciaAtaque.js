@@ -99,7 +99,7 @@ export function GerenciaModoAtaque(P){
                     }
                     else{
                     cura =-Math.floor(ataqueResultado/3)
-                        Player2Stats.Aura += Math.floor(ataqueResultado/3);
+                        Player2Stats.Aura -= Math.floor(ataqueResultado/3);
                     }
                     HitMark(cura,"P2")
                 }

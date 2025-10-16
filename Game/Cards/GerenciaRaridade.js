@@ -303,7 +303,6 @@ export function puxaCarta(P, especial){
     if (P == "player2"){ 
 
         carta = PegaCarta("P2");
-        //carta[0] = DeckFull.Gaster
         if (Player1Stats.modos.quero == true){
             //carta[0] = DeckLenda[[Math.floor(Math.random() * DeckLenda.length)]];
             carta[1] = 'LENDA';
