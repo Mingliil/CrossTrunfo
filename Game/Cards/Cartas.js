@@ -493,7 +493,7 @@ DeckFull.Spam = {
     Audiofont:'Assets/audios/Intros/SpamLaugh.mp3',
     AudioST:CardOst.SPAMTON,
     AudioType: 'audio/mp3',
-    AlturaX:700,
+    AlturaX:620,
     AlturaY:546,
     CoordsX:1880,
     CoordsY:6180,
@@ -504,6 +504,24 @@ DeckFull.Spam = {
         poder: 50,
         defesa: 0,
         magia: 100
+    }
+};
+DeckFull.Balatro = {
+    nome:"John Balatro?",
+    raridade:"ÉPICO",
+    descricao:"<B>I'M<span style='color:red'> <a target='_blank' href='https://balatro-online.com/' style='background-color: transparent; color: red;'>Balatroing</span></a> So GOOD",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:539,
+    CoordsX:2502,
+    CoordsY:6180,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"100%",
+    Status : {
+        poder: 50,
+        defesa: 70,
+        magia: 30
     }
 };
 DeckFull.TVTIME = {
@@ -603,6 +621,6 @@ DeckFull.Frisk = {
 };
 
 export const DeckRaro = [DeckFull.Silver, DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
-export const DeckEpico = [DeckFull.TVTIME, DeckFull.Spam, DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
+export const DeckEpico = [DeckFull.Balatro, DeckFull.TVTIME, DeckFull.Spam, DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
 export const DeckLenda = [DeckFull.Femtanyl, DeckFull.pandemonium, DeckFull.EGGMAN];
 export const DeckPlayer = [DeckFull.Frisk, DeckFull.Susie, DeckFull.Kris, DeckFull.Gaster,DeckFull.Valkyrie, DeckFull.Shadow, DeckFull.Spriggan, DeckFull.Kerbeus, DeckFull.Ragnaruk , DeckFull.EXE, DeckFull.Batman, DeckFull.Chara, DeckFull.Ghost, DeckFull.Morshu, DeckFull.Ubi,  DeckFull.Goku ,DeckFull.Sherma];

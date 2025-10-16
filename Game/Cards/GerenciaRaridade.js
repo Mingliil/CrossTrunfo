@@ -215,8 +215,6 @@ export function puxaCarta(P, especial){
     //quero = true;
     if (P == "player1"){
         carta = PegaCarta("P1");
-        //carta[1] = "ÉPICO";
-        //carta = [DeckEpico[0],"ÉPICO"];
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
