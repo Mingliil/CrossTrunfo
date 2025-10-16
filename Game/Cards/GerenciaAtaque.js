@@ -50,11 +50,16 @@ export function GerenciaModoAtaque(P){
                     HitMark(-ataqueResultado,"P2")
                 }
                 if (P1Card.podeCurar == true){
+                    let cura = Math.floor(ataqueResultado/3);
                     if (P1Card.nome == "Gaster"){
-                        Player1Stats.Aura +=  Math.floor(ataqueResultado/2);
+                        cura = Math.floor(ataqueResultado/2);
+                        Player1Stats.Aura +=  cura;
                     }
-                    Player1Stats.Aura +=  Math.floor(ataqueResultado/3);
-                    HitMark(Math.floor(ataqueResultado/3),"P1")
+                    else{
+                    cura = Math.floor(ataqueResultado/3)
+                        Player1Stats.Aura += cura;
+                    }
+                    HitMark(cura,"P1")
                 }
                 else if (Player1Stats.modos.curaDano == true){
                     Player1Stats.Aura +=  Math.floor(ataqueResultado/3);
@@ -66,10 +71,10 @@ export function GerenciaModoAtaque(P){
                 }
 
                 if (Player2Stats.Aura <= 0){ //vitoria
-                document.getElementById("auraP2").innerHTML = 0;
-                ModoRodada(2, false);
-                document.getElementById("auraP2").innerHTML = "<b>"+0+"</b>";
-    document.getElementById("auraP1").innerHTML = "<b>"+ Player1Stats.Aura+"</b>";
+                    document.getElementById("auraP2").innerHTML = 0;
+                    ModoRodada(2, false);
+                    document.getElementById("auraP2").innerHTML = "<b>"+0+"</b>";
+                    document.getElementById("auraP1").innerHTML = "<b>"+ Player1Stats.Aura+"</b>";
                 }
                 else{
                     document.getElementById("auraP2").innerHTML = "<b>"+ Player2Stats.Aura+"</b>";
@@ -87,10 +92,16 @@ export function GerenciaModoAtaque(P){
                     HitMark(ataqueResultado,"P1")
                 }
                 if (P2Card.podeCurar == true){
+                    let cura = -Math.floor(ataqueResultado/3);
                     if (P2Card.nome == "Gaster"){
-                        Player2Stats.Aura +=  Math.floor(ataqueResultado/2);
+                        cura = -Math.floor(ataqueResultado/2);
+                        Player2Stats.Aura +=  cura;
                     }
-                    Player2Stats.Aura -= Math.floor(ataqueResultado/3);
+                    else{
+                    cura =-Math.floor(ataqueResultado/3)
+                        Player2Stats.Aura += Math.floor(ataqueResultado/3);
+                    }
+                    HitMark(cura,"P2")
                 }
                 if (Player1Stats.Aura<=0){ //derrota
                     document.getElementById("auraP1").innerHTML = 0;
@@ -125,17 +136,17 @@ export function HitMark(x,P){
     let rect = 0//vida.getBoundingClientRect();
     if (P == "P1"){
         hitMark = document.getElementById("HMP1");
-        vida = document.getElementById("auraP1")
-        rect = vida.getBoundingClientRect();
-        hitMark.style.left = (rect.x*1.65)+'px';
-        hitMark.style.top = (rect.y/1.08)+'px';
+        vida = document.getElementById("HMP1")
+        rect = hitMark.getBoundingClientRect();
+        //hitMark.style.left = (rect.x-30)+'px';
+        //hitMark.style.top = (rect.y-10)+'px';
     }
     else{
         hitMark = document.getElementById("HMP2");
-        vida = document.getElementById("auraP2")
+        vida = document.getElementById("HMP2")
         rect = vida.getBoundingClientRect();
-        hitMark.style.left = (rect.x*1.10)+'px';
-        hitMark.style.top = (rect.y/1.08)+'px';
+        //hitMark.style.left = (rect.x-30)+'px';
+        //hitMark.style.top = (rect.y-10)+'px';
     }
         hitMark.classList.remove(...hitMark.classList);
         hitMark.classList.add("HitP1");

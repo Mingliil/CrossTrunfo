@@ -42,6 +42,13 @@ export let Player2Stats = {
         raro:0,
         epico:0,
         lenda:0
+    },
+    modos : {
+        modoPan: false,
+        modoPrime: false,
+        curaDano: false,
+        curaTempo: 5,
+        quero: false
     }
 };
 

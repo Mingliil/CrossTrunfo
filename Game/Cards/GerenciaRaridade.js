@@ -300,21 +300,27 @@ export function puxaCarta(P, especial){
                 break;
         }
     }
+
+    //Player 2
     if (P == "player2"){ 
+
         carta = PegaCarta("P2");
+        //carta[0] = DeckFull.Gaster
         if (Player1Stats.modos.quero == true){
             //carta[0] = DeckLenda[[Math.floor(Math.random() * DeckLenda.length)]];
-            carta[0] = DeckFull.Goku;
             carta[1] = 'LENDA';
+            carta[0] = DeckFull.Goku;
             Player1Stats.modos.quero = false;
         }
-        Player2Stats.card = carta[0];
+        
         if (Player2Stats.card == DeckFull.Goku){
-            const drip = Math.floor(Math.random() * 30);
+            const drip = Math.floor(Math.random() * 0);
             if (drip == 0){
+                
                 carta[1] = PureAuraAndDrip("P2");
             }
         }
+        Player2Stats.card = carta[0];
         document.getElementById("debug").innerHTML =Player2Stats.card.nome
         if (carta[0].nome == "Gaster"){
             GasterRandom();
