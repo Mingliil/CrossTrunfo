@@ -68,7 +68,7 @@ export function Carta(carta, P){
     }
 
     if (P == "P2"){
-    canvas = document.getElementById('CartaP2');
+    canvas = document.getElementById('CartaP2Costa');
         if (estados.CartaRel == 0){
         img.src = 'Assets/ExemploCartaFundo.png';
         }
@@ -91,6 +91,11 @@ export function Carta(carta, P){
         }
         if (P == "P2"){
             if (estados.CartaRel == 0){
+                if (estados.rodada == 1){
+                
+                }
+                else{
+                }
                 sourceX = 0;
                 sourceY = 0; 
                 sourceWidth = 373;
@@ -101,6 +106,13 @@ export function Carta(carta, P){
                 sourceY = carta.CoordsY; 
                 sourceWidth = carta.AlturaX;
                 sourceHeight = carta.AlturaY;
+
+            }
+            if (estados.CartaRel == 0){
+                document.getElementById("cartaflip2").style.transform = 'rotateY(360deg)';
+            }
+            else{
+                document.getElementById("cartaflip2").style.transform = 'rotateY(-180deg)';
             }
         }
 
@@ -128,6 +140,9 @@ export function Carta(carta, P){
     };
 
 }
+
+
 window.onload = ModoRodada(1);
 //window.onload = puxaCarta("player2");
 //window.onload = puxaCarta("player1");
+

@@ -20,7 +20,7 @@ const Soundtrack = document.getElementById("audioST");
         BackgroundST();
 }
 if (Player2Stats.card == DeckFull.Goku){
-    const drip = Math.floor(Math.random() * 30);
+    const drip = Math.floor(Math.random() * 20);
     if (drip == 0){
         PureAuraAndDrip("P2");
     }

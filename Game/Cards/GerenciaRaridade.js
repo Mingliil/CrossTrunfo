@@ -215,6 +215,7 @@ export function puxaCarta(P, especial){
     //quero = true;
     if (P == "player1"){
         carta = PegaCarta("P1");
+        //carta = [DeckEpico[0],'ÉPICO']
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
@@ -303,6 +304,7 @@ export function puxaCarta(P, especial){
     if (P == "player2"){ 
 
         carta = PegaCarta("P2");
+        //carta[0] = DeckFull.Goku;
         if (Player1Stats.modos.quero == true){
             //carta[0] = DeckLenda[[Math.floor(Math.random() * DeckLenda.length)]];
             carta[1] = 'LENDA';
@@ -313,8 +315,7 @@ export function puxaCarta(P, especial){
         if (Player2Stats.card == DeckFull.Goku){
             const drip = Math.floor(Math.random() * 0);
             if (drip == 0){
-                
-                carta[1] = PureAuraAndDrip("P2");
+                PureAuraAndDrip("P2");
             }
         }
         Player2Stats.card = carta[0];
