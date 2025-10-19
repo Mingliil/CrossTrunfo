@@ -1,6 +1,6 @@
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull} from "./Cartas.js";
 import { Player1Stats, Player2Stats, estados } from "./Rework.js";
-import { Carta } from "./Rework.js";
+import { Carta, RolarCarta } from "./Rework.js";
 import { SuperIntro } from "./GerenciaAudio.js";
 import { GasterRandom, imsad, PureAuraAndDrip } from "./GerenciaEspeciais.js";
 /*
@@ -254,7 +254,8 @@ export function puxaCarta(P, especial){
         if (carta[0]==DeckFull.TVTIME){
             SuperIntro(carta[0]);
         }
-        Carta(Player1Stats.card, "P1");
+        RolarCarta("P1");
+        //Carta(Player1Stats.card, "P1");
         if (Player1Stats.card.nome == "Token/Femtanyl"){
             document.getElementById("cartaPoder").innerHTML = "WIRES: " +1999 + "<br>";
             document.getElementById("cartaDefesa").innerHTML = "ON MY: " + 1999 + "<br>"
@@ -312,18 +313,12 @@ export function puxaCarta(P, especial){
             Player1Stats.modos.quero = false;
         }
         
-        if (Player2Stats.card == DeckFull.Goku){
-            const drip = Math.floor(Math.random() * 0);
-            if (drip == 0){
-                PureAuraAndDrip("P2");
-            }
-        }
+        
         Player2Stats.card = carta[0];
         document.getElementById("debug").innerHTML =Player2Stats.card.nome
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
-        Carta(Player2Stats.card, "P2"); 
        switch (carta[1]) {
             case "LENDA":
                 Player2Stats.raridades.raro++;

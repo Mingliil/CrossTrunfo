@@ -1,10 +1,13 @@
 import { AudioST, SuperIntro} from "./GerenciaAudio.js";
-import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda} from "./Cartas.js";
+import {DeckPlayer, DeckFull,  DeckRaro ,DeckEpico ,DeckLenda} from "./Cartas.js";
 import { puxaCarta } from "./GerenciaRaridade.js";
 import { ModoRodada } from "./GerenciaRodada.js";
+import { PureAuraAndDrip } from "./GerenciaEspeciais.js";
+
+
 export let estados ={
     ultimaST:0,
-    audioRolar:0,
+    audioRolar:false,
     estadoRodada:0,
     rodada : 0,
     derrotaPonto:0,
@@ -12,8 +15,9 @@ export let estados ={
     derrotado: false,
     estiloP2: false,
     estaAtacando : true, // se estaAtacando = true, esconde carta do inimigo, senão mostra carta
-    CartaRel : 1, //0 = escondido - 1 =revelado
-    danoDado:0
+    CartaRel : 0, //0 = escondido - 1 =revelado
+    danoDado:0,
+    menu: true
 }
 
 export let Player1Stats = {
@@ -68,11 +72,12 @@ export function Carta(carta, P){
     }
 
     if (P == "P2"){
-    canvas = document.getElementById('CartaP2Costa');
+    canvas = document.getElementById('CartaP2');
         if (estados.CartaRel == 0){
         img.src = 'Assets/ExemploCartaFundo.png';
         }
         else{
+            
         img.src = Player2Stats.card.Atlas;
         }
     } 
@@ -108,12 +113,7 @@ export function Carta(carta, P){
                 sourceHeight = carta.AlturaY;
 
             }
-            if (estados.CartaRel == 0){
-                document.getElementById("cartaflip2").style.transform = 'rotateY(360deg)';
-            }
-            else{
-                document.getElementById("cartaflip2").style.transform = 'rotateY(-180deg)';
-            }
+            
         }
 
         // Define the destination rectangle (x, y, width, height) on the canvas
@@ -138,7 +138,45 @@ export function Carta(carta, P){
         );
 
     };
+}
 
+export function RolarCarta(P){
+    let carta;
+    let player;
+    let deg = "180deg";
+    let timer = 400;
+    if (P == "P2"){
+        carta = Player2Stats.card
+        player = "P2";
+        const flip = document.getElementById("CartaP2flip")
+        if (flip.style.transform == "rotateY("+deg+")"){
+            deg = "-180deg"
+        }
+        else{
+            deg = "180deg";
+        }
+        flip.style.transform = "rotateY("+deg+")";
+    }
+    else{
+        carta = Player1Stats.card
+        player = "P1";
+        const flip = document.getElementById("CartaP1flip");
+        deg = "360deg"
+        if (flip.style.transform == "rotateY("+deg+")"){
+            deg = "-360deg"
+        }
+        else{
+            deg = "360deg";
+        }
+        flip.style.transform = "rotateY("+deg+")";
+        if (estados.rodada ==1){
+            timer = 0
+        }
+    }
+    setTimeout(function(){
+        
+        Carta(carta, player);
+    },timer)
 }
 
 

@@ -74,7 +74,7 @@ export function PureAuraAndDrip(P){
     Player2Stats.card.Status.defesa= 100;
     Player2Stats.card.Status.magia= 100; 
     AudioST(Player2Stats.card);
-    return "ÉPICO"
+    return "ÉPICO";
     }
     
 }

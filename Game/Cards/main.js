@@ -1,4 +1,4 @@
-import { Carta, estados } from "./Rework.js";
+import { Carta, estados, RolarCarta } from "./Rework.js";
 import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull} from "./Cartas.js";
 import { puxaCarta, Raridade, PegaCarta } from "./GerenciaRaridade.js";
 import { GerenciaModoAtaque, HitMark } from "./GerenciaAtaque.js";
@@ -6,19 +6,20 @@ import { ModoRodada, fim } from "./GerenciaRodada.js";
 import { Player2Stats, Player1Stats } from "./Rework.js";
 import { EstiloRaro } from "./GerenciaRaridade.js";
 import { PureAuraAndDrip } from "./GerenciaEspeciais.js";
+import { AbreMenu, ResetaEstados } from "./GerenciaRodada.js";
 //aqui é onde esta a parte de playlist de soundtrack do jogo sem que esteja relacionado as cartas
 import { BackgroundST } from "./GerenciaAudio.js";
 
+
 const Soundtrack = document.getElementById("audioST");
-    if (estados.audioRolar == 0){
-         BackgroundST();
-    Soundtrack.onended = () => {
-        BackgroundST();
-    }
-}
+
+
  Soundtrack.onended = () => {
-        BackgroundST();
+        if (estados.menu == false){
+            BackgroundST();
+        }
 }
+
 if (Player2Stats.card == DeckFull.Goku){
     const drip = Math.floor(Math.random() * 20);
     if (drip == 0){
@@ -26,26 +27,24 @@ if (Player2Stats.card == DeckFull.Goku){
     }
 }
 //resto do jogo
-
 document.getElementById("btDebug").onclick = () =>{
-    document.getElementById("btDebug").innerHTML = Player1Stats.modos.quero;//Raridade();
+    
+    document.getElementById("btDebug").innerHTML = estados.estadoRodada;//Raridade();
     //puxaCarta("player1", "", true);
     Player1Stats.modos.quero = true;
-   
     //Carta(DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],"P1");
+    RolarCarta("P2");
 }
+
 document.getElementById("botao").onclick = () =>{
-    
     if (document.getElementById("botao").innerHTML == "ataque"){ 
         estados.estiloP2 = true;
         GerenciaModoAtaque();
-
     }
     else if (document.getElementById("botao").innerHTML == "proxima rodada"){
         estados.estiloP2 = false;
         ModoRodada(1);
     }
-    
     else if (document.getElementById("botao").innerHTML = "main menu"){
         ModoRodada(2);
     }
@@ -64,4 +63,17 @@ document.getElementById("fim1").onclick = () =>{
 }
 document.getElementById("fim2").onclick = () =>{
     fim(0);
+}
+document.getElementById('btnPlay').addEventListener('click', function () {
+      estados.menu = false;
+      AbreMenu(false)
+      document.getElementById("jogo").style.display = "block";
+      document.getElementById("menu").style.display = "none";
+      document.getElementById("begug").innerHTML = estados.menu;
+
+      //window.location.href = 'Jogo.html';
+});
+
+if (estados.menu ==false){
+    AbreMenu(false)
 }

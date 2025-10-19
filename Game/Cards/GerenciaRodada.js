@@ -1,7 +1,11 @@
 import { PegaCarta, puxaCarta } from "./GerenciaRaridade.js";
-import { estados, Carta, Player1Stats,Player2Stats } from "./Rework.js";
+import {RolarCarta, estados, Carta, Player1Stats,Player2Stats } from "./Rework.js";
 import { EstiloRaro } from "./GerenciaRaridade.js";
 import { DeckFull } from "./Cartas.js";
+import { BackgroundST } from "./GerenciaAudio.js";
+import { PureAuraAndDrip } from "./GerenciaEspeciais.js";
+
+
 export function ModoRodada(x, perdeu){
     /*
         Estados do x
@@ -10,8 +14,7 @@ export function ModoRodada(x, perdeu){
         x = 2: fim
     */
     if (x == 1){
-        
-        estados.CartaRel--;
+        estados.CartaRel=0;
         puxaCarta("player1");
         estados.rodada++;
         document.getElementById("rodada").innerHTML = estados.rodada;
@@ -21,12 +24,21 @@ export function ModoRodada(x, perdeu){
         document.getElementById("CartaP2Desc").innerHTML = "";
         document.getElementById("botao").innerHTML = "ataque";
         puxaCarta("player2");
-        Carta(Player2Stats.card, "P2");
+        RolarCarta("P2");
+        //Carta(Player2Stats.card, "P2");
         EstiloRaro(Player2Stats.card.raridade, "P2");
     }
     else if (x==0){
-        estados.CartaRel++;
-        Carta(Player2Stats.card, "P2");
+
+        estados.CartaRel=1;
+        if (Player2Stats.card == DeckFull.Goku){
+            const drip = Math.floor(Math.random() * 25);
+            if (drip == 0){
+                    PureAuraAndDrip("P2");
+            }
+        }
+        RolarCarta("P2");
+        //Carta(Player2Stats.card, "P2");
         document.getElementById("CartaP2Nome").innerHTML = Player2Stats.card.nome;
         document.getElementById("CartaP2Rari").innerHTML = Player2Stats.card.raridade;
         document.getElementById("CartaP2Desc").innerHTML = Player2Stats.card.descricao;
@@ -53,7 +65,6 @@ export function ModoRodada(x, perdeu){
                 document.getElementById("rodada").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADAS";
                 document.getElementById("rodadaFim").innerHTML = "PLAYER 2 GAHNOU EM <br>" + estados.rodada+" RODADAS";
                 }
-                
                 document.getElementById("Estado").innerHTML = "PERDEU";
             }
             else{
@@ -63,11 +74,11 @@ export function ModoRodada(x, perdeu){
                     document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADA";
                 }
                 else{
-                document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
-                document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
+                    document.getElementById("rodada").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
+                    document.getElementById("rodadaFim").innerHTML = "PLAYER 1 GAHNOU EM <br>" + estados.rodada+" RODADAS";
                 }
+                document.getElementById("Estado").innerHTML = "VENCEU";
             }
-            
     }
     if(Player1Stats.Aura>100){
         document.getElementById("auraP1").style ="color:rgba(0, 140, 255, 1);";
@@ -87,11 +98,62 @@ export function ModoRodada(x, perdeu){
     }
     if(Player2Stats.Aura<45){
         document.getElementById("auraP2").style ="color:rgba(255, 0, 0, 1);";
+    
     }
 }
 
 export function fim(x){
     if (x==0){
+        ResetaEstados("placar")
+        //location.reload();
+    }
+    if (x==1){
+        AbreMenu(true);
+    //window.open('Menu.html', '_self').focus();
+    }
+};
+export function AbreMenu(aberto){
+    if (aberto == true){
+        ResetaEstados();
+        document.getElementById("jogo").style.display = "none";
+        document.getElementById("menu").style.display = "block";
+        estados.audioRolar = false;
+    }
+    else{
+        document.getElementById("jogo").style.display = "block";
+        document.getElementById("menu").style.display = "none";
+        estados.audioRolar = true;
+        BackgroundST();
+        ModoRodada(1);
+    }
+}
+export function ResetaEstados(x){
+    /* 
+    x = "placar" = reseta tudo menos placar
+    */
+
+        estados.estaAtacando = true;
+        if (x == "placar"){
+            if (estados.derrotado == true){
+                estados.derrotaPonto++;
+                document.getElementById("placarDerrota").innerHTML = estados.derrotaPonto;
+                
+            }
+            else{
+                estados.vitoriaPonto++;
+                document.getElementById("placarVitoria").innerHTML = estados.vitoriaPonto;
+            }
+        }
+        else{
+            estados.derrotaPonto = 0;
+            document.getElementById("placarDerrota").innerHTML = estados.derrotaPonto;
+            estados.vitoriaPonto = 0;
+            document.getElementById("placarVitoria").innerHTML = estados.vitoriaPonto;
+        }
+        estados.estiloP2= false;
+        estados.rodada = 0;
+        Player1Stats.modos.modoPrime = false;
+        document.getElementById("rodada").innerHTML = estados.rodada;
         const bt = document.getElementById("botao");
         bt.removeAttribute("data-bs-target");
         Player1Stats.Aura = 100;
@@ -102,23 +164,5 @@ export function fim(x){
         estados.estadoRodada = 0;
         estados.CartaRel =1;
         estados.estaAtacando = true;
-        if (estados.derrotado == true){
-            estados.derrotaPonto++;
-            document.getElementById("placarDerrota").innerHTML = estados.derrotaPonto;
-        
-        }
-        else{
-            estados.vitoriaPonto++;
-            document.getElementById("placarVitoria").innerHTML = estados.vitoriaPonto;
-        }
-        estados.estiloP2= false;
-        estados.rodada = 0;
-        Player1Stats.modos.modoPrime = false;
-        document.getElementById("rodada").innerHTML = estados.rodada;
         ModoRodada(1);
-        //location.reload();
-    }
-    if (x==1){
-    window.open('Menu.html', '_self').focus();
-    }
-};
+}

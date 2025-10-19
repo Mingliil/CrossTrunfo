@@ -11,12 +11,11 @@ export function AudioST(carta){
     const AlertaOst = document.getElementById("ostDetails");
 
     const CartaOST = carta.AudioST
-    
+
     AudioScr.type = "audio/mp3";
     AudioScr.src = CartaOST.ST;
         audio.load();
         audio.play();
-    
     CreditosNome.innerHTML = CartaOST.Nome;
     CreditosDesc.innerHTML = CartaOST.Creditos;
     AlertaOst.classList.remove(...AlertaOst.classList);
@@ -59,27 +58,30 @@ export function BackgroundST(){
     const AudioScr = document.getElementById("audioSTSrc");
     const CreditosDesc = document.getElementById("creditosST");
     const CreditosNome = document.getElementById("creditosNm");
-    const AlertaOst = document.getElementById("ostDetails")
-    if (PlaylistChoice == estados.ultimaST){
-        BackgroundST();
-        return null;
-    }
-    AudioScr.type = "audio/mp3";
-    AudioScr.src = PlaylistChoice.ST;
-    audio.volume = 0.2;
-        audio.load();
-        audio.play();
-    CreditosNome.innerHTML = PlaylistChoice.Nome;
-    CreditosDesc.innerHTML = PlaylistChoice.Creditos;
-    AlertaOst.classList.remove(...AlertaOst.classList);
-    AlertaOst.classList.add("visible");
-    AlertaOst.classList.add("alert");
-    AlertaOst.classList.add("alert-primary");
-    AlertaOst.classList.add("overlayST");
+    const AlertaOst = document.getElementById("ostDetails");
+    if (estados.audioRolar == true){
+        if (PlaylistChoice == estados.ultimaST){
+            BackgroundST();
+            return null;
+        }
+        AudioScr.type = "audio/mp3";
+        AudioScr.src = PlaylistChoice.ST;
+            audio.load();
+            audio.play();
+        CreditosNome.innerHTML = PlaylistChoice.Nome;
+        CreditosDesc.innerHTML = PlaylistChoice.Creditos;
+        AlertaOst.classList.remove(...AlertaOst.classList);
+        AlertaOst.classList.add("visible");
+        AlertaOst.classList.add("alert");
+        AlertaOst.classList.add("alert-primary");
+        AlertaOst.classList.add("overlayST");
+    
+        setTimeout(function(){
+           // AlertaOst.classList.remove(...AlertaOst.classList);
+            AlertaOst.classList.add("desapareça");
+        }, 10000)
+        estados.ultimaST = PlaylistChoice;
 
-    setTimeout(function(){
-       // AlertaOst.classList.remove(...AlertaOst.classList);
-        AlertaOst.classList.add("desapareça");
-    }, 10000)
-    estados.ultimaST = PlaylistChoice;
+    }
+
 }
