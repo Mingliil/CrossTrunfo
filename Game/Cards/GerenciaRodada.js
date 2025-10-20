@@ -104,27 +104,39 @@ export function ModoRodada(x, perdeu){
 
 export function fim(x){
     if (x==0){
+        estados.podePausar = true;
         ResetaEstados("placar")
         //location.reload();
     }
     if (x==1){
+        estados.podePausar = false;
         AbreMenu(true);
     //window.open('Menu.html', '_self').focus();
     }
 };
 export function AbreMenu(aberto){
     if (aberto == true){
-        ResetaEstados();
         document.getElementById("jogo").style.display = "none";
         document.getElementById("menu").style.display = "block";
+        if (estados.pause == true){
+            document.getElementById('btnPlay').innerHTML = "Continuar";
+        }
+        else{
+            ResetaEstados();
+            document.getElementById('btnPlay').innerHTML = "Jogar";
+        }
         estados.audioRolar = false;
     }
     else{
         document.getElementById("jogo").style.display = "block";
         document.getElementById("menu").style.display = "none";
         estados.audioRolar = true;
-        BackgroundST();
-        ModoRodada(1);
+        
+        if(estados.pause == false){
+            ModoRodada(1);
+            BackgroundST();
+        }
+        estados.pause = false;
     }
 }
 export function ResetaEstados(x){
@@ -137,7 +149,6 @@ export function ResetaEstados(x){
             if (estados.derrotado == true){
                 estados.derrotaPonto++;
                 document.getElementById("placarDerrota").innerHTML = estados.derrotaPonto;
-                
             }
             else{
                 estados.vitoriaPonto++;
@@ -150,6 +161,7 @@ export function ResetaEstados(x){
             estados.vitoriaPonto = 0;
             document.getElementById("placarVitoria").innerHTML = estados.vitoriaPonto;
         }
+        estados.podePausar = true;
         estados.estiloP2= false;
         estados.rodada = 0;
         Player1Stats.modos.modoPrime = false;
