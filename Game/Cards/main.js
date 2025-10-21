@@ -62,10 +62,16 @@ document.getElementById("fim1").onclick = () =>{
     fim(1);
 }
 document.getElementById("fim2").onclick = () =>{
+    estados.podePausar = false;
     fim(0);
 }
 document.getElementById('btnPlay').addEventListener('click', function () {
       estados.menu = false;
+      estados.podePausar = true;
+      estados.getBackCounter++;
+      if (estados.getBackCounter >= 2){
+        estados.getBackCounter = 1;
+      }
       AbreMenu(false)
       document.getElementById("jogo").style.display = "block";
       document.getElementById("menu").style.display = "none";
@@ -75,3 +81,19 @@ document.getElementById('btnPlay').addEventListener('click', function () {
 if (estados.menu ==false){
     AbreMenu(false)
 }
+document.addEventListener("keydown", function(e){
+    if (e.code == "Escape"){
+        estados.menu = true;
+        document.getElementById("btDebug").innerHTML = estados.getBackCounter;
+        if (estados.podePausar == true){
+            estados.pause = true;
+            AbreMenu(true);
+            
+        if (estados.getBackCounter == 2){
+            AbreMenu(false);
+            estados.getBackCounter = 0;
+        }
+        }
+    }
+    estados.getBackCounter++;
+})
