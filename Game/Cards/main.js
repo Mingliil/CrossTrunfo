@@ -69,8 +69,6 @@ document.getElementById('btnPlay').addEventListener('click', function () {
       AbreMenu(false)
       document.getElementById("jogo").style.display = "block";
       document.getElementById("menu").style.display = "none";
-      document.getElementById("begug").innerHTML = estados.menu;
-
       //window.location.href = 'Jogo.html';
 });
 
