@@ -1,4 +1,4 @@
-import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull} from "./Cartas.js";
+import {DeckPlayer,  DeckRaro ,DeckEpico ,DeckLenda, DeckFull, DeckDev} from "./Cartas.js";
 import { Player1Stats, Player2Stats, estados } from "./Rework.js";
 import { Carta, RolarCarta } from "./Rework.js";
 import { SuperIntro } from "./GerenciaAudio.js";
@@ -216,8 +216,9 @@ export function PegaCarta(P){
 
         default:
             let cartacomum = DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)];
+            //cartacomum = DeckFull.Ubi;
             if (cartacomum == DeckFull.Ubi){
-                cartacomum 
+                cartacomum = /*DeckDev[0]//*/DeckDev[Math.floor(Math.random() * DeckDev.length)];
                return [cartacomum,'DEV'];
             }
             else{

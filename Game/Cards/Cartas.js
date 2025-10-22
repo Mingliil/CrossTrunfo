@@ -619,7 +619,61 @@ DeckFull.Frisk = {
         magia: 40
     }
 };
-export const DeckDev = [DeckFull.Ubi]
+DeckFull.Bezerk = {
+    nome:"<b><span style='color:#f1e835'>Ber</span><span style='color:#54408d'>zerk</span></b>",
+    raridade:"DEV",
+    descricao:"\"it was epic when he said \'It's bezerking time\' and berzerked all over the place\"",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:539,
+    CoordsX:2960,
+    CoordsY:6187,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"100%",
+    Status : {
+        poder: 40,
+        defesa: 10,
+        magia: 50
+    }
+};
+DeckFull.eric = {
+    nome:"<b>Ryco</b>",
+    raridade:"DEV",
+    descricao:"",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:539,
+    CoordsX:3430,
+    CoordsY:6187,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"100%",
+    Status : {
+        poder: 40,
+        defesa: 10,
+        magia: 50
+    }
+};
+DeckFull.Falha = {
+    nome:"<b>Dupla Falha</b>",
+    raridade:"DEV",
+    descricao:"",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:530,
+    CoordsX:2953,
+    CoordsY:5640,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"100%",
+    Status : {
+        poder: 21,
+        defesa: 14,
+        magia: 64,
+    }
+};
+export const DeckDev = [DeckFull.Falha, DeckFull.eric,DeckFull.Ubi, DeckFull.Bezerk]
 export const DeckRaro = [DeckFull.Silver, DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
 export const DeckEpico = [DeckFull.Balatro, DeckFull.TVTIME, DeckFull.Spam, DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
 export const DeckLenda = [DeckFull.Femtanyl, DeckFull.pandemonium, DeckFull.EGGMAN];
