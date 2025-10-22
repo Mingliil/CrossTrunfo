@@ -12,8 +12,6 @@ import { BackgroundST } from "./GerenciaAudio.js";
 
 
 const Soundtrack = document.getElementById("audioST");
-
-
  Soundtrack.onended = () => {
         if (estados.menu == false){
             BackgroundST();
@@ -65,6 +63,7 @@ document.getElementById("fim2").onclick = () =>{
     estados.podePausar = false;
     fim(0);
 }
+
 document.getElementById('btnPlay').addEventListener('click', function () {
       estados.menu = false;
       estados.podePausar = true;
@@ -93,7 +92,9 @@ document.addEventListener("keydown", function(e){
             AbreMenu(false);
             estados.getBackCounter = 0;
         }
-        }
+     
     }
+    
+}
     estados.getBackCounter++;
 })

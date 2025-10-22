@@ -17,7 +17,7 @@ export let estados ={
     estaAtacando : true, // se estaAtacando = true, esconde carta do inimigo, senão mostra carta
     CartaRel : 0, //0 = escondido - 1 =revelado
     danoDado:0,
-    menu: true,
+    menu: false,
     pause: false,
     podePausar: false,
     getBackCounter: 1,
@@ -181,9 +181,3 @@ export function RolarCarta(P){
         Carta(carta, player);
     },timer)
 }
-
-
-window.onload = ModoRodada(1);
-//window.onload = puxaCarta("player2");
-//window.onload = puxaCarta("player1");
-

@@ -619,7 +619,7 @@ DeckFull.Frisk = {
         magia: 40
     }
 };
-
+export const DeckDev = [DeckFull.Ubi]
 export const DeckRaro = [DeckFull.Silver, DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
 export const DeckEpico = [DeckFull.Balatro, DeckFull.TVTIME, DeckFull.Spam, DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
 export const DeckLenda = [DeckFull.Femtanyl, DeckFull.pandemonium, DeckFull.EGGMAN];

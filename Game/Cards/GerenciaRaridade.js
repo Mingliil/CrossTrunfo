@@ -44,7 +44,7 @@ export function EstiloRaro(x, p){
                 P1Desc.classList.add("rounded");
             }
             break;
-        case 'SuperTrunfo':
+        case 'LENDA':
             if(p == "P2"){
                 if(estados.estiloP2== false){
                     P2Desc.classList.remove("border-success");
@@ -122,7 +122,22 @@ export function EstiloRaro(x, p){
                 P1Desc.classList.add("rounded");
             }
             break;
-        case 'COMUM':
+        case 'DEV':
+            if(p == "P2"){
+                if(estados.estiloP2== false){
+                    P2Desc.classList.remove(...P2Desc.classList);
+                }
+                else if (estados.estiloP2== true){
+                    P2Desc.style = "border-radius: 15px; border: 2px solid rgba(255, 136, 0, 1);color:rgba(255, 255, 255, 1); background-color:rgba(255, 0, 0, 1)"
+                }
+            }
+            else{
+                P1Desc.classList.remove(...P1Desc.classList);
+                P1Desc.innerHTML = "<b>DEV</b>"
+                P1Desc.style = "border-radius: 15px; border: 2px solid rgba(255, 136, 0, 1);color:rgba(255, 255, 255, 1); background-color:rgba(255, 0, 0, 1)"
+           }
+            break;
+        default:
             if(p == "P2"){
                 if(estados.estiloP2== false){
                     P2Desc.classList.remove(...P2Desc.classList);
@@ -145,8 +160,6 @@ export function EstiloRaro(x, p){
                 P1Desc.classList.add("text-white");
                 P1Desc.classList.add("rounded");
             }
-            break;
-        default:
         break;
     }
 }
@@ -202,7 +215,14 @@ export function PegaCarta(P){
             break;
 
         default:
-            return [DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)],'COMUM'];
+            let cartacomum = DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)];
+            if (cartacomum == DeckFull.Ubi){
+                cartacomum 
+               return [cartacomum,'DEV'];
+            }
+            else{
+                return [cartacomum,'COMUM'];
+            }
             break;
     }
 }
@@ -215,7 +235,7 @@ export function puxaCarta(P, especial){
     //quero = true;
     if (P == "player1"){
         carta = PegaCarta("P1");
-        //carta = [DeckEpico[0],'ÉPICO']
+        //carta = [DeckFull.Ubi,'DEV']
         if (carta[0].nome == "Gaster"){
             GasterRandom();
         }
