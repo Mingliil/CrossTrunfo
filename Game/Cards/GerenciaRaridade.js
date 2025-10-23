@@ -216,9 +216,9 @@ export function PegaCarta(P){
 
         default:
             let cartacomum = DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)];
-            cartacomum = DeckFull.Ubi;
+            //cartacomum = DeckFull.Ubi;
             if (cartacomum == DeckFull.Ubi){
-                cartacomum = DeckDev[0]//*/DeckDev[Math.floor(Math.random() * DeckDev.length)];
+                cartacomum = /*DeckDev[0]//*/DeckDev[Math.floor(Math.random() * DeckDev.length)];
                return [cartacomum,'DEV'];
             }
             else{
