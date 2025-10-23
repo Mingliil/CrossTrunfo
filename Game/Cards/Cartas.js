@@ -640,7 +640,7 @@ DeckFull.Bezerk = {
 DeckFull.eric = {
     nome:"<b>Ryco</b>",
     raridade:"DEV",
-    descricao:"",
+    descricao:"O Genuino Pecado da preguiça encarnado",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:539,
@@ -658,8 +658,9 @@ DeckFull.eric = {
 DeckFull.Falha = {
     nome:"<b>Dupla Falha</b>",
     raridade:"DEV",
-    descricao:"",
+    descricao:"Duas aonde seus criadores as abandonaram, onde viram tudo em volta decair.",
     Atlas:'Assets/cards.png',
+    AudioST:CardOst.Falha,
     AlturaX:373,
     AlturaY:530,
     CoordsX:2953,
@@ -673,7 +674,26 @@ DeckFull.Falha = {
         magia: 64,
     }
 };
-export const DeckDev = [DeckFull.Falha, DeckFull.eric,DeckFull.Ubi, DeckFull.Bezerk]
+
+DeckFull.Ash = {
+    nome:"<b>Ash Greninja</b>",
+    raridade:"DEV",
+    descricao:"\"Um dos mais fortes\"",
+    Atlas:'Assets/cards.png',
+    AlturaX:373,
+    AlturaY:530,
+    CoordsX:2502,
+    CoordsY:5640,
+    DescX: 1,
+    DescY: 0,
+    ImgTamanho:"100%",
+    Status : {
+        poder: 50,
+        defesa: 0,
+        magia: 80,
+    }
+};
+export const DeckDev = [DeckFull.Ash, DeckFull.Falha, DeckFull.eric,DeckFull.Ubi, DeckFull.Bezerk]
 export const DeckRaro = [DeckFull.Silver, DeckFull.LordX, DeckFull.SOAD, DeckFull.GlassAnimals];
 export const DeckEpico = [DeckFull.Balatro, DeckFull.TVTIME, DeckFull.Spam, DeckFull.Mesmerizer, DeckFull.Circus, DeckFull.YAAI, DeckFull.Superman];
 export const DeckLenda = [DeckFull.Femtanyl, DeckFull.pandemonium, DeckFull.EGGMAN];

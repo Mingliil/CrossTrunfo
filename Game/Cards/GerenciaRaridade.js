@@ -216,9 +216,9 @@ export function PegaCarta(P){
 
         default:
             let cartacomum = DeckPlayer[Math.floor(Math.random() * DeckPlayer.length)];
-            //cartacomum = DeckFull.Ubi;
+            cartacomum = DeckFull.Ubi;
             if (cartacomum == DeckFull.Ubi){
-                cartacomum = /*DeckDev[0]//*/DeckDev[Math.floor(Math.random() * DeckDev.length)];
+                cartacomum = DeckDev[0]//*/DeckDev[Math.floor(Math.random() * DeckDev.length)];
                return [cartacomum,'DEV'];
             }
             else{
@@ -252,6 +252,14 @@ export function puxaCarta(P, especial){
             document.getElementById("auraP1").innerHTML = Player1Stats.Aura;
         }
         Player1Stats.card = carta[0];
+        if (carta[0]==DeckFull.eric){
+            if(Math.floor(Math.random() * 2) == 1){
+                Player1Stats.card.nome = "<b>Ryco</b>"
+            }
+            else{
+                Player1Stats.card.nome = "<b>Eric</b>"
+            }
+        }
         if (carta[1] == 'LENDA' && Player1Stats.ultimacarta.nome != Player1Stats.card.nome){
             SuperIntro(carta[0]);
         }
@@ -269,12 +277,18 @@ export function puxaCarta(P, especial){
                 carta[1] = 'ÉPICO';
             }
         }
-        if (carta[0]==DeckFull.Spam){
+        if (carta[0]==DeckFull.Spam ||carta[0] == DeckFull.TVTIME){
             SuperIntro(carta[0]);
         }
-        if (carta[0]==DeckFull.TVTIME){
+        if (carta[0]==DeckFull.Falha){
             SuperIntro(carta[0]);
+            DeckFull.Falha.Status.poder +=10;
+            DeckFull.Falha.Status.defesa +=5;
+            DeckFull.Falha.Status.magia +=4
+            carta[0] = DeckFull.Falha
+            Player1Stats.card = carta[0];
         }
+
         RolarCarta("P1");
         //Carta(Player1Stats.card, "P1");
         if (Player1Stats.card.nome == "Token/Femtanyl"){

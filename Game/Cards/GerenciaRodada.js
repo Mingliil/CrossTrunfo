@@ -145,6 +145,7 @@ export function ResetaEstados(x){
     */
 
         estados.estaAtacando = true;
+        BackgroundST();
         if (x == "placar"){
             if (estados.derrotado == true){
                 estados.derrotaPonto++;

@@ -77,6 +77,11 @@ CardOst.Femtanyl={
     ST:'Assets/audios/SoundTracks/Token.mp3',
     Creditos:""
 }
+CardOst.Falha={
+    Nome:"Cut Off My Strings by Hitori Sugar Music",
+    ST:"Assets/audios/SoundTracks/Cut Off My Strings - Hitori Sugar Music.mp3",
+    Creditos:""
+}
 CardOst.SPAMTON={
     Nome:" Your Computer Has Been Tons of Spammed por <a target='_blank'  class='alert-link' href='https://www.youtube.com/@Feo_the_Cat'>Feo the Cat</a>",
     ST:"Assets/audios/SoundTracks/Your Computer Has Been Tons of Spammed - Feo the Cat.mp3",
