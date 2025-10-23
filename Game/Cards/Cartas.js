@@ -678,7 +678,7 @@ DeckFull.Falha = {
 DeckFull.Ash = {
     nome:"<b>Ash Greninja</b>",
     raridade:"DEV",
-    descricao:"\"Um dos mais fortes\"",
+    descricao:"<b>\"Já bebeu água hoje?\"</>",
     Atlas:'Assets/cards.png',
     AlturaX:373,
     AlturaY:530,
@@ -686,11 +686,11 @@ DeckFull.Ash = {
     CoordsY:5640,
     DescX: 1,
     DescY: 0,
-    ImgTamanho:"100%",
+    ImgTamanho:"50%",
     Status : {
-        poder: 50,
-        defesa: 0,
-        magia: 80,
+        poder: 30,
+        defesa: 10,
+        magia: 70,
     }
 };
 export const DeckDev = [DeckFull.Ash, DeckFull.Falha, DeckFull.eric,DeckFull.Ubi, DeckFull.Bezerk]
