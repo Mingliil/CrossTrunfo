@@ -17,7 +17,7 @@ export let estados ={
     estaAtacando : true, // se estaAtacando = true, esconde carta do inimigo, senão mostra carta
     CartaRel : 0, //0 = escondido - 1 =revelado
     danoDado:0,
-    menu: false,
+    menu: true,
     pause: false,
     podePausar: false,
     getBackCounter: 1,
