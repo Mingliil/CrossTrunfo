@@ -172,6 +172,9 @@ export function ResetaEstados(x){
         Player1Stats.Aura = 100;
         Player2Stats.Aura = 100;
         Player1Stats.modos.modoPan = false;
+        DeckFull.Falha.Status.poder = 21;
+		DeckFull.Falha.Status.defesa = 14;
+		DeckFull.Falha.Status.magia = 64;
         document.getElementById("auraP2").innerHTML = "<b>"+ Player2Stats.Aura+"</b>";
         document.getElementById("auraP1").innerHTML = "<b>"+ Player1Stats.Aura+"</b>";
         estados.estadoRodada = 0;
