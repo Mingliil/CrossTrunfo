@@ -143,9 +143,14 @@ export function ResetaEstados(x){
     /* 
     x = "placar" = reseta tudo menos placar
     */
-
+        const Soundtrack = document.getElementById("audioST");
+        if (!Soundtrack.onended){
+        if (estados.menu == false){
+            BackgroundST();
+        }
+    }
         estados.estaAtacando = true;
-        BackgroundST();
+        
         if (x == "placar"){
             if (estados.derrotado == true){
                 estados.derrotaPonto++;
